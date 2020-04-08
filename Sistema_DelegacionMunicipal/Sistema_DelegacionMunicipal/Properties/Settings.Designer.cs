@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Proyecto_Tecnologias.Properties
+namespace Sistema_DelegacionMunicipal.Properties
 {
 
 

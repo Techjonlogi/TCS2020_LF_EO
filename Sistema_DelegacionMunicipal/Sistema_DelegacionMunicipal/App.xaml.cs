@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Proyecto_Tecnologias
+namespace Sistema_DelegacionMunicipal
 {
     /// <summary>
     /// Lógica de interacción para App.xaml

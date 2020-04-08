@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Proyecto_Tecnologias
+namespace Sistema_DelegacionMunicipal
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml

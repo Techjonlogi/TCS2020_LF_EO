@@ -1,0 +1,55 @@
+﻿<Window x:Class="Sistema_DelegacionMunicipal.LoginMunicipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sistema_DelegacionMunicipal"
+        mc:Ignorable="d"
+        xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Login" Height="400" Width="600" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0,0,10,0">
+        <Rectangle RadiusY="8" RadiusX="8" Fill="LightGray"/>
+        <Image Source="Imagenes/portadaLogin.png" Margin="310,0,0,0" Stretch="UniformToFill"/>
+
+        <StackPanel Margin="20,10,290,10">
+            <Label Content="Inicio de Sesión" FontFamily="Segoe UI Black" FontSize="24" Margin="0,10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal"/>
+
+            <StackPanel Margin="0,15" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Foreground="#707070"/>
+                <TextBox materialDesign:HintAssist.Hint="Usuario" Width="250" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Key" VerticalAlignment="Center" Foreground="#707070"/>
+                <PasswordBox materialDesign:HintAssist.Hint="Contraseña" Width="250" Margin="5"/>
+            </StackPanel>
+            <Grid>
+                <CheckBox Content="Recordar cuenta" Margin="5,10" Foreground="#707070"/>
+                <Label Content="Recuperar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Foreground="#707070"/>
+            </Grid>
+            <Button HorizontalAlignment="Center" Content="Iniciar sesión" FontFamily="Impact" FontSize="14" Width="110" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="84,30,95.6,0" Click="Button_Click_IniciarSesion"/>
+            <StackPanel Orientation="Horizontal" Margin="0,70" Height="39">
+                <Label Content="Redes sociales: " Foreground="#707070" VerticalAlignment="Center"/>
+                <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="#FF3D56AC" BorderBrush="#FF3D56AC">
+                    <materialDesign:PackIcon Kind="Facebook" VerticalAlignment="Center" Foreground="White"/>
+                </Button>
+                <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="15,0" Background="#FF01BAFF" BorderBrush="#FF01BAFF">
+                    <materialDesign:PackIcon Kind="Twitter" VerticalAlignment="Center" Foreground="White"/>
+                </Button>
+                <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="#FFE05959" BorderBrush="#FFE05959">
+                    <materialDesign:PackIcon Kind="GooglePlus" VerticalAlignment="Center" Foreground="White"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="310,50,0,50">
+            <TextBlock Text="Bienvenido" Foreground="#A3081F" HorizontalAlignment="Center" FontSize="48" FontFamily="Champagne &amp; Limousines" FontWeight="Bold"/>
+            <TextBlock Text="Sistema para las delegaciones municipales" Foreground="#A3081F" HorizontalAlignment="Center" Width="280" FontSize="24" FontFamily="Champagne &amp; Limousines" TextWrapping="Wrap" TextAlignment="Center" Margin="0,30,0,0" Height="60"/>
+        </StackPanel>
+
+        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="568,0,0,379" Height="21" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
+        <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,379" Width="22" Height="Auto" Click="Button_Cerrar"/>
+
+    </Grid>
+</Window>

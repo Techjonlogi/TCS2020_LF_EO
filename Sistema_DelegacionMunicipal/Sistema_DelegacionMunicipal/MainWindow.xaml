@@ -8,6 +8,50 @@
         mc:Ignorable="d"
         Title="Gestión" Height="643.096" Width="1024.238" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
+    <Grid Background="#FFEEEEEE">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="63*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="4,-10,0,0" Background="#FF959595" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
+            <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="645" VerticalAlignment="Top" Width="147" Margin="-20,10,0,-2"/>
+            <Rectangle Fill="#7A6E46" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="148" Margin="-20,0,0,0"/>
+
+
+            <Label Content="Historial" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,319,0,0" VerticalAlignment="Top" Width="85" Height="91" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <Label Content="de Reportes" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,356,0,0" VerticalAlignment="Top" Width="85" Height="54" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <materialDesign:PackIcon Kind="History" Width="24" Height="62" VerticalAlignment="Center" Margin="-10,342,0,249" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnHistorialReportes" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,335,0,0" VerticalAlignment="Top" Width="147" Height="76" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnHistorialReportes_Click"/>
+
+            <Label Content="Chat Grupal" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,409,0,0" VerticalAlignment="Top" Width="92" Height="75" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <materialDesign:PackIcon Kind="ChatTyping" Width="24" Height="61" VerticalAlignment="Center" Margin="-10,416,0,176" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnChat" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,409,0,0" VerticalAlignment="Top" Width="148" Height="75" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Click="btnChat_Click" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1"/>
+
+            <Label Content="Levantar" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,245,0,0" VerticalAlignment="Top" Width="92" Height="93" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <Label Content="Reporte" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,281,0,0" VerticalAlignment="Top" Width="92" Height="57" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <materialDesign:PackIcon Kind="FileReport" Width="24" Height="61" VerticalAlignment="Center" Margin="-10,269,0,323" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnLevantarReporte" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,262,0,0" VerticalAlignment="Top" Width="147" Height="75" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnLevantarReporte_Click"/>
+
+            <Label Content="Conductores" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,188,0,0" VerticalAlignment="Top" Width="92" Height="76" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <materialDesign:PackIcon Kind="Steering" Width="24" Height="76" VerticalAlignment="Center" Margin="-10,188,0,389" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnConductores" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,188,0,0" VerticalAlignment="Top" Width="147" Height="76" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnConductores_Click"/>
+
+            <Label Content="Salir" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,593,0,-2" VerticalAlignment="Top" Width="89" Height="62" Foreground="White" FontSize="16" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <materialDesign:PackIcon Kind="Power" Width="30" Height="55" VerticalAlignment="Center" Margin="-10,598,0,0" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnSalir" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,598,0,-2" VerticalAlignment="Top" Width="147" Height="57" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Click="BtnSalir_Click" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1"/>
+            <materialDesign:PackIcon Kind="User" Width="62" Height="101" VerticalAlignment="Center" Margin="22,15,0,537" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+
+
+
+
+
+        </Grid>
+        <Grid Margin="130,0,0,0" Grid.Column="1">
+            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
 </Window>
-    

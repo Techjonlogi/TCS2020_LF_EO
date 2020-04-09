@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\App.xaml
-2-1834531758
+6-1597832220
 
-6-638339080
+10-1357493502
 37238144395
-LoginMunicipal.xaml;MainWindow.xaml;
+LoginMunicipal.xaml;MainWindow.xaml;ViewController\Chat.xaml;ViewController\Conductor.xaml;ViewController\HistorialReportes.xaml;ViewController\LevantarReporte.xaml;
 
 False
 

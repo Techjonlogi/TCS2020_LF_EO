@@ -88,3 +88,11 @@ C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Si
 C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csproj.CopyComplete
 C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.exe
 C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.pdb
+C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Conductor.g.cs
+C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\HistorialReportes.g.cs
+C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\LevantarReporte.g.cs
+C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Conductor.baml
+C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\HistorialReportes.baml
+C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\LevantarReporte.baml
+C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Chat.g.cs
+C:\Users\Alejandro\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Chat.baml

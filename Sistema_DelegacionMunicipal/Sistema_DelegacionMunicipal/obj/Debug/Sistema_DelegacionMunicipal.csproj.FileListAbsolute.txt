@@ -200,3 +200,5 @@ C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Siste
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csprojAssemblyReference.cache
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarVehiculo.g.cs
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarVehiculo.baml
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Dictamen.g.cs
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Dictamen.baml

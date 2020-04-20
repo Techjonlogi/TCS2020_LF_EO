@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sistema_DelegacionMunicipal.ViewController"
-             mc:Ignorable="d" Height="643" Width="893">
+             mc:Ignorable="d" Height="643" Width="879">
 
     <Grid>
         <Rectangle Fill="#FF6C6CB2" HorizontalAlignment="Left" Height="643" Stroke="Black" VerticalAlignment="Top" Width="893"/>
@@ -14,10 +14,17 @@
             <Grid>
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
                 <Label Content="Conductores" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
+                <DataGrid HorizontalAlignment="Left" Height="447" Margin="100,101,0,0" VerticalAlignment="Top" Width="681"/>
+                <Button HorizontalAlignment="Center" Content="Agregar Nuevo" FontFamily="Impact" FontSize="16" Width="143" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="100,582,636,27" Height="Auto"/>
 
             </Grid>
 
         </materialDesign:TransitioningContent>
+
+        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
+        <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,621" Width="22" Height="22" Click="BtnSalir_Click"/>
+        
     </Grid>
 </UserControl>
+
 

@@ -39,14 +39,10 @@
             <Label Content="Conductores" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,188,0,0" VerticalAlignment="Top" Width="92" Height="76" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
             <materialDesign:PackIcon Kind="Steering" Width="24" Height="76" VerticalAlignment="Center" Margin="-10,188,0,389" Foreground="White" RenderTransformOrigin="3.1,0.867" />
             <Button x:Name="btnConductores" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,188,0,0" VerticalAlignment="Top" Width="147" Height="76" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnConductores_Click"/>
-
-            <Label Content="Salir" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,593,0,-2" VerticalAlignment="Top" Width="89" Height="62" Foreground="White" FontSize="16" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
-            <materialDesign:PackIcon Kind="Power" Width="30" Height="55" VerticalAlignment="Center" Margin="-10,598,0,0" Foreground="White" RenderTransformOrigin="3.1,0.867" />
-            <Button x:Name="btnSalir" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,598,0,-2" VerticalAlignment="Top" Width="147" Height="57" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Click="BtnSalir_Click" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1"/>
             <materialDesign:PackIcon Kind="User" Width="62" Height="101" VerticalAlignment="Center" Margin="22,15,0,537" Foreground="White" RenderTransformOrigin="3.1,0.867" />
 
-
-
+            <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="982,10,0,622" Height="21" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
+            <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,10,0,622" Width="22" Height="Auto" Click="BtnSalir_Click"/>
 
 
         </Grid>

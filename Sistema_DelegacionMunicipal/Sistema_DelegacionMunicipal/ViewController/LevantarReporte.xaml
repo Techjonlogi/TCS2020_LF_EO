@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sistema_DelegacionMunicipal.ViewController"
-             mc:Ignorable="d" Height="643" Width="893">
+             mc:Ignorable="d" Height="643" Width="879">
 
     <Grid>
         <Rectangle Fill="#FF6C6CB2" HorizontalAlignment="Left" Height="643" Stroke="Black" VerticalAlignment="Top" Width="893"/>
@@ -18,6 +18,10 @@
             </Grid>
 
         </materialDesign:TransitioningContent>
+
+        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
+        <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,621" Width="22" Height="22" Click="BtnSalir_Click"/>
+
     </Grid>
 </UserControl>
 

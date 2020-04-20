@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sistema_DelegacionMunicipal.ViewController"
-             mc:Ignorable="d" Height="643" Width="893">
+             mc:Ignorable="d" Height="643" Width="879">
 
     <Grid>
         <Rectangle Fill="#FF6C6CB2" HorizontalAlignment="Left" Height="643" Stroke="Black" VerticalAlignment="Top" Width="893"/>
@@ -14,10 +14,32 @@
             <Grid>
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
                 <Label Content="Chat Grupal" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
+                <Rectangle Fill="#CC6E717E" HorizontalAlignment="Left" Height="601" Stroke="Transparent" VerticalAlignment="Top" Width="476" Margin="0,42,0,0"/>
+                <Rectangle Fill="#FF648FAE" HorizontalAlignment="Left" Height="47" Margin="0,596,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
+                <TextBox HorizontalAlignment="Left" Height="47" Margin="10,596,0,0" TextWrapping="Wrap" Text="Escribe un mensaje" VerticalAlignment="Top" Width="317" BorderBrush="Black" FontSize="18"/>
+
+                <materialDesign:PackIcon Kind="Send" VerticalAlignment="Center" Foreground="#FF36342F" Margin="423,596,0,0" Height="47" Width="38" RenderTransformOrigin="2.59,-0.56"/>
+                <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,596,418,0" Width="38" Height="Auto"/>
+
+                <materialDesign:PackIcon Kind="PhotoCamera" VerticalAlignment="Center" Foreground="#FF36342F" Margin="353,596,0,0" Height="47" Width="38" RenderTransformOrigin="2.59,-0.56"/>
+                <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,596,488,0" Width="38" Height="Auto"/>
+
+
+
+                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="403" Margin="476,0,0,0"/>
+                <Label Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="403" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="476,0,0,0"/>
+                <DataGrid HorizontalAlignment="Left" Height="601" Margin="476,42,0,0" VerticalAlignment="Top" Width="403" Background="#FF8792AA"/>
+                <Label Content="Aún no hay mensajes" HorizontalAlignment="Left" Margin="132,300,0,0" VerticalAlignment="Top" Width="222" Height="42" FontSize="22"/>
+
 
             </Grid>
 
+
         </materialDesign:TransitioningContent>
+
+        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
+        <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,621" Width="22" Height="22" Click="BtnSalir_Click"/>
+
     </Grid>
 </UserControl>
 

@@ -26,6 +26,7 @@ namespace Sistema_DelegacionMunicipal
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
 

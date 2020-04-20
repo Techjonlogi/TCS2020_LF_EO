@@ -24,5 +24,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
         {
             InitializeComponent();
         }
+
+        private void BtnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 }

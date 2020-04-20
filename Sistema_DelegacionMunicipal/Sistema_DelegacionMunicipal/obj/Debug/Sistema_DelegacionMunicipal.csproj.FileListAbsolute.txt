@@ -170,7 +170,6 @@ C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Siste
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\MaterialDesignColors.pdb
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csprojAssemblyReference.cache
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\LoginMunicipal.g.cs
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\MainWindow.g.cs
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Chat.g.cs
@@ -194,3 +193,8 @@ C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Siste
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csproj.CopyComplete
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.exe
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.pdb
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Inicio.g.cs
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Inicio.baml
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarConductor.g.cs
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarConductor.baml
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csprojAssemblyReference.cache

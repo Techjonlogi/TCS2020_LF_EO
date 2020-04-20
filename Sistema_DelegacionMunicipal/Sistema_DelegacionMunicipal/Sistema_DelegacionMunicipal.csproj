@@ -129,6 +129,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewController\AgregarConductor.xaml.cs">
+      <DependentUpon>AgregarConductor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewController\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,9 @@
     </Compile>
     <Compile Include="ViewController\HistorialReportes.xaml.cs">
       <DependentUpon>HistorialReportes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Inicio.xaml.cs">
+      <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewController\LevantarReporte.xaml.cs">
       <DependentUpon>LevantarReporte.xaml</DependentUpon>
@@ -160,6 +166,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ViewController\AgregarConductor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewController\Chat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewController\HistorialReportes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewController\Inicio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -206,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\portadaLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\veracruzGob.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.0\build\MaterialDesignThemes.targets')" />

@@ -8,15 +8,27 @@
         mc:Ignorable="d"
         Title="Gestión" Height="643.096" Width="1024.238" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
-    <Grid Background="#FFEEEEEE">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF646464" Offset="1"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FF727171" Offset="0.943"/>
+                <GradientStop Color="#FFA09999" Offset="0.613"/>
+                <GradientStop Color="White" Offset="0.191"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="63*"/>
         </Grid.ColumnDefinitions>
         <Grid Margin="4,-10,0,0" Background="#FF959595" Grid.Column="1">
             <Grid.RowDefinitions>
+
                 <RowDefinition/>
             </Grid.RowDefinitions>
+
 
             <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="645" VerticalAlignment="Top" Width="147" Margin="-20,10,0,-2"/>
             <Rectangle Fill="#7A6E46" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="148" Margin="-20,0,0,0"/>
@@ -36,13 +48,17 @@
             <materialDesign:PackIcon Kind="FileReport" Width="24" Height="61" VerticalAlignment="Center" Margin="-10,269,0,323" Foreground="White" RenderTransformOrigin="3.1,0.867" />
             <Button x:Name="btnLevantarReporte" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,262,0,0" VerticalAlignment="Top" Width="147" Height="75" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnLevantarReporte_Click"/>
 
-            <Label Content="Conductores" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,188,0,0" VerticalAlignment="Top" Width="92" Height="76" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <Label Content="Conductores" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,174,0,0" VerticalAlignment="Top" Width="92" Height="90" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <Label Content="y Vehículos" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,211,0,0" VerticalAlignment="Top" Width="92" Height="53" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
             <materialDesign:PackIcon Kind="Steering" Width="24" Height="76" VerticalAlignment="Center" Margin="-10,188,0,389" Foreground="White" RenderTransformOrigin="3.1,0.867" />
             <Button x:Name="btnConductores" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,188,0,0" VerticalAlignment="Top" Width="147" Height="76" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnConductores_Click"/>
-            <materialDesign:PackIcon Kind="User" Width="62" Height="101" VerticalAlignment="Center" Margin="22,15,0,537" Foreground="White" RenderTransformOrigin="3.1,0.867" />
 
-            <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="982,10,0,622" Height="21" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-            <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,10,0,622" Width="22" Height="Auto" Click="BtnSalir_Click"/>
+            <Label Content="Inicio" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,117,0,0" VerticalAlignment="Top" Width="92" Height="76" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <materialDesign:PackIcon Kind="Home" Width="24" Height="76" VerticalAlignment="Center" Margin="-10,117,0,460" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnInicio" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,117,0,0" VerticalAlignment="Top" Width="147" Height="76" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnInicio_Click"/>
+
+
+            <materialDesign:PackIcon Kind="User" Width="62" Height="101" VerticalAlignment="Center" Margin="22,15,0,537" Foreground="White" RenderTransformOrigin="3.1,0.867" />
 
 
         </Grid>

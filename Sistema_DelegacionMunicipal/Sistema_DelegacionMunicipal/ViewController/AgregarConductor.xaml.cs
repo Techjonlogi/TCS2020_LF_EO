@@ -16,12 +16,11 @@ using System.Windows.Shapes;
 namespace Sistema_DelegacionMunicipal.ViewController
 {
     /// <summary>
-    /// Lógica de interacción para Conductor.xaml
+    /// Lógica de interacción para AgregarConductor.xaml
     /// </summary>
-    public partial class Conductor : UserControl
+    public partial class AgregarConductor : UserControl
     {
-
-        public Conductor()
+        public AgregarConductor()
         {
             InitializeComponent();
         }
@@ -29,11 +28,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
-        }
-
-        private void BtnAgregarConductor_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

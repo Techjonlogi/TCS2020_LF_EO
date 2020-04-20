@@ -21,19 +21,21 @@ namespace Sistema_DelegacionMunicipal
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int botonSeleccionado = 0;
+        private int botonSeleccionado = 5;
+
+        Chat chat = new Chat();
+        Conductor conductor = new Conductor();
+        HistorialReportes historialReportes = new HistorialReportes();
+        LevantarReporte levantarReporte = new LevantarReporte();
+        Inicio inicio = new Inicio();
 
         public MainWindow()
         {
             InitializeComponent();
-
+            GridPrincipal.Children.Add(inicio);
+            btnInicio.Background = Brushes.White;
         }
 
-
-        private void BtnSalir_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
 
         private void BtnConductores_Click(object sender, RoutedEventArgs e)
         {
@@ -41,7 +43,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(1);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new Conductor());
+                GridPrincipal.Children.Add(conductor);
             }
         }
 
@@ -51,7 +53,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(2);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new LevantarReporte());
+                GridPrincipal.Children.Add(levantarReporte);
             }
         }
 
@@ -61,7 +63,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(3);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new HistorialReportes());
+                GridPrincipal.Children.Add(historialReportes);
             }
         }
 
@@ -71,9 +73,27 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(4);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new Chat());
+                GridPrincipal.Children.Add(chat);
             }
         }
+
+        private void BtnInicio_Click(object sender, RoutedEventArgs e)
+        {
+            if (botonSeleccionado != 5)
+            {
+                cambiarBoton(5);
+                GridPrincipal.Children.Clear();
+                GridPrincipal.Children.Add(inicio);
+            }
+        }
+
+
+        public void MostrarAgregarConductor()
+        {
+            GridPrincipal.Children.Clear();
+            GridPrincipal.Children.Add(new AgregarConductor());
+        }
+
 
 
         private void cambiarBoton(int seleccionado)
@@ -82,7 +102,7 @@ namespace Sistema_DelegacionMunicipal
             btnLevantarReporte.Background = Brushes.Transparent;
             btnHistorialReportes.Background = Brushes.Transparent;
             btnChat.Background = Brushes.Transparent;
-
+            btnInicio.Background = Brushes.Transparent;
 
             switch (seleccionado)
             {
@@ -110,11 +130,14 @@ namespace Sistema_DelegacionMunicipal
                     btnChat.Background = Brushes.White;
                     break;
 
-
+                case (5):
+                    botonSeleccionado = 5;
+                    btnInicio.Background = Brushes.White;
+                    break;
             }
 
         }
 
-
+        
     }
 }

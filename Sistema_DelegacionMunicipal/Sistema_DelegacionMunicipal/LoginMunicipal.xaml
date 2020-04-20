@@ -29,19 +29,7 @@
                 <CheckBox Content="Recordar cuenta" Margin="5,10" Foreground="#707070"/>
                 <Label Content="Recuperar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Foreground="#707070"/>
             </Grid>
-            <Button HorizontalAlignment="Center" Content="Iniciar sesión" FontFamily="Impact" FontSize="14" Width="110" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="84,30,95.6,0" Click="Button_Click_IniciarSesion"/>
-            <StackPanel Orientation="Horizontal" Margin="0,70" Height="39">
-                <Label Content="Redes sociales: " Foreground="#707070" VerticalAlignment="Center"/>
-                <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="#FF3D56AC" BorderBrush="#FF3D56AC">
-                    <materialDesign:PackIcon Kind="Facebook" VerticalAlignment="Center" Foreground="White"/>
-                </Button>
-                <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="15,0" Background="#FF01BAFF" BorderBrush="#FF01BAFF">
-                    <materialDesign:PackIcon Kind="Twitter" VerticalAlignment="Center" Foreground="White"/>
-                </Button>
-                <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="#FFE05959" BorderBrush="#FFE05959">
-                    <materialDesign:PackIcon Kind="GooglePlus" VerticalAlignment="Center" Foreground="White"/>
-                </Button>
-            </StackPanel>
+            <Button HorizontalAlignment="Center" Content="Iniciar sesión" FontFamily="Impact" FontSize="14" Width="110" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="79,90,91,0" Click="Button_Click_IniciarSesion" RenderTransformOrigin="0.536,1.438"/>
         </StackPanel>
         <StackPanel Margin="310,50,0,50">
             <TextBlock Text="Bienvenido" Foreground="#A3081F" HorizontalAlignment="Center" FontSize="48" FontFamily="Champagne &amp; Limousines" FontWeight="Bold"/>

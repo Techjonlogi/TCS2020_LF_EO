@@ -24,7 +24,6 @@ namespace Sistema_DelegacionMunicipal
         private int botonSeleccionado = 5;
 
         Chat chat = new Chat();
-        HistorialReportes historialReportes = new HistorialReportes();
         LevantarReporte levantarReporte = new LevantarReporte();
         Inicio inicio = new Inicio();
 
@@ -62,7 +61,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(3);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(historialReportes);
+                GridPrincipal.Children.Add(new HistorialReportes());
             }
         }
 

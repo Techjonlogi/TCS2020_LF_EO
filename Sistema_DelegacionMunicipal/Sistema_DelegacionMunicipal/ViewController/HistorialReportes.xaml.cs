@@ -23,11 +23,43 @@ namespace Sistema_DelegacionMunicipal.ViewController
         public HistorialReportes()
         {
             InitializeComponent();
+            btnVolver.Visibility = Visibility.Hidden;
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+
+
+        private void BtnVerDictamen_Click(object sender, RoutedEventArgs e)
+        {
+            if (gridHistorial.Children.Count < 1)
+            {
+                gridHistorial.Children.Clear();
+                gridHistorial.Children.Add(new Dictamen());
+
+                btnVisualizarReporte.Visibility = Visibility.Hidden;
+                btnVerDictamen.Visibility = Visibility.Hidden;
+
+                btnVolver.Visibility = Visibility.Visible;
+            }
+        }
+
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            if (gridHistorial.Children.Count > 0)
+            {
+                gridHistorial.Children.RemoveAt(0);
+
+                btnVisualizarReporte.Visibility = Visibility.Visible;
+                btnVerDictamen.Visibility = Visibility.Visible;
+
+                btnVolver.Visibility = Visibility.Hidden;
+            }
+
         }
     }
 }

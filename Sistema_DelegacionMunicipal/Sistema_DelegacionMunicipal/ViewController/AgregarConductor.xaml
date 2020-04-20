@@ -17,16 +17,16 @@
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="749"/>
                 <Label Content="Agregar Conductor" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="722" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="24"/>
 
-                <Label Content="Nombre completo" HorizontalAlignment="Left" Margin="0,61,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <Label Content="Nombre completo" HorizontalAlignment="Left" Margin="0,61,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="300,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <Label Content="Fecha de nacimiento" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <Label Content="Fecha de nacimiento" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
                 <TextBox HorizontalAlignment="Left" Height="41" Margin="300,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <Label Content="de conducir" HorizontalAlignment="Left" Margin="0,231,0,0" VerticalAlignment="Top" Width="277" Height="44" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="de conducir" HorizontalAlignment="Left" Margin="0,231,0,0" VerticalAlignment="Top" Width="277" Height="44" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="300,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <Label Content="Teléfono celular" HorizontalAlignment="Left" Margin="0,300,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <Label Content="Teléfono celular" HorizontalAlignment="Left" Margin="0,300,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="300,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <Label Content="Contraseña de acceso" HorizontalAlignment="Left" Margin="0,379,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
-                <Label Content="Número de licencia" HorizontalAlignment="Left" Margin="0,201,0,0" VerticalAlignment="Top" Width="277" Height="59" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Contraseña de acceso" HorizontalAlignment="Left" Margin="0,379,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <Label Content="Número de licencia" HorizontalAlignment="Left" Margin="0,204,0,0" VerticalAlignment="Top" Width="277" Height="56" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="297" Margin="300,0,0,222" Height="42" FontSize="20" VerticalContentAlignment="Bottom"/>
 
 

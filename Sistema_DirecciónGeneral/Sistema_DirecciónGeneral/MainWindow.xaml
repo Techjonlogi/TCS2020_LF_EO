@@ -7,6 +7,71 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="643.096" Width="1024.238" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" >
-    
-    
-</Window>
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF646464" Offset="1"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FF727171" Offset="0.943"/>
+                <GradientStop Color="#FFA09999" Offset="0.613"/>
+                <GradientStop Color="White" Offset="0.191"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="63*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="2,-10,0,0.2" Background="#FF959595" Grid.Column="1">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="333*"/>
+                <RowDefinition Height="320*"/>
+            </Grid.RowDefinitions>
+
+
+            <Rectangle Fill="#FF36342F" HorizontalAlignment="Right" Height="645" VerticalAlignment="Top" Width="147" Margin="-20,10,879,-2.2" Grid.RowSpan="2"/>
+            <Rectangle Fill="#7A6E46" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="148" Margin="-20,0,0,0"/>
+
+            <Label Content="Dictaminar" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,67.133,0,0" VerticalAlignment="Top" Width="92" Height="75" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208" Grid.Row="1"/>
+            <Label Content="reporte" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,82.133,0,0" VerticalAlignment="Top" Width="92" Height="75" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208" Grid.Row="1"/>
+            <materialDesign:PackIcon Kind="Report" Width="24" Height="61" VerticalAlignment="Center" Margin="-10,83.133,0,175.8" Foreground="White" RenderTransformOrigin="3.1,0.867" Grid.Row="1" />
+            <Button x:Name="btnDictaminar" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,76.133,0,0" VerticalAlignment="Top" Width="148" Height="75" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Click="btnDictaminar_Click" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Grid.Row="1"/>
+
+
+            <Label Content="Visualizar" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,319,0,0" VerticalAlignment="Top" Width="85" Height="91" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208" Grid.RowSpan="2"/>
+            <Label Content="Reportes" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,23.133,0,0" VerticalAlignment="Top" Width="85" Height="54" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208" Grid.Row="1"/>
+            <materialDesign:PackIcon Kind="History" Width="24" Height="62" VerticalAlignment="Center" Margin="-10,9.133,0,248.8" Foreground="White" RenderTransformOrigin="3.1,0.867" Grid.Row="1" />
+            <Button x:Name="btnVisualizarReportes" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,2.133,0,0" VerticalAlignment="Top" Width="147" Height="76" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnVisualizarReportes_Click" Grid.Row="1"/>
+
+            <Label Content="Chat Grupal" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="36,144.133,0,0" VerticalAlignment="Top" Width="92" Height="75" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208" Grid.Row="1"/>
+            <materialDesign:PackIcon Kind="ChatTyping" Width="24" Height="75" VerticalAlignment="Center" Margin="-10,144.133,0,100.8" Foreground="White" RenderTransformOrigin="3.1,0.867" Grid.Row="1" />
+            <Button x:Name="btnChat" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,144.133,0,0" VerticalAlignment="Top" Width="148" Height="75" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Click="btnChat_Click" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Grid.Row="1"/>
+
+            <Label Content="Registro de " HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="30,230,0,0" VerticalAlignment="Top" Width="105" Height="93" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <Label Content="delegaciones" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="30,265,0,0" VerticalAlignment="Top" Width="105" Height="57" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <Label Content="municipales" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="30,271,0,0" VerticalAlignment="Top" Width="105" Height="73" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208" Grid.RowSpan="2"/>
+            <materialDesign:PackIcon Kind="City" Width="24" Height="61" VerticalAlignment="Center" Margin="-10,269,0,2.867" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnRegistrarDelegacion" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,262,0,0" VerticalAlignment="Top" Width="147" Height="75" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnRegistrarDelegacion_Click" Grid.RowSpan="2"/>
+
+            <Label Content="Registro de " HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,174,0,0" VerticalAlignment="Top" Width="92" Height="90" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <Label Content="usuarios" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,211,0,0" VerticalAlignment="Top" Width="92" Height="53" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <materialDesign:PackIcon Kind="Register" Width="24" Height="76" VerticalAlignment="Center" Margin="-10,188,0,68.867" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnRegistroUsuario" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,188,0,0" VerticalAlignment="Top" Width="147" Height="76" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnRegistrarUsuario_Click"/>
+
+            <Label Content="Inicio" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,117,0,0" VerticalAlignment="Top" Width="92" Height="76" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>
+            <materialDesign:PackIcon Kind="Home" Width="24" Height="76" VerticalAlignment="Center" Margin="-10,117,0,139.867" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnInicio" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="-20,117,0,0" VerticalAlignment="Top" Width="147" Height="76" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnInicio_Click"/>
+
+
+            <materialDesign:PackIcon Kind="User" Width="62" Height="101" VerticalAlignment="Center" Margin="22,15,0,216.867" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+
+
+        </Grid>
+        <Grid Margin="128,0,0,0.2" Grid.Column="1">
+            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+
+</Window>   

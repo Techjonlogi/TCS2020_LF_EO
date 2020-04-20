@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\App.xaml
-2-419086188
+9-1128755944
 
-7-1396709772
+141194369422
 371804243287
-Login.xaml;MainWindow.xaml;
+Login.xaml;MainWindow.xaml;ViewController\ChatGrupal.xaml;ViewController\DetallesReporte.xaml;ViewController\DictaminarReporte.xaml;ViewController\Inicio.xaml;ViewController\RegistrarDelegacion.xaml;ViewController\RegistrarUsuario.xaml;ViewController\VisualizarReportes.xaml;
 
 True
 

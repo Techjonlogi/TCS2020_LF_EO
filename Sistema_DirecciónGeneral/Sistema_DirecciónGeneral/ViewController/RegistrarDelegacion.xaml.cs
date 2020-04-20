@@ -17,7 +17,7 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para RegistrarDelegacion.xaml
     /// </summary>
-    public partial class RegistrarDelegacion : Window
+    public partial class RegistrarDelegacion : UserControl
     {
         public RegistrarDelegacion()
         {

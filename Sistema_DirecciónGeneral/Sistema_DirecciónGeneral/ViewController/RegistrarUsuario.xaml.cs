@@ -17,7 +17,7 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para RegistrarUsuario.xaml
     /// </summary>
-    public partial class RegistrarUsuario : Window
+    public partial class RegistrarUsuario : UserControl
     {
         public RegistrarUsuario()
         {

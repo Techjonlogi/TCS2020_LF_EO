@@ -17,7 +17,7 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para DetallesReporte.xaml
     /// </summary>
-    public partial class DetallesReporte : Window
+    public partial class DetallesReporte : UserControl
     {
         public DetallesReporte()
         {

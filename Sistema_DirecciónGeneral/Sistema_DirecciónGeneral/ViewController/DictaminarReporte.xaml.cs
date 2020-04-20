@@ -17,7 +17,7 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para DictaminarReporte.xaml
     /// </summary>
-    public partial class DictaminarReporte : Window
+    public partial class DictaminarReporte : UserControl
     {
         public DictaminarReporte()
         {

@@ -17,7 +17,7 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para ChatGrupal.xaml
     /// </summary>
-    public partial class ChatGrupal : Window
+    public partial class ChatGrupal : UserControl
     {
         public ChatGrupal()
         {

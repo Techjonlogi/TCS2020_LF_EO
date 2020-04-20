@@ -17,7 +17,6 @@
                 <Label Content="Nombre (Alias)" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="171,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Ingrese la dirección de la delegación " HorizontalAlignment="Left" Margin="0,71,0,0" VerticalAlignment="Top" Width="878" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Button HorizontalAlignment="Center" Content="Añadir" FontFamily="Impact" FontSize="14" Width="144" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="664,549,71.2,62.2" Height="Auto"/>
                 <Label Content="Complete información" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="869" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Calle:" HorizontalAlignment="Left" Margin="0,197,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label Content="Número:" HorizontalAlignment="Left" Margin="0,273,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
@@ -39,7 +38,7 @@
         </materialDesign:TransitioningContent>
 
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,621" Width="22" Height="22" Click="BtnSalir_Click"/>
+        
 
 
 

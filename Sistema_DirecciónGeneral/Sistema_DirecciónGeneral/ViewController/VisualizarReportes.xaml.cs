@@ -17,7 +17,7 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para VisualizarReportes.xaml
     /// </summary>
-    public partial class VisualizarReportes : Window
+    public partial class VisualizarReportes : UserControl
     {
         public VisualizarReportes()
         {

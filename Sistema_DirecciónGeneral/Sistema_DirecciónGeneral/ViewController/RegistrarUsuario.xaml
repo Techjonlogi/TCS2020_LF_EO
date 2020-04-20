@@ -18,7 +18,7 @@
                 <Label Content="Apellidos" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label Content="Cargo" HorizontalAlignment="Left" Margin="0,398,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label Content="1.- Ingrese sus datos personales" HorizontalAlignment="Left" Margin="0,81,-0.2,0" VerticalAlignment="Top" Width="681" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Button HorizontalAlignment="Center" Content="Registrar usuario" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="243,559,258.8,52.2" Height="Auto"/>
+               
                 <Label Content="2.- Selecciona el cargo" HorizontalAlignment="Left" Margin="0,323,0,0" VerticalAlignment="Top" Width="671" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Username" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label Content="Contraseña" HorizontalAlignment="Left" Margin="10,264,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
@@ -33,7 +33,7 @@
         </materialDesign:TransitioningContent>
 
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="659,0,-0.2,621.2" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,-0.2,621.2" Width="22" Height="22" Click="BtnSalir_Click"/>
+       
 
 
 

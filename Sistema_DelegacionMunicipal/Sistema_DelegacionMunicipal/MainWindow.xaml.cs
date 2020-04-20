@@ -24,7 +24,6 @@ namespace Sistema_DelegacionMunicipal
         private int botonSeleccionado = 5;
 
         Chat chat = new Chat();
-        Conductor conductor = new Conductor();
         HistorialReportes historialReportes = new HistorialReportes();
         LevantarReporte levantarReporte = new LevantarReporte();
         Inicio inicio = new Inicio();
@@ -43,7 +42,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(1);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(conductor);
+                GridPrincipal.Children.Add(new Conductor());
             }
         }
 
@@ -86,14 +85,6 @@ namespace Sistema_DelegacionMunicipal
                 GridPrincipal.Children.Add(inicio);
             }
         }
-
-
-        public void MostrarAgregarConductor()
-        {
-            GridPrincipal.Children.Clear();
-            GridPrincipal.Children.Add(new AgregarConductor());
-        }
-
 
 
         private void cambiarBoton(int seleccionado)

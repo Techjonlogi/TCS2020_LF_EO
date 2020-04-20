@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace Sistema_DelegacionMunicipal.ViewController
 {
     /// <summary>
-    /// Lógica de interacción para AgregarConductor.xaml
+    /// Lógica de interacción para AgregarVehiculo.xaml
     /// </summary>
-    public partial class AgregarConductor : UserControl
+    public partial class AgregarVehiculo : UserControl
     {
-        public AgregarConductor()
+        public AgregarVehiculo()
         {
             InitializeComponent();
         }
-
-        private void BtnSalir_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
     }
 }

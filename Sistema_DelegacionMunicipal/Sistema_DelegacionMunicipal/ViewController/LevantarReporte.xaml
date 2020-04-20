@@ -22,12 +22,17 @@
                 <ComboBox HorizontalAlignment="Left" Margin="203,212,0,0" VerticalAlignment="Top" Width="249" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
                 <Label Content="1.- Selecciona a los involucrados" HorizontalAlignment="Left" Margin="0,81,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Button HorizontalAlignment="Center" Content="Añadir" FontFamily="Impact" FontSize="14" Width="144" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="179,293,556,318" Height="Auto"/>
-                <Label Content="Involucrados añadidos" HorizontalAlignment="Left" Margin="495,81,0,0" VerticalAlignment="Top" Width="383" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF7A6E46" />
-                <DataGrid HorizontalAlignment="Left" Height="202" Margin="495,123,0,0" VerticalAlignment="Top" Width="384" Background="#FFC7C7C7"/>
+                <Label Content="Involucrados añadidos" HorizontalAlignment="Left" Margin="495,81,0,0" VerticalAlignment="Top" Width="383" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF36342F" Foreground="#DDFFFFFF" />
+
+                <DataGrid x:Name="dataGridInvolucrados" SelectionMode="Single"  AutoGenerateColumns="False" IsReadOnly="True" Height="202" Margin="494,123,0,0" VerticalAlignment="Top" ItemsSource="{Binding}" RowBackground="#FFF1E6E6" CanUserResizeRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre Completo" HeaderStringFormat="Nombre" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                    </DataGrid.Columns>
+                </DataGrid>
                 <Label Content="2.- Completa información" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="3.- Agrega fotografías" HorizontalAlignment="Left" Margin="0,511,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Button HorizontalAlignment="Center" Content="Selecionar fotografías" FontFamily="Impact" FontSize="14" Width="165" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="179,587,556,10" Height="Auto"/>
-                <Label Content="Fotografías seleccionadas" HorizontalAlignment="Left" Margin="494,353,0,0" VerticalAlignment="Top" Width="384" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF7A6E46" />
+                <Label Content="Fotografías seleccionadas" HorizontalAlignment="Left" Margin="494,353,0,0" VerticalAlignment="Top" Width="384" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF36342F" Foreground="#DDFFFFFF" />
                 <DataGrid HorizontalAlignment="Left" Height="238" Margin="495,395,0,0" VerticalAlignment="Top" Width="384" Background="#FFC7C7C7"/>
 
             </Grid>

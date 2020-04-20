@@ -132,6 +132,9 @@
     <Compile Include="ViewController\AgregarConductor.xaml.cs">
       <DependentUpon>AgregarConductor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewController\AgregarVehiculo.xaml.cs">
+      <DependentUpon>AgregarVehiculo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewController\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ViewController\AgregarConductor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewController\AgregarVehiculo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

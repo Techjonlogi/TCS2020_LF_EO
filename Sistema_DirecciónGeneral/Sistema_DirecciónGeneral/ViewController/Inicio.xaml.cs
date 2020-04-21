@@ -24,5 +24,11 @@ namespace Sistema_DirecciónGeneral.ViewController
         {
             InitializeComponent();
         }
+
+        private void Button_Salir(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 }

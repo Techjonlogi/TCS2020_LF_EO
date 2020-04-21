@@ -27,7 +27,7 @@
 
 
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="403" Margin="476,0,0,0"/>
-                <Label Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="403" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="476,0,0,0"/>
+                <Label Content="Usuarios Conectados" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="476,0,0,0"/>
                 <DataGrid HorizontalAlignment="Left" Height="601" Margin="476,42,0,0" VerticalAlignment="Top" Width="403" Background="#FF898989"/>
                 <Label Content="Aún no hay mensajes" HorizontalAlignment="Left" Margin="132,300,0,0" VerticalAlignment="Top" Width="222" Height="42" FontSize="22"/>
 
@@ -38,7 +38,8 @@
         </materialDesign:TransitioningContent>
 
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        
+        <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="856,0,0,621" Width="23" Height="22" Click="Button_Salir" VerticalAlignment="Bottom" />
+
 
     </Grid>
 </UserControl>

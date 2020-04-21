@@ -65,21 +65,12 @@ namespace Sistema_DirecciónGeneral
             }
         }
 
-        private void BtnDictaminar_Click(object sender, RoutedEventArgs e)
-        {
-            if (botonSeleccionado != 4)
-            {
-                cambiarBoton(3);
-                GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new DictaminarReporte());
-            }
-        }
 
         private void btnChat_Click(object sender, RoutedEventArgs e)
         {
-            if (botonSeleccionado != 5)
+            if (botonSeleccionado != 4)
             {
-                cambiarBoton(5);
+                cambiarBoton(4);
                 GridPrincipal.Children.Clear();
                 GridPrincipal.Children.Add(chat);
             }
@@ -87,9 +78,9 @@ namespace Sistema_DirecciónGeneral
 
         private void BtnInicio_Click(object sender, RoutedEventArgs e)
         {
-            if (botonSeleccionado != 6)
+            if (botonSeleccionado != 5)
             {
-                cambiarBoton(6);
+                cambiarBoton(5);
                 GridPrincipal.Children.Clear();
                 GridPrincipal.Children.Add(inicio);
             }
@@ -101,7 +92,6 @@ namespace Sistema_DirecciónGeneral
             btnRegistrarUsuario.Background = Brushes.Transparent;
             btnRegistrarDelegacion.Background = Brushes.Transparent;
             btnVisualizarReportes.Background = Brushes.Transparent;
-            btnDictaminar.Background = Brushes.Transparent;
             btnChat.Background = Brushes.Transparent;
             btnInicio.Background = Brushes.Transparent;
 
@@ -128,15 +118,10 @@ namespace Sistema_DirecciónGeneral
 
                 case (4):
                     botonSeleccionado = 4;
-                    btnDictaminar.Background = Brushes.White;
-                    break;
-
-                case (5):
-                    botonSeleccionado = 5;
                     btnChat.Background = Brushes.White;
                     break;
-                case (6):
-                    botonSeleccionado = 6;
+                case (5):
+                    botonSeleccionado = 5;
                     btnInicio.Background = Brushes.White;
                     break;
             }

@@ -33,7 +33,8 @@
 
         <Image Source="/Imagenes/veracruzGob.png" Margin="0,-203,0,345"/>
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        
+        <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="856,0,0,621" Width="23" Height="Auto" Click="Button_Salir" />
+
 
     </Grid>
 </UserControl>

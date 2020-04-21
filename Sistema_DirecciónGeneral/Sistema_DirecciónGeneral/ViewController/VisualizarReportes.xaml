@@ -14,16 +14,32 @@
             <Grid>
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
                 <Label Content="Visualizar Reportes" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <DataGrid HorizontalAlignment="Left" Height="412" Margin="100,101,0,0" VerticalAlignment="Top" Width="681"/>
-                <Button HorizontalAlignment="Center" Content="Ver más detalles" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="602,554,98.2,57.2" Height="Auto"/>
-                <Button HorizontalAlignment="Center" Content="Dictaminar reporte" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="100,554,600.2,57.2" Height="Auto"/>
+                <DataGrid HorizontalAlignment="Left" Height="465" Margin="100,101,0,0" VerticalAlignment="Top" Width="681"/>
+
+                <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="126" Background="#FFC13434" BorderBrush="{x:Null}" Margin="100,601,653,10" Height="Auto" Click="BtnVolver_Click" />
+                <Button x:Name="btnVerDetalles" HorizontalAlignment="Center" Content="Ver más detalles" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="602,601,98,10" Height="Auto" Click="BtnVerDetalles_Click"/>
+                <Button x:Name="btnDictaminarReporte" HorizontalAlignment="Center" Content="Dictaminar reporte" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="100,601,600,10" Height="Auto" Click="BtnDictaminar_Click"/>
+
+                <Button x:Name="btnFinalizarDictamen" HorizontalAlignment="Center" Content="Finalizar dictamen" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="346,601,354,10" Height="Auto"/>
+
 
             </Grid>
 
         </materialDesign:TransitioningContent>
 
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        
+        <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="856,0,0,621" Width="23" Height="Auto" Click="Button_Salir" />
+
+
+
+
+        <Grid Margin="96,99,89,59">
+            <Grid x:Name="gridDictamen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Margin="0,0,0,59">
+            <Grid x:Name="gridDetalles" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
 
     </Grid>
 </UserControl>

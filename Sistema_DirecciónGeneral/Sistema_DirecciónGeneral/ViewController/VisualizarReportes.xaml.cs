@@ -22,6 +22,71 @@ namespace Sistema_DirecciónGeneral.ViewController
         public VisualizarReportes()
         {
             InitializeComponent();
+            btnVolver.Visibility = Visibility.Hidden;
+            btnFinalizarDictamen.Visibility = Visibility.Hidden;
+        }
+
+
+        private void Button_Salir(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BtnDictaminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (gridDictamen.Children.Count < 1)
+            {
+                gridDictamen.Children.Clear();
+                gridDictamen.Children.Add(new DictaminarReporte());
+
+                btnVolver.Visibility = Visibility.Visible;
+                btnVolver.Content = "Cancelar";
+                btnFinalizarDictamen.Visibility = Visibility.Visible;
+
+                btnDictaminarReporte.Visibility = Visibility.Hidden;
+                btnVerDetalles.Visibility = Visibility.Hidden;
+            }
+
+        }
+
+
+        private void BtnVerDetalles_Click(object sender, RoutedEventArgs e)
+        {
+            if (gridDetalles.Children.Count < 1)
+            {
+                gridDetalles.Children.Clear();
+                gridDetalles.Children.Add(new DetallesReporte());
+
+                btnVolver.Visibility = Visibility.Visible;
+                btnVolver.Content = "Volver";
+
+                btnDictaminarReporte.Visibility = Visibility.Hidden;
+                btnVerDetalles.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void BtnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            if (gridDetalles.Children.Count > 0)
+            {
+                btnVolver.Visibility = Visibility.Hidden;
+
+                btnDictaminarReporte.Visibility = Visibility.Visible;
+                btnVerDetalles.Visibility = Visibility.Visible;
+
+                gridDetalles.Children.RemoveAt(0);
+            }
+
+            if (gridDictamen.Children.Count > 0)
+            {
+                btnVolver.Visibility = Visibility.Hidden;
+                btnFinalizarDictamen.Visibility = Visibility.Hidden;
+
+                btnDictaminarReporte.Visibility = Visibility.Visible;
+                btnVerDetalles.Visibility = Visibility.Visible;
+
+                gridDictamen.Children.RemoveAt(0);
+            }
         }
     }
 }

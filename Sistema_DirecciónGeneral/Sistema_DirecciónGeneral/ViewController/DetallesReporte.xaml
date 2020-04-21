@@ -9,11 +9,11 @@
 
     <Grid>
         <Rectangle Fill="#FF6C6CB2" HorizontalAlignment="Left" Height="643" Stroke="Black" VerticalAlignment="Top" Width="893"/>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595">
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.4}" Background="#FF959595">
 
             <Grid>
-                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
-                <Label Content="Reporte detallado" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
+                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="879"/>
+                <Label Content="Reporte detallado" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="879" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
                 <Label Content="Conductor" HorizontalAlignment="Left" Margin="0,128,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="179,411,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Vehículo" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
@@ -50,7 +50,8 @@
         </materialDesign:TransitioningContent>
 
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        
+        <Button FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="856,0,0,621" Height="Auto" Click="Button_Salir" HorizontalAlignment="Left" Width="23" />
+
 
 
 

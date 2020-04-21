@@ -16,15 +16,11 @@
                 <Label Content="Dictaminar Reporte" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="707" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
                 <Label Content="Folio:" HorizontalAlignment="Left" Margin="0,121,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label Content="Seleccione el reporte que desea dictaminar" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="707" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Label Content="Nombre" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Contraseña" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="219,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="219,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
                 <ComboBox HorizontalAlignment="Left" Margin="219,121,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
-                <Label Content="Descripción" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="219,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" VerticalContentAlignment="Bottom"/>
-                <Label Content="Responsabilidad" HorizontalAlignment="Left" Margin="0,274,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <ComboBox HorizontalAlignment="Left" Margin="219,274,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
+                <Label Content="Descripción" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBox HorizontalAlignment="Left" Height="42" Margin="219,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" VerticalContentAlignment="Bottom"/>
+                <Label Content="Responsabilidad" HorizontalAlignment="Left" Margin="0,168,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <ComboBox HorizontalAlignment="Left" Margin="219,168,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
 
             </Grid>
 

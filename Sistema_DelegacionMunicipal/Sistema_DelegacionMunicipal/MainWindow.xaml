@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Sistema_DelegacionMunicipal"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Gestión" Height="643.096" Width="1024.238" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="Gestión" Height="643.096" Width="1024.238" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" MouseDown="Window_MouseDown">
 
     <Grid>
         <Grid.Background>

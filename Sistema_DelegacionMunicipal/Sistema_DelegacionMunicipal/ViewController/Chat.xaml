@@ -8,29 +8,31 @@
              mc:Ignorable="d" Height="643" Width="879">
 
     <Grid>
+
+
+
         <Rectangle Fill="#FF6C6CB2" HorizontalAlignment="Left" Height="643" Stroke="Black" VerticalAlignment="Top" Width="893"/>
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595">
 
             <Grid>
-                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
-                <Label Content="Chat Grupal" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <Rectangle Fill="#CCD8D8D8" HorizontalAlignment="Left" Height="601" Stroke="Transparent" VerticalAlignment="Top" Width="476" Margin="0,42,0,0"/>
-                <Rectangle Fill="#FF648FAE" HorizontalAlignment="Left" Height="47" Margin="0,596,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
-                <TextBox HorizontalAlignment="Left" Height="47" Margin="10,596,0,0" TextWrapping="Wrap" Text="Escribe un mensaje" VerticalAlignment="Top" Width="317" BorderBrush="Black" FontSize="18"/>
+                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="531"/>
+                <Label Content="Chat Grupal" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="531" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
+                <Rectangle Fill="#CCD8D8D8" HorizontalAlignment="Left" Height="601" Stroke="Transparent" VerticalAlignment="Top" Width="531" Margin="0,42,0,0"/>
+                <Rectangle Fill="#FF648FAE" HorizontalAlignment="Left" Height="47" Margin="0,596,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="531"/>
 
-                <materialDesign:PackIcon Kind="Send" VerticalAlignment="Center" Foreground="#FF36342F" Margin="423,596,0,0" Height="47" Width="38" RenderTransformOrigin="2.59,-0.56"/>
-                <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,596,418,0" Width="38" Height="Auto"/>
+                <TextBox MaxLength="200" x:Name="txtBoxMensaje" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="43" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" BorderBrush="Black" FontSize="16" FontFamily="Leelawadee UI Semilight" AcceptsReturn="True" FontStretch="Condensed" MaxLines="4" TextOptions.TextFormattingMode="Display" TextWrapping="Wrap" PreviewKeyDown="txtBoxMensaje_PreviewKeyDown"/>
 
-                <materialDesign:PackIcon Kind="PhotoCamera" VerticalAlignment="Center" Foreground="#FF36342F" Margin="353,596,0,0" Height="47" Width="38" RenderTransformOrigin="2.59,-0.56"/>
-                <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,596,488,0" Width="38" Height="Auto"/>
+                <materialDesign:PackIcon Kind="Send" VerticalAlignment="Center" Foreground="#FF36342F" Margin="501,596,0,0" Height="47" Width="30" RenderTransformOrigin="2.59,-0.56"/>
+                <Button x:Name="btnEnviar" HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,596,348,0" Width="30" Height="Auto" Click="btnEnviar_Click"/>
+
+                <materialDesign:PackIcon Kind="PhotoCamera" VerticalAlignment="Center" Foreground="#FF36342F" Margin="450,596,0,0" Height="47" Width="32" RenderTransformOrigin="2.59,-0.56"/>
+                <Button x:Name="btnEnviarImagen" HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,596,397,0" Width="32" Height="47" RenderTransformOrigin="1.018,0.546" VerticalAlignment="Top" Click="btnEnviarImagen_Click"/>
 
 
 
-                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="403" Margin="476,0,0,0"/>
-                <Label Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="403" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="476,0,0,0"/>
-                <DataGrid HorizontalAlignment="Left" Height="601" Margin="476,42,0,0" VerticalAlignment="Top" Width="403" Background="#FF898989"/>
-                <Label Content="Aún no hay mensajes" HorizontalAlignment="Left" Margin="132,300,0,0" VerticalAlignment="Top" Width="222" Height="42" FontSize="22"/>
-
+                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="348" Margin="531,0,0,0"/>
+                <Label Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="343" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="536,0,0,0"/>
+                <DataGrid HorizontalAlignment="Left" Height="601" Margin="531,42,0,0" VerticalAlignment="Top" Width="348" Background="#FF707070"/>
 
             </Grid>
 
@@ -39,6 +41,18 @@
 
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
         <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,621" Width="22" Height="22" Click="BtnSalir_Click"/>
+
+
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlidee" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}">
+            <ScrollViewer x:Name="scrollChat" Margin="0,42,350,47" Background="White">
+                <Grid x:Name="GridBaseChatRecibido" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="526" Height="554" Background="#FF999999">
+                    <Grid x:Name="GridChatRecibido" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="554" Width="508"/>
+
+                </Grid>
+            </ScrollViewer>
+        </materialDesign:TransitioningContent>
+
+
 
     </Grid>
 </UserControl>

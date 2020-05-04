@@ -129,6 +129,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChatMsj\MensajeChat.xaml.cs">
+      <DependentUpon>MensajeChat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatMsj\MensajeEnviado.xaml.cs">
+      <DependentUpon>MensajeEnviado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sockets\SocketCliente.cs" />
+    <Compile Include="Sockets\SocketServer.cs" />
     <Compile Include="ViewController\AgregarConductor.xaml.cs">
       <DependentUpon>AgregarConductor.xaml</DependentUpon>
     </Compile>
@@ -153,6 +161,14 @@
     <Compile Include="ViewController\LevantarReporte.xaml.cs">
       <DependentUpon>LevantarReporte.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChatMsj\MensajeChat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChatMsj\MensajeEnviado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginMunicipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

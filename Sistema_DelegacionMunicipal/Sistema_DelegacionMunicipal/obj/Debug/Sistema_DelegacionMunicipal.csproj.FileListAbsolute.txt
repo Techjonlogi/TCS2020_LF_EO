@@ -202,3 +202,7 @@ C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Siste
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarVehiculo.baml
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Dictamen.g.cs
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Dictamen.baml
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ChatMsj\MensajeChat.g.cs
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ChatMsj\MensajeChat.baml
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ChatMsj\MensajeEnviado.g.cs
+C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ChatMsj\MensajeEnviado.baml

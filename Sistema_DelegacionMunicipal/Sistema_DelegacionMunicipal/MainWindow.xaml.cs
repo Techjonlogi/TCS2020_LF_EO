@@ -35,6 +35,12 @@ namespace Sistema_DelegacionMunicipal
         }
 
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+
         private void BtnConductores_Click(object sender, RoutedEventArgs e)
         {
             if (botonSeleccionado != 1)

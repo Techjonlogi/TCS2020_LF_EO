@@ -19,23 +19,17 @@ namespace Sistema_DelegacionMunicipal.Sockets
             socketServer.Bind(direccion);
             socketServer.Listen(2);
 
-            (sender as BackgroundWorker).ReportProgress(10, "Socket escuchando.");
-
             Socket socketClienteRemoto = socketServer.Accept();
 
-            string infoCliente = "";
             string mensaje = "";
-
-            (sender as BackgroundWorker).ReportProgress(50, infoCliente);
 
             byte[] byteRemoto = new byte[255];
             int datos = socketClienteRemoto.Receive(byteRemoto, 0, byteRemoto.Length, 0);
             Array.Resize(ref byteRemoto, datos);
-
             mensaje = Encoding.Default.GetString(byteRemoto);
 
             socketServer.Close();
-
+            e.Result = mensaje;
         }
 
     }

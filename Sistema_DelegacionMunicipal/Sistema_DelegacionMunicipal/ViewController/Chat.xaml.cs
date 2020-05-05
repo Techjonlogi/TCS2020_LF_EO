@@ -25,7 +25,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
     public partial class Chat : UserControl
     {
         int posicionMensaje = 0;
-     
+
 
         public Chat()
         {
@@ -34,54 +34,49 @@ namespace Sistema_DelegacionMunicipal.ViewController
         }
 
 
-    public void ManejoBWorker()
-    {
-        BackgroundWorker bw = new BackgroundWorker();
-        SocketServer ss = new SocketServer();
-        bw.WorkerReportsProgress = true;
-        bw.DoWork += ss.Conectar;
-        bw.ProgressChanged += metodoProgress;
-        bw.RunWorkerCompleted += metodoCompleted;
-        bw.RunWorkerAsync();
+        public void ManejoBWorker()
+        {
+            BackgroundWorker bw = new BackgroundWorker();
+            SocketServer ss = new SocketServer();
+            bw.WorkerReportsProgress = true;
+            bw.DoWork +=  ss.Conectar;
+            bw.RunWorkerCompleted += metodoCompleted;
+            bw.RunWorkerAsync();
 
-    }
-
-    public void metodoDoWork(object sender, DoWorkEventArgs e)
-    {
-        //Implementación en segundo plano
-    }
-
-    public void metodoProgress(object sender, ProgressChangedEventArgs e)
-    {
-        // Hilo Principal reporta avances a interfaz
-
-    }
-
-    public void metodoCompleted(object sender, RunWorkerCompletedEventArgs e)
-    {
-        //Hilo principal reporta finalización de tarea
-        string resultado = (string)e.Result;
-        recibirMensaje(resultado);
-        txtBoxMensaje.Text = "";
-        txtBoxMensaje.Focus();
-
-        ManejoBWorker();
-    }
-
-
-
-
-
-
-
-    /*private void txtBoxMensaje_PreviewKeyDown(object sender, KeyEventArgs e)
-    {
-            if (e.Key == Key.Enter)
-            {
-                enviarMensaje();
-            }
         }
-     */
+
+        public void metodoDoWork(object sender, DoWorkEventArgs e)
+        {
+            //Implementación en segundo plano
+
+        }
+
+        public void metodoCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //Hilo principal reporta finalización de tarea
+            string resultado = (string)e.Result;
+            recibirMensaje(resultado);
+
+            txtBoxMensaje.Text = "";
+            txtBoxMensaje.Focus();
+
+            ManejoBWorker();
+        }
+
+
+
+
+
+
+
+    private void txtBoxMensaje_PreviewKeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Enter)
+        {
+            enviarMensaje();
+        }
+    }
+    
 
     private void BtnSalir_Click(object sender, RoutedEventArgs e)
     {
@@ -106,16 +101,18 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         scrollChat.ScrollToVerticalOffset(GridBaseChatRecibido.Height - 1);
 
-        GridChatRecibido.Children.Add(new MensajeChat(posicionMensaje, txtBoxMensaje.Text));
+        GridChatRecibido.Children.Add(new MensajeChat(posicionMensaje, mensajeRecibido));
+
+        txtMensajeRecibido.Text = mensajeRecibido;
 
         int separacion = 0;
-        if (txtBoxMensaje.LineCount == 1)
+        if (txtMensajeRecibido.LineCount == 1)
             separacion = 65;
-        if (txtBoxMensaje.LineCount == 2)
+        if (txtMensajeRecibido.LineCount == 2)
             separacion = 80;
-        if (txtBoxMensaje.LineCount == 3)
+        if (txtMensajeRecibido.LineCount == 3)
             separacion = 95;
-        if (txtBoxMensaje.LineCount > 3)
+        if (txtMensajeRecibido.LineCount > 3)
             separacion = 110;
 
         posicionMensaje += separacion;
@@ -130,32 +127,49 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
     public void enviarMensaje()
     {
-            SocketCliente sc = new SocketCliente();
-            sc.Conectar(txtBoxMensaje.Text);
+        string texto = txtBoxMensaje.Text.Trim();
 
-        scrollChat.ScrollToVerticalOffset(GridBaseChatRecibido.Height - 1);
-
-        GridChatRecibido.Children.Add(new MensajeEnviado(posicionMensaje, txtBoxMensaje.Text));
-
-        int separacion = 0;
-        if (txtBoxMensaje.LineCount == 1)
-            separacion = 65;
-        if (txtBoxMensaje.LineCount == 2)
-            separacion = 80;
-        if (txtBoxMensaje.LineCount == 3)
-            separacion = 95;
-        if (txtBoxMensaje.LineCount > 3)
-            separacion = 110;
-
-        posicionMensaje += separacion;
-
-        if (posicionMensaje > 554)
+        if (texto != "")
         {
-            GridBaseChatRecibido.Height += separacion;
-            GridChatRecibido.Height += separacion;
+            SocketCliente sc = new SocketCliente();
+            sc.Conectar(texto);
+
+            scrollChat.ScrollToVerticalOffset(GridBaseChatRecibido.Height - 1);
+
+            GridChatRecibido.Children.Add(new MensajeEnviado(posicionMensaje, texto));
+
+            int separacion = 0;
+            if (txtBoxMensaje.LineCount == 1)
+                separacion = 65;
+            if (txtBoxMensaje.LineCount == 2)
+                separacion = 80;
+            if (txtBoxMensaje.LineCount == 3)
+                separacion = 95;
+            if (txtBoxMensaje.LineCount > 3)
+                separacion = 110;
+
+            posicionMensaje += separacion;
+
+            if (posicionMensaje > 554)
+            {
+                GridBaseChatRecibido.Height += separacion;
+                GridChatRecibido.Height += separacion;
+            }
+        }
+
+
+    }
+
+        private void txtBoxMensaje_GotFocus(object sender, RoutedEventArgs e)
+        {
+            lbMensaje.Content = "";
+        }
+
+        private void txtBoxMensaje_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtBoxMensaje.Text == "")
+                lbMensaje.Content = "Escribe un mensaje";
         }
     }
-
-        
-    }
+           
 }

@@ -24,7 +24,7 @@ namespace Sistema_DelegacionMunicipal.ChatMsj
         {
             InitializeComponent();
             txtMensaje.Text = mensaje;
-            this.Margin = new Thickness(75, posicionMensaje, 35, 0);
+            this.Margin = new Thickness(65, posicionMensaje, 35, 0);
 
             if (DateTime.Now.Hour > 12) 
                  txtHora.Text = "" + (DateTime.Now.Hour - 12) + ":" + DateTime.Now.Minute + " pm";

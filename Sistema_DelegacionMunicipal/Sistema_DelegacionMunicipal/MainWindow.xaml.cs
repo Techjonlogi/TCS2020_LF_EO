@@ -37,7 +37,7 @@ namespace Sistema_DelegacionMunicipal
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+             DragMove();
         }
 
 

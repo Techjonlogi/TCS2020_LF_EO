@@ -205,3 +205,4 @@ C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\Sistema_DirecciónGeneral.csproj.CopyComplete
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\Sistema_DirecciónGeneral.exe
 C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\Sistema_DirecciónGeneral.pdb
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\Sistema_DirecciónGeneral.csproj.CoreCompileInputs.cache

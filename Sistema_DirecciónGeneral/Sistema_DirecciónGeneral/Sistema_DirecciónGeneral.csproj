@@ -110,6 +110,7 @@
       <HintPath>..\packages\MaterialDesignThemes.3.1.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -129,6 +130,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Clases\Validaciones.cs" />
+    <Compile Include="DAOs\UsuarioDAO.cs" />
     <Compile Include="ViewController\ChatGrupal.xaml.cs">
       <DependentUpon>ChatGrupal.xaml</DependentUpon>
     </Compile>

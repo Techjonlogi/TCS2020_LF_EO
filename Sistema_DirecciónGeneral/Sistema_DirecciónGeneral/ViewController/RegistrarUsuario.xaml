@@ -26,7 +26,12 @@
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="424,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.444,0.47"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="424,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="424,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
-                <ComboBox HorizontalAlignment="Left" Margin="424,457,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.665,0.42"/>
+                <ComboBox HorizontalAlignment="Left" Margin="424,457,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.665,0.42">
+                    <ComboBoxItem>Administrativo</ComboBoxItem>
+                    <ComboBoxItem>Perito</ComboBoxItem>
+                    <ComboBoxItem>Soporte</ComboBoxItem>
+                    <ComboBoxItem>Atención</ComboBoxItem>
+                </ComboBox>
                 <Label Content="Delegación" HorizontalAlignment="Left" Margin="197,311,0,0" VerticalAlignment="Top" Width="201" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <ComboBox HorizontalAlignment="Left" Margin="424,316,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
                 <Button  HorizontalAlignment="Center" Content="Registrar Usuario" FontFamily="Impact" FontSize="14" Width="201" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="332,566,346,104" Height="Auto"/>

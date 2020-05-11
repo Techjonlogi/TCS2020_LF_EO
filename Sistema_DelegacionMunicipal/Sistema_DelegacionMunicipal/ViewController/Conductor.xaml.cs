@@ -26,63 +26,39 @@ namespace Sistema_DelegacionMunicipal.ViewController
         {
             InitializeComponent();
             GridConductor.Children.Clear();
-
-            btnCancelar.Visibility = Visibility.Hidden;
-            btnAgregarConductor.Visibility = Visibility.Hidden;
-            btnAgregarVehiculo.Visibility = Visibility.Hidden;
+            
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+    
 
         private void BtnNuevoConductor_Click(object sender, RoutedEventArgs e)
         {
-            if (GridConductor.Children.Count < 1)
-            {
-                GridConductor.Children.Clear();
-                GridConductor.Children.Add(new AgregarConductor());
-
-                btnNuevoConductor.Visibility = Visibility.Hidden;
-                btnNuevoVehiculo.Visibility = Visibility.Hidden;
-
-                btnCancelar.Visibility = Visibility.Visible;
-                btnAgregarConductor.Visibility = Visibility.Visible;
-            }
+            AgregarConductor agregarConductor = new AgregarConductor();
+            GridConductor.Children.Clear();
+            GridConductor.Children.Add(agregarConductor);
         }
 
 
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            if (GridConductor.Children.Count > 0)
-            {
-                GridConductor.Children.RemoveAt(0);
-
-                btnNuevoConductor.Visibility = Visibility.Visible;
-                btnNuevoVehiculo.Visibility = Visibility.Visible;
-
-                btnCancelar.Visibility = Visibility.Hidden;
-                btnAgregarConductor.Visibility = Visibility.Hidden;
-                btnAgregarVehiculo.Visibility = Visibility.Hidden;
-            }
-                
-        }
 
         private void btnNuevoVehiculo_Click(object sender, RoutedEventArgs e)
         {
-            if (GridConductor.Children.Count < 1)
-            {
-                GridConductor.Children.Clear();
-                GridConductor.Children.Add(new AgregarVehiculo());
+            AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
+            GridConductor.Children.Clear();
+            GridConductor.Children.Add(agregarVehiculo);
 
-                btnNuevoConductor.Visibility = Visibility.Hidden;
-                btnNuevoVehiculo.Visibility = Visibility.Hidden;
-
-                btnCancelar.Visibility = Visibility.Visible;
-                btnAgregarVehiculo.Visibility = Visibility.Visible;
-            }
         }
 
+        private void dataGridConductores_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dataGrid = sender as DataGrid;
+            DataGridRow row = (DataGridRow)dataGrid.ItemContainerGenerator.ContainerFromIndex(dataGrid.SelectedIndex);
+            DataGridCell RowColumn = dataGrid.Columns[1].GetCellContent(row).Parent as DataGridCell;
+            string CellValue = ((TextBlock)RowColumn.Content).Text;
+            //matriculaSeleccionada = CellValue;
+        }
     }
 }

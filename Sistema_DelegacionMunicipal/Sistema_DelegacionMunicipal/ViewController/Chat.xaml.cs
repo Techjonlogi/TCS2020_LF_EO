@@ -164,8 +164,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
         private Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
         byte[] receivedBuf = new byte[1024];
-        Thread thr;
-
 
         private void ReceiveData(IAsyncResult ar)
         {

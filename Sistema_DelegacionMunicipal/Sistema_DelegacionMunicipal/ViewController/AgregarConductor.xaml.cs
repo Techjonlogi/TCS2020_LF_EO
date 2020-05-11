@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_DelegacionMunicipal.DAOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,5 +31,15 @@ namespace Sistema_DelegacionMunicipal.ViewController
             Application.Current.Shutdown();
         }
 
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnAgregar_Click(object sender, RoutedEventArgs e)
+        {
+            ConductorDAO conductorDAO = new ConductorDAO();
+            conductorDAO.AgregarConductor(txtNombre.Text, txtApellidos.Text, txtLicencia.Text, txtTelefono.Text);
+        }
     }
 }

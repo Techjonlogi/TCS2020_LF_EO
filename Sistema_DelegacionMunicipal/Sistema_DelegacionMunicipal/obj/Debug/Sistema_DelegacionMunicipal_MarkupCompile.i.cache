@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\
 Sistema_DelegacionMunicipal
 none
 false
 DEBUG;TRACE
-C:\Users\normal\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\App.xaml
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\App.xaml
 12-205869335
 
-19-1538045861
-37-1267723238
+17-1893503268
+37-855751981
 ChatMsj\MensajeChat.xaml;ChatMsj\MensajeEnviado.xaml;LoginMunicipal.xaml;MainWindow.xaml;ViewController\AgregarConductor.xaml;ViewController\AgregarVehiculo.xaml;ViewController\Chat.xaml;ViewController\Conductor.xaml;ViewController\Dictamen.xaml;ViewController\HistorialReportes.xaml;ViewController\Inicio.xaml;ViewController\LevantarReporte.xaml;
 
-False
+True
 

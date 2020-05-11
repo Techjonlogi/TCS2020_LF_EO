@@ -135,8 +135,6 @@
     <Compile Include="ChatMsj\MensajeEnviado.xaml.cs">
       <DependentUpon>MensajeEnviado.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sockets\SocketCliente.cs" />
-    <Compile Include="Sockets\SocketServer.cs" />
     <Compile Include="ViewController\AgregarConductor.xaml.cs">
       <DependentUpon>AgregarConductor.xaml</DependentUpon>
     </Compile>
@@ -253,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\veracruzGob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sockets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.0\build\MaterialDesignThemes.targets')" />

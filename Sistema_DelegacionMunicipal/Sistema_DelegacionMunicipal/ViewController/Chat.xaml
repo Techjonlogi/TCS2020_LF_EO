@@ -20,7 +20,10 @@
                 <Rectangle Fill="#CCD8D8D8" HorizontalAlignment="Left" Height="601" Stroke="Transparent" VerticalAlignment="Top" Width="531" Margin="0,42,0,0"/>
                 <Rectangle Fill="#FF648FAE" HorizontalAlignment="Left" Height="47" Margin="0,596,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="531"/>
 
-                <TextBox MaxLength="200" x:Name="txtMensajeRecibido" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="43" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" BorderBrush="{x:Null}" FontSize="16" FontFamily="Leelawadee UI Semilight" AcceptsReturn="False" FontStretch="Condensed" MaxLines="4" TextOptions.TextFormattingMode="Display" TextWrapping="Wrap" PreviewKeyDown="txtBoxMensaje_PreviewKeyDown" GotFocus="txtBoxMensaje_GotFocus" LostFocus="txtBoxMensaje_LostFocus" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}"/>
+                <TextBox  MaxLength="200" x:Name="txtMensajeRecibido" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="43" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" BorderBrush="{x:Null}" FontSize="16" FontFamily="Leelawadee UI Semilight" AcceptsReturn="False" FontStretch="Condensed" MaxLines="4" TextOptions.TextFormattingMode="Display" TextWrapping="Wrap" PreviewKeyDown="txtBoxMensaje_PreviewKeyDown" GotFocus="txtBoxMensaje_GotFocus" LostFocus="txtBoxMensaje_LostFocus" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}"/>
+
+
+
                 <Label x:Name="lbMensaje" Content="Escribe un mensaje" HorizontalAlignment="Left" VerticalContentAlignment="Bottom" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" Height="43" FontSize="16" FontFamily="Leelawadee UI Semilight" Background="{x:Null}" Foreground="#DD3E3E3E"/>
                 <TextBox MaxLength="200" x:Name="txtBoxMensaje" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="43" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" BorderBrush="Black" FontSize="16" FontFamily="Leelawadee UI Semilight" AcceptsReturn="False" FontStretch="Condensed" MaxLines="4" TextOptions.TextFormattingMode="Display" TextWrapping="Wrap" PreviewKeyDown="txtBoxMensaje_PreviewKeyDown" GotFocus="txtBoxMensaje_GotFocus" LostFocus="txtBoxMensaje_LostFocus"/>
 
@@ -33,7 +36,7 @@
 
 
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="348" Margin="531,0,0,0"/>
-                <Label Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="343" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="536,0,0,0"/>
+                <Label x:Name="labelTest" Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="343" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="536,0,0,0"/>
                 <DataGrid HorizontalAlignment="Left" Height="601" Margin="531,42,0,0" VerticalAlignment="Top" Width="348" Background="#FF707070"/>
 
             </Grid>
@@ -53,8 +56,6 @@
                 </Grid>
             </ScrollViewer>
         </materialDesign:TransitioningContent>
-
-
 
     </Grid>
 </UserControl>

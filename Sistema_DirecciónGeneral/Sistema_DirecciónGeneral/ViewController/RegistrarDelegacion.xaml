@@ -27,7 +27,26 @@
                 <Label Content="Colonia:" HorizontalAlignment="Left" Margin="408,118,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="579,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Municipio:" HorizontalAlignment="Left" Margin="408,197,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <ComboBox HorizontalAlignment="Left" Margin="574,197,0,0" VerticalAlignment="Top" Width="237" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
+                <ComboBox HorizontalAlignment="Left" Margin="574,197,0,0" VerticalAlignment="Top" Width="237" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482">
+                    <ComboBoxItem>Acayucan</ComboBoxItem>
+                    <ComboBoxItem>Actopan</ComboBoxItem>
+                    <ComboBoxItem>Acula</ComboBoxItem>
+                    <ComboBoxItem>Acultzingo</ComboBoxItem>
+                    <ComboBoxItem>Agua Dulce</ComboBoxItem>
+                    <ComboBoxItem>Álamo Temapache</ComboBoxItem>
+                    <ComboBoxItem>Alpatláhuac</ComboBoxItem>
+                    <ComboBoxItem>Alto Lucero</ComboBoxItem>
+                    <ComboBoxItem>Altotonga</ComboBoxItem>
+                    <ComboBoxItem>Alvarado</ComboBoxItem>
+                    <ComboBoxItem>Amatitlán</ComboBoxItem>
+                    <ComboBoxItem>Amatlán de los Reyes</ComboBoxItem>
+                    <ComboBoxItem>Angel R. Cabada</ComboBoxItem>
+                    <ComboBoxItem>Apazapan</ComboBoxItem>
+                    <ComboBoxItem>Aquila</ComboBoxItem>
+                    <ComboBoxItem>Astacinga</ComboBoxItem>
+                    <ComboBoxItem>Atlahuilco</ComboBoxItem>
+                    <ComboBoxItem>Atoyac</ComboBoxItem>
+                </ComboBox> 
                 <Label Content="Correo:" HorizontalAlignment="Left" Margin="166,413,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label Content="Telefono:" HorizontalAlignment="Left" Margin="90,460,0,0" VerticalAlignment="Top" Width="242" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <TextBox HorizontalAlignment="Left" Height="42" Margin="387,413,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" FontSize="22"/>

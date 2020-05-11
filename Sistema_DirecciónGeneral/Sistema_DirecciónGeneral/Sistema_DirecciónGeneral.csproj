@@ -132,6 +132,7 @@
     </ApplicationDefinition>
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Validaciones.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="DAOs\UsuarioDAO.cs" />
     <Compile Include="ViewController\ChatGrupal.xaml.cs">
       <DependentUpon>ChatGrupal.xaml</DependentUpon>

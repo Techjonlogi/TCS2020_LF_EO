@@ -52,7 +52,6 @@ namespace Sistema_DirecciónGeneral
                     mainWindow.Show();
                     this.Close();
                 }
-
                 else
                 {
                     MessageBox.Show(this, "Sin acceso", "Error");

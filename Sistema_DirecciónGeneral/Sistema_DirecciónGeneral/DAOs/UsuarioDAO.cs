@@ -1,6 +1,7 @@
 ﻿using Sistema_DirecciónGeneral.Clases;
 using System;
 using System.Data.SqlClient;
+using System.Windows;
 using static Sistema_DirecciónGeneral.Connection;
 
 namespace Sistema_DirecciónGeneral.DAOs
@@ -56,5 +57,44 @@ namespace Sistema_DirecciónGeneral.DAOs
             }
             return userGeneral;
         }
+
+        public void AddUsuario(string user, string contrasenia, string nombre, string apellidos, string cargo, int idDelegacion)
+        {
+            
+            SqlConnection conn = null;
+            try
+            {
+                conn = ConnectionUtils.getConnection();
+                SqlCommand command;
+                SqlDataReader rd;
+                if (conn != null)
+                {
+                    String query = String.Format("INSERT INTO dbo.Usuario " +
+                        "(usuario, contrasenia, nombre, apellidos, cargo, idDelegacion )" +
+                        "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}');", user, contrasenia, nombre, apellidos, cargo, idDelegacion);
+                    Console.WriteLine(query);
+                    command = new SqlCommand(query, conn);
+                    command.ExecuteNonQuery();
+                    command.Dispose();
+
+                    MessageBox.Show("El usuario ha sido registrado.");
+                }
+            }
+            //Cambiar las excepciones, buscar cuáles nos podría dar
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Error al guardar al usuario.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            
+        }
+
     }
 }

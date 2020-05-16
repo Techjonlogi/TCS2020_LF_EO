@@ -130,6 +130,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Clases\Delegacion.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Validaciones.cs" />
     <Compile Include="Connection.cs" />

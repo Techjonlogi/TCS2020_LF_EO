@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema_DirecciónGeneral", "Sistema_DirecciónGeneral\Sistema_DirecciónGeneral.csproj", "{3FA171F9-8B77-4DA7-A61D-ABD73F31A0FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{C55DC897-C119-4C66-80C8-24B3C8398177}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,26 +39,6 @@ Global
 		{3FA171F9-8B77-4DA7-A61D-ABD73F31A0FE}.Release|x64.Build.0 = Release|Any CPU
 		{3FA171F9-8B77-4DA7-A61D-ABD73F31A0FE}.Release|x86.ActiveCfg = Release|Any CPU
 		{3FA171F9-8B77-4DA7-A61D-ABD73F31A0FE}.Release|x86.Build.0 = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|ARM.Build.0 = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|x64.Build.0 = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Debug|x86.Build.0 = Debug|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|ARM.ActiveCfg = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|ARM.Build.0 = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|ARM64.Build.0 = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|x64.ActiveCfg = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|x64.Build.0 = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|x86.ActiveCfg = Release|Any CPU
-		{C55DC897-C119-4C66-80C8-24B3C8398177}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

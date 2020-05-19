@@ -1,5 +1,4 @@
 ﻿using Sistema_DirecciónGeneral.Clases;
-using Sistema_DirecciónGeneral.DAOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +20,7 @@ namespace Sistema_DirecciónGeneral
     /// </summary>
     public partial class Login : Window
     {
-        private string user;
-        private string contrasenia;
-        
+                
         public Login()
         {
             InitializeComponent();
@@ -36,35 +33,36 @@ namespace Sistema_DirecciónGeneral
 
         private void Button_IniciarSesion(object sender, RoutedEventArgs e)
         {
-            
-
-            if (validarCampos())
+            if (string.IsNullOrEmpty(txt_user.Text) || string.IsNullOrEmpty(txt_pass.Password))
             {
-                user = txt_user.Text;
-                contrasenia = txt_pass.Password;
-                               
-                Usuario userGeneral = UsuarioDAO.GetLogin(user, contrasenia);
-                //Login
-                if (userGeneral != null && userGeneral.Idusuario > 0)
+                MessageBox.Show("Usuario y/o password Vacios...", "Error");
+                txt_user.Focus();
+                txt_pass.Focus();
+                return;
+            }
+            try
+            {
+                IQueryable query;
+                using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+                {                   
+                    query = from Usuario in db.Usuarios
+                                where Usuario.usuario1 == txt_user.Text && Usuario.contrasenia == txt_pass.Password
+                                select Usuario;
+                }
+                if(query != null)
                 {
-                    MessageBox.Show(this, "Bienvenido: " + userGeneral.Nombreuser, "Información");
+                    MessageBox.Show(this, "Bienvenido: " + txt_user.Text, "Información");
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     this.Close();
                 }
-                else
-                {
-                    MessageBox.Show(this, "Sin acceso", "Error");
-                    txt_user.Text = "";
-                    txt_pass.Password = "";
-                    txt_user.Focus();
-                }
-
+                
             }
-            else
+            catch
             {
-                MessageBox.Show("Usuario y/o password Vacios...", "Error");
-            }
+                MessageBox.Show("Error");
+                
+            }            
         }
 
         private bool validarCampos()

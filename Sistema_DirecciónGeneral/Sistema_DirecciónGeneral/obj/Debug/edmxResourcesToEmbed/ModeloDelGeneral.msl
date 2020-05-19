@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SistemaReportesVehiculosModelStoreContainer" CdmEntityContainer="SistemaReportesVehiculosEntities">
+    <EntitySetMapping Name="Conductors">
+      <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Conductor">
+        <MappingFragment StoreEntitySet="Conductor">
+          <ScalarProperty Name="idConductor" ColumnName="idConductor" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="numLicencia" ColumnName="numLicencia" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Delegacions">
+      <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Delegacion">
+        <MappingFragment StoreEntitySet="Delegacion">
+          <ScalarProperty Name="idDelegacion" ColumnName="idDelegacion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+          <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dictamen">
+      <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Dictaman">
+        <MappingFragment StoreEntitySet="Dictamen">
+          <ScalarProperty Name="folio" ColumnName="folio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaHora" ColumnName="fechaHora" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Municipios">
+      <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Municipio">
+        <MappingFragment StoreEntitySet="Municipio">
+          <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+          <ScalarProperty Name="municipio1" ColumnName="municipio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reportes">
+      <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Reporte">
+        <MappingFragment StoreEntitySet="Reporte">
+          <ScalarProperty Name="idReporte" ColumnName="idReporte" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+          <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+          <ScalarProperty Name="numCarrosInvolucrados" ColumnName="numCarrosInvolucrados" />
+          <ScalarProperty Name="evidencia" ColumnName="evidencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehiculoes">
+      <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Vehiculo">
+        <MappingFragment StoreEntitySet="Vehiculo">
+          <ScalarProperty Name="placas" ColumnName="placas" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="nombreAseguradora" ColumnName="nombreAseguradora" />
+          <ScalarProperty Name="numPoliza" ColumnName="numPoliza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiculoReportes">
+      <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.VehiculoReporte">
+        <MappingFragment StoreEntitySet="VehiculoReporte">
+          <ScalarProperty Name="idVehiculoReporte" ColumnName="idVehiculoReporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Vehiculo_Conductor" TypeName="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor" StoreEntitySet="Vehiculo">
+      <EndProperty Name="Conductor">
+        <ScalarProperty Name="idConductor" ColumnName="idConductor" />
+      </EndProperty>
+      <EndProperty Name="Vehiculo">
+        <ScalarProperty Name="placas" ColumnName="placas" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Delegacion_Municipio" TypeName="SistemaReportesVehiculosModel.FK_Delegacion_Municipio" StoreEntitySet="Delegacion">
+      <EndProperty Name="Municipio">
+        <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+      </EndProperty>
+      <EndProperty Name="Delegacion">
+        <ScalarProperty Name="idDelegacion" ColumnName="idDelegacion" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Reporte_Delegacion" TypeName="SistemaReportesVehiculosModel.FK_Reporte_Delegacion" StoreEntitySet="Reporte">
+      <EndProperty Name="Delegacion">
+        <ScalarProperty Name="idDelegacion" ColumnName="idDelegación" />
+      </EndProperty>
+      <EndProperty Name="Reporte">
+        <ScalarProperty Name="idReporte" ColumnName="idReporte" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Usuario_Delegacion" TypeName="SistemaReportesVehiculosModel.FK_Usuario_Delegacion" StoreEntitySet="Usuario">
+      <EndProperty Name="Delegacion">
+        <ScalarProperty Name="idDelegacion" ColumnName="idDelegación" />
+      </EndProperty>
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Reporte_Dictamen" TypeName="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" StoreEntitySet="Reporte">
+      <EndProperty Name="Dictamen">
+        <ScalarProperty Name="folio" ColumnName="folio" />
+      </EndProperty>
+      <EndProperty Name="Reporte">
+        <ScalarProperty Name="idReporte" ColumnName="idReporte" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_VehiculoReporte_Reporte" TypeName="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" StoreEntitySet="VehiculoReporte">
+      <EndProperty Name="Reporte">
+        <ScalarProperty Name="idReporte" ColumnName="idReporte" />
+      </EndProperty>
+      <EndProperty Name="VehiculoReporte">
+        <ScalarProperty Name="idVehiculoReporte" ColumnName="idVehiculoReporte" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_VehiculoReporte_Vehiculo" TypeName="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo" StoreEntitySet="VehiculoReporte">
+      <EndProperty Name="Vehiculo">
+        <ScalarProperty Name="placas" ColumnName="placas" />
+      </EndProperty>
+      <EndProperty Name="VehiculoReporte">
+        <ScalarProperty Name="idVehiculoReporte" ColumnName="idVehiculoReporte" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

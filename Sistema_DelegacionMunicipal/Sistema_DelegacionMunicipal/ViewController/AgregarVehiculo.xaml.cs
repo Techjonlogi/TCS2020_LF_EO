@@ -24,5 +24,15 @@ namespace Sistema_DelegacionMunicipal.ViewController
         {
             InitializeComponent();
         }
+
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnAgregar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

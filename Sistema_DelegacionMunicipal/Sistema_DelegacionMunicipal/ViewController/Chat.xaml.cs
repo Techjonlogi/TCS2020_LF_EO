@@ -83,8 +83,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
             posicionMensaje += separacion;
 
-            test.Content = "Buff = " + posicionBuffer + "  Pos = " + posicionMensaje;
-
             //Ajustar tamaño de grid
 
             if (posicionMensaje > 554)
@@ -134,8 +132,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
                 int posicionBuffer = posicionMensaje;
 
                 posicionMensaje += separacion;
-
-                test.Content = "Buff = " + posicionBuffer + "  Pos = " + posicionMensaje;
 
                 //Ajustar tamaño de grid
 

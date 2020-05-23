@@ -135,8 +135,6 @@
     <Compile Include="ChatMsj\MensajeEnviado.xaml.cs">
       <DependentUpon>MensajeEnviado.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DAOs\ConductorDAO.cs" />
-    <Compile Include="DataBase\Connection.cs" />
     <Compile Include="ViewController\AgregarConductor.xaml.cs">
       <DependentUpon>AgregarConductor.xaml</DependentUpon>
     </Compile>

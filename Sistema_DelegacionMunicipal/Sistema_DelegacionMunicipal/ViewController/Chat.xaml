@@ -16,7 +16,7 @@
 
             <Grid>
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="531"/>
-                <Label x:Name="test" Content="Chat Grupal" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="531" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
+                <Label Content="Chat Grupal" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="531" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
                 <Rectangle Fill="#CCD8D8D8" HorizontalAlignment="Left" Height="601" Stroke="Transparent" VerticalAlignment="Top" Width="531" Margin="0,42,0,0"/>
                 <Rectangle Fill="#FF648FAE" HorizontalAlignment="Left" Height="47" Margin="0,596,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="531"/>
 

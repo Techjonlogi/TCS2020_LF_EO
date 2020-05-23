@@ -60,5 +60,12 @@ namespace Sistema_DelegacionMunicipal.ViewController
             string CellValue = ((TextBlock)RowColumn.Content).Text;
             //matriculaSeleccionada = CellValue;
         }
+
+        private void btnDetalleConductor_Click(object sender, RoutedEventArgs e)
+        {
+            DetalleConductor detalleConductor = new DetalleConductor();
+            gridDetallesConductor.Children.Clear();
+            gridDetallesConductor.Children.Add(detalleConductor);
+        }
     }
 }

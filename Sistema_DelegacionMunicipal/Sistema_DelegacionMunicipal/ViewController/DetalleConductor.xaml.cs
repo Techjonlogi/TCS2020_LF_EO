@@ -39,13 +39,15 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void btnNuevoVehiculo_Click(object sender, RoutedEventArgs e)
         {
-            /*
             AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
-            GridConductor.Children.Clear();
-            GridConductor.Children.Add(agregarVehiculo);
-            */
+            gridVehiculo.Children.Clear();
+            gridVehiculo.Children.Add(agregarVehiculo);
         }
 
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
     }
 
 }

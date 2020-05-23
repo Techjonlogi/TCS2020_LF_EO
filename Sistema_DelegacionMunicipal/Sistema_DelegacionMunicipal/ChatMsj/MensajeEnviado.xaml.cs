@@ -26,11 +26,21 @@ namespace Sistema_DelegacionMunicipal.ChatMsj
             txtMensaje.Text = mensaje;
             this.Margin = new Thickness(65, posicionMensaje, 35, 0);
 
-            if (DateTime.Now.Hour > 12) 
-                 txtHora.Text = "" + (DateTime.Now.Hour - 12) + ":" + DateTime.Now.Minute + " pm";
+            string minutos = "";
+
+            if (DateTime.Now.Minute < 10)
+                minutos = "0" + DateTime.Now.Minute;
             else
-                txtHora.Text = "" + (DateTime.Now.Hour) + ":" + DateTime.Now.Minute + " am";
+                minutos = "" + DateTime.Now.Minute;
+
+            if (DateTime.Now.Hour > 12)
+                txtHora.Text = "" + (DateTime.Now.Hour - 12) + ":" + minutos + " pm";
+            else
+                txtHora.Text = "" + (DateTime.Now.Hour) + ":" + minutos + " am";
+
 
         }
+
     }
+
 }

@@ -20,10 +20,12 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// </summary>
     public partial class HistorialReportes : UserControl
     {
+        
+
         public HistorialReportes()
         {
             InitializeComponent();
-            btnVolver.Visibility = Visibility.Hidden;
+            gridHistorial.Children.Clear();
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
@@ -35,31 +37,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void BtnVerDictamen_Click(object sender, RoutedEventArgs e)
         {
-            if (gridHistorial.Children.Count < 1)
-            {
+                Dictamen dictamen = new Dictamen();
                 gridHistorial.Children.Clear();
-                gridHistorial.Children.Add(new Dictamen());
-
-                btnVisualizarReporte.Visibility = Visibility.Hidden;
-                btnVerDictamen.Visibility = Visibility.Hidden;
-
-                btnVolver.Visibility = Visibility.Visible;
-            }
+                gridHistorial.Children.Add(dictamen);
         }
 
 
-        private void btnVolver_Click(object sender, RoutedEventArgs e)
-        {
-            if (gridHistorial.Children.Count > 0)
-            {
-                gridHistorial.Children.RemoveAt(0);
-
-                btnVisualizarReporte.Visibility = Visibility.Visible;
-                btnVerDictamen.Visibility = Visibility.Visible;
-
-                btnVolver.Visibility = Visibility.Hidden;
-            }
-
-        }
     }
 }

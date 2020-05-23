@@ -37,7 +37,7 @@ namespace Sistema_DelegacionMunicipal
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-             DragMove();
+             //DragMove();
         }
 
 
@@ -94,6 +94,7 @@ namespace Sistema_DelegacionMunicipal
 
         private void cambiarBoton(int seleccionado)
         {
+
             btnConductores.Background = Brushes.Transparent;
             btnLevantarReporte.Background = Brushes.Transparent;
             btnHistorialReportes.Background = Brushes.Transparent;
@@ -134,6 +135,59 @@ namespace Sistema_DelegacionMunicipal
 
         }
 
-        
+        private void BtnInicio_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnInicio.Background = Brushes.White;
+        }
+
+        private void BtnInicio_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 5)
+                btnInicio.Background = Brushes.Transparent;
+        }
+
+        private void btnConductores_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnConductores.Background = Brushes.White;
+        }
+
+        private void btnConductores_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 1)
+                btnConductores.Background = Brushes.Transparent;
+        }
+
+        private void btnLevantarReporte_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnLevantarReporte.Background = Brushes.White;
+        }
+
+        private void btnLevantarReporte_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 2)
+                btnLevantarReporte.Background = Brushes.Transparent;
+        }
+
+        private void btnHistorialReportes_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnHistorialReportes.Background = Brushes.White;
+        }
+
+        private void btnHistorialReportes_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 3)
+                btnHistorialReportes.Background = Brushes.Transparent;
+        }
+
+        private void btnChat_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnChat.Background = Brushes.White;
+        }
+
+        private void btnChat_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 4)
+                btnChat.Background = Brushes.Transparent;
+        }
     }
 }

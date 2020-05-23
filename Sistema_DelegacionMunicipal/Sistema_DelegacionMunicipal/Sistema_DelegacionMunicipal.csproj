@@ -149,6 +149,9 @@
     <Compile Include="ViewController\Conductor.xaml.cs">
       <DependentUpon>Conductor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewController\DetalleConductor.xaml.cs">
+      <DependentUpon>DetalleConductor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewController\Dictamen.xaml.cs">
       <DependentUpon>Dictamen.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewController\Conductor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewController\DetalleConductor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

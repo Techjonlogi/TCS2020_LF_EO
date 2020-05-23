@@ -25,7 +25,10 @@ namespace Sistema_DelegacionMunicipal.ViewController
             InitializeComponent();
         }
 
+        private void BtnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
 
-        
     }
 }

@@ -27,6 +27,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
     public partial class Chat : UserControl
     {
         int posicionMensaje = 0;
+        bool gridAmpliado = false;
         string mensaje = "";
 
         public Chat()
@@ -55,41 +56,57 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void btnEnviar_Click(object sender, RoutedEventArgs e)
         {
-                enviarMensaje();
+            enviarMensaje();
         }
 
 
-            private void btnEnviarImagen_Click(object sender, RoutedEventArgs e)
+        private void btnEnviarImagen_Click(object sender, RoutedEventArgs e)
         {
-
+            recibirMensaje(txtBoxMensaje.Text);
         }
 
         public void recibirMensaje(string mensajeRecibido)
         {
-
-            scrollChat.ScrollToVerticalOffset(GridBaseChatRecibido.Height - 1);
+            //Crear user control del mensaje
 
             GridChatRecibido.Children.Add(new MensajeChat(posicionMensaje, mensajeRecibido));
 
             txtMensajeRecibido.Text = mensajeRecibido;
 
+            //Actualizar valores de separación de mensaje
+
             int separacion = 0;
-            if (txtMensajeRecibido.LineCount == 1)
-                separacion = 65;
-            if (txtMensajeRecibido.LineCount == 2)
-                separacion = 80;
-            if (txtMensajeRecibido.LineCount == 3)
-                separacion = 95;
-            if (txtMensajeRecibido.LineCount > 3)
-                separacion = 110;
+
+            separacion += txtMensajeRecibido.LineCount * 16 + 45;
+
+            int posicionBuffer = posicionMensaje;
 
             posicionMensaje += separacion;
 
+            test.Content = "Buff = " + posicionBuffer + "  Pos = " + posicionMensaje;
+
+            //Ajustar tamaño de grid
+
             if (posicionMensaje > 554)
             {
-                GridBaseChatRecibido.Height += separacion;
-                GridChatRecibido.Height += separacion;
+
+                if (!gridAmpliado)
+                {
+                    GridBaseChatRecibido.Height += (separacion - (554 - posicionBuffer));
+                    GridChatRecibido.Height += (separacion - (554 - posicionBuffer));
+                }
+                else
+                {
+                    GridBaseChatRecibido.Height += separacion;
+                    GridChatRecibido.Height += separacion;
+                }
+
+                gridAmpliado = true;
+
+
             }
+
+            scrollChat.ScrollToVerticalOffset(GridBaseChatRecibido.Height - 1);
 
         }
 
@@ -101,34 +118,55 @@ namespace Sistema_DelegacionMunicipal.ViewController
             {
 
                 envioMsj(texto);
+                txtMensajeRecibido.Text = texto;  
 
-                scrollChat.ScrollToVerticalOffset(GridBaseChatRecibido.Height - 1);
+                //Crear user control del mensaje
 
                 GridChatRecibido.Children.Add(new MensajeEnviado(posicionMensaje, texto));
 
+
+                //Actualizar valores de separación de mensaje
+
                 int separacion = 0;
-                if (txtBoxMensaje.LineCount == 1)
-                    separacion = 65;
-                if (txtBoxMensaje.LineCount == 2)
-                    separacion = 80;
-                if (txtBoxMensaje.LineCount == 3)
-                    separacion = 95;
-                if (txtBoxMensaje.LineCount > 3)
-                    separacion = 110;
+
+                separacion += txtMensajeRecibido.LineCount * 16 + 45;
+
+                int posicionBuffer = posicionMensaje;
 
                 posicionMensaje += separacion;
 
+                test.Content = "Buff = " + posicionBuffer + "  Pos = " + posicionMensaje;
+
+                //Ajustar tamaño de grid
+
                 if (posicionMensaje > 554)
                 {
-                    GridBaseChatRecibido.Height += separacion;
-                    GridChatRecibido.Height += separacion;
+
+                    if (!gridAmpliado)
+                    {
+                        GridBaseChatRecibido.Height += (separacion - (554 - posicionBuffer));
+                        GridChatRecibido.Height += (separacion - (554 - posicionBuffer));
+                    }
+                    else
+                    {
+                        GridBaseChatRecibido.Height += separacion;
+                        GridChatRecibido.Height += separacion;
+                    }
+
+                    gridAmpliado = true;
+
+                    
                 }
+
+                scrollChat.ScrollToVerticalOffset(GridBaseChatRecibido.Height - 1);
             }
 
 
             txtBoxMensaje.Text = "";
             txtBoxMensaje.Focus();
         }
+
+
 
         private void txtBoxMensaje_GotFocus(object sender, RoutedEventArgs e)
         {

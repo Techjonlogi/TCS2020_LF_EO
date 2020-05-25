@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelodelgeneral.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelodelgeneral.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelo/modelodelgeneral.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelo/modelodelgeneral.tt")]
 
 

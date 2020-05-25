@@ -140,44 +140,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Clases\Validaciones.cs" />
-    <Compile Include="Conductor.cs">
+    <Compile Include="Modelo\Conductor.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="Delegacion.cs">
+    <Compile Include="Modelo\Delegacion.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dictaman.cs">
+    <Compile Include="Modelo\Dictaman.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModeloDelGeneral.Context.cs">
+    <Compile Include="Modelo\ModeloDelGeneral.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloDelGeneral.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModeloDelGeneral.cs">
+    <Compile Include="Modelo\ModeloDelGeneral.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModeloDelGeneral.Designer.cs">
+    <Compile Include="Modelo\ModeloDelGeneral.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloDelGeneral.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Municipio.cs">
+    <Compile Include="Modelo\Municipio.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reporte.cs">
+    <Compile Include="Modelo\Reporte.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.cs">
+    <Compile Include="Modelo\Usuario.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="Vehiculo.cs">
+    <Compile Include="Modelo\Vehiculo.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="VehiculoReporte.cs">
+    <Compile Include="Modelo\VehiculoReporte.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewController\ChatGrupal.xaml.cs">
@@ -267,11 +266,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="ModeloDelGeneral.edmx">
+    <EntityDeploy Include="Modelo\ModeloDelGeneral.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeloDelGeneral.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModeloDelGeneral.edmx.diagram">
+    <None Include="Modelo\ModeloDelGeneral.edmx.diagram">
       <DependentUpon>ModeloDelGeneral.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -290,12 +289,12 @@
     <Resource Include="Imagenes\veracruzGob.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModeloDelGeneral.Context.tt">
+    <Content Include="Modelo\ModeloDelGeneral.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloDelGeneral.edmx</DependentUpon>
       <LastGenOutput>ModeloDelGeneral.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ModeloDelGeneral.tt">
+    <Content Include="Modelo\ModeloDelGeneral.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloDelGeneral.edmx</DependentUpon>
       <LastGenOutput>ModeloDelGeneral.cs</LastGenOutput>

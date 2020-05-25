@@ -65,6 +65,8 @@ namespace Sistema_DelegacionMunicipal.ViewController
                     db.Conductor.Add(conductor);
                     db.SaveChanges();
                     MessageBox.Show("Agregado con éxito");
+
+                    this.Visibility = Visibility.Collapsed;
                 }
             }
             catch

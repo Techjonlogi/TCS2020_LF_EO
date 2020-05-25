@@ -33,7 +33,7 @@
                         <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre" HeaderStringFormat="Nombre" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                         <DataGridTextColumn Binding="{Binding fechaNacimiento}" ClipboardContentBinding="{x:Null}" Header="Fecha de Nacimiento" HeaderStringFormat="Nombre" Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                         <DataGridTextColumn Binding="{Binding telefono}" ClipboardContentBinding="{x:Null}" Header="Teléfono" HeaderStringFormat="Nombre" Width="130" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-                        <DataGridTextColumn Binding="{Binding numLicencia}" ClipboardContentBinding="{x:Null}" Header="Número Licencia" HeaderStringFormat="Nombre" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding numLicencia}" ClipboardContentBinding="{x:Null}" Header="Número Licencia" HeaderStringFormat="Nombre" Width="160" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
 
                     </DataGrid.Columns>
                 </DataGrid>

@@ -1,4 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
+using Sistema_DelegacionMunicipal.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,16 +23,21 @@ namespace Sistema_DelegacionMunicipal.ViewController
     public partial class ListaConductor : UserControl
     {
 
-        Modelo.SistemaReportesVehiculosEntities db = new Modelo.SistemaReportesVehiculosEntities();
+        int conductorSeleccionado = 0;
 
         public ListaConductor()
         {
             InitializeComponent();
             GridConductor.Children.Clear();
-
-            //dataGridConductores.ItemsSource = db.Conductor.ToList();
-
+            llenarTablaConductores();
         }
+
+        public void llenarTablaConductores()
+        {
+            Modelo.SistemaReportesVehiculosEntities db = new Modelo.SistemaReportesVehiculosEntities();
+            dataGridConductores.ItemsSource = db.Conductor.ToList();
+        }
+
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
@@ -58,18 +64,21 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void dataGridConductores_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            /*
             DataGrid dataGrid = sender as DataGrid;
             DataGridRow row = (DataGridRow)dataGrid.ItemContainerGenerator.ContainerFromIndex(dataGrid.SelectedIndex);
             DataGridCell RowColumn = dataGrid.Columns[1].GetCellContent(row).Parent as DataGridCell;
-            string CellValue = ((TextBlock)RowColumn.Content).Text;
-            //matriculaSeleccionada = CellValue;
+            int CellValue = (int)RowColumn;*/
+
+            conductorSeleccionado = dataGridConductores.SelectedIndex + 1;
         }
 
         private void btnDetalleConductor_Click(object sender, RoutedEventArgs e)
         {
-            DetalleConductor detalleConductor = new DetalleConductor();
+            DetalleConductor detalleConductor = new DetalleConductor(conductorSeleccionado);
             gridDetallesConductor.Children.Clear();
             gridDetallesConductor.Children.Add(detalleConductor);
+            llenarTablaConductores();
         }
     }
 }

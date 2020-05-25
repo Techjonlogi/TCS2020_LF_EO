@@ -128,6 +128,10 @@ namespace Sistema_DirecciónGeneral
 
         }
 
+        private void CuadroUsuario_MouseDown(object sender, MouseButtonEventArgs e)
+        {
 
+            DragMove();
+        }
     }
 }

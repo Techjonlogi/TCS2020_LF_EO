@@ -32,7 +32,7 @@
 
 
             <Rectangle Fill="#FF36342F" HorizontalAlignment="Right" Height="645" VerticalAlignment="Top" Width="147" Margin="-20,10,879,-2.2" Grid.RowSpan="2"/>
-            <Rectangle Fill="#7A6E46" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="148" Margin="-20,0,0,0"/>
+            <Rectangle Fill="#7A6E46" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="148" Margin="-20,0,0,0" MouseDown="CuadroUsuario_MouseDown"/>
 
 
             <Label Content="Visualizar" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,319,0,0" VerticalAlignment="Top" Width="85" Height="91" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208" Grid.RowSpan="2"/>

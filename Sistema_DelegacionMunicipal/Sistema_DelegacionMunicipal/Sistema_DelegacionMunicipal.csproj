@@ -174,9 +174,6 @@
     <Compile Include="Modelo\Reporte.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\Usuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

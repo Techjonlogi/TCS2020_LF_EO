@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_DelegacionMunicipal.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,25 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// </summary>
     public partial class DetalleConductor : UserControl
     {
-        public DetalleConductor()
+
+        public DetalleConductor(int idConductorSeleccionado)
         {
             InitializeComponent();
+            llenarTablaVehiculos(idConductorSeleccionado);
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
+
+        public void llenarTablaVehiculos(int idConductorSeleccionado)
+        {
+            Modelo.SistemaReportesVehiculosEntities db = new Modelo.SistemaReportesVehiculosEntities();
+            dataGridVehiculos.ItemsSource = db.Vehiculo.Where(x => x.idConductor == idConductorSeleccionado).ToList();
+        }
+
 
 
         private void dataGridConductores_SelectionChanged(object sender, SelectionChangedEventArgs e)

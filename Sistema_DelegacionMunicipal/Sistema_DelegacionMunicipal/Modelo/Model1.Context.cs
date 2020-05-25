@@ -30,7 +30,6 @@ namespace Sistema_DelegacionMunicipal.Modelo
         public virtual DbSet<Dictamen> Dictamen { get; set; }
         public virtual DbSet<Municipio> Municipio { get; set; }
         public virtual DbSet<Reporte> Reporte { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Vehiculo> Vehiculo { get; set; }
         public virtual DbSet<VehiculoReporte> VehiculoReporte { get; set; }

@@ -34,7 +34,7 @@
                 </ComboBox>
                 <Label Content="Delegación" HorizontalAlignment="Left" Margin="197,311,0,0" VerticalAlignment="Top" Width="201" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <ComboBox x:Name="cb_delegacion" ItemsSource="{Binding Delegacion}" HorizontalAlignment="Left" Margin="424,316,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
-                <Button x:Name="btn_RegistrarUsuario" HorizontalAlignment="Center" Content="Registrar Usuario" FontFamily="Impact" FontSize="14" Width="201" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="332,566,346,104" Height="Auto"/>
+                <Button x:Name="btn_RegistrarUsuario" HorizontalAlignment="Center" Content="Registrar Usuario" FontFamily="Impact" FontSize="14" Width="201" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="332,566,346,104" Height="Auto" Click="btn_RegistrarUsuario_Click"/>
 
 
             </Grid>

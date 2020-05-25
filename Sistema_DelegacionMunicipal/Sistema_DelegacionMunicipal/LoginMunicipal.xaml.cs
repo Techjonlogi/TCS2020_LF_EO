@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_DelegacionMunicipal.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,40 @@ namespace Sistema_DelegacionMunicipal
 
         private void Button_Click_IniciarSesion(object sender, RoutedEventArgs e)
         {
-            
+            /*
+            if (string.IsNullOrEmpty(txt_user.Text) || string.IsNullOrEmpty(txt_pass.Password))
+            {
+                MessageBox.Show("Usuario y/o password Vacios...", "Error");
+                return;
+            }
+            try
+            {
+                //IQueryable query;
+                using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+                {
+                    var query = from Usuario in db.Usuario
+                                where Usuario.usuario1 == txt_user.Text && Usuario.contrasenia == txt_pass.Password
+                                select Usuario;
+                    if (query.Count() > 0)
+                    {
+                        MessageBox.Show(this, "Bienvenido: " + txt_user.Text, "Información");
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o password incorrecto...", "Error");
+                    }
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+
+            }
+            */
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
 

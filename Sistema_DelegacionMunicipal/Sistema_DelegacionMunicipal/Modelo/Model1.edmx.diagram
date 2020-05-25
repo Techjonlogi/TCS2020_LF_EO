@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6f17574746bd4e0d8086e4d53d7b645e" Name="Diagram1">
+        <EntityTypeShape EntityType="ModeloDelMunicipal.Conductor" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloDelMunicipal.Delegacion" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloDelMunicipal.Dictamen" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloDelMunicipal.Municipio" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloDelMunicipal.Reporte" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloDelMunicipal.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloDelMunicipal.Usuario" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloDelMunicipal.Vehiculo" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloDelMunicipal.VehiculoReporte" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="ModeloDelMunicipal.FK_Vehiculo_Conductor" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloDelMunicipal.FK_Delegacion_Municipio" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloDelMunicipal.FK_Reporte_Delegacion" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloDelMunicipal.FK_Usuario_Delegacion" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloDelMunicipal.FK_Reporte_Dictamen" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloDelMunicipal.FK_VehiculoReporte_Reporte" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloDelMunicipal.FK_VehiculoReporte_Vehiculo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

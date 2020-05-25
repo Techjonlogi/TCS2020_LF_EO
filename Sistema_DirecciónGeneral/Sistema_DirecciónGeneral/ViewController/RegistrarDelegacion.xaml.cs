@@ -75,7 +75,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                         calle = calle,
                         colonia = colonia,
                         codigoPostal = codigoPostal,
-                        Municipio = idMunicipio ,
+                        //Municipio = idMunicipio ,
                         telefono = telefono,
                         correo = correo
                     };

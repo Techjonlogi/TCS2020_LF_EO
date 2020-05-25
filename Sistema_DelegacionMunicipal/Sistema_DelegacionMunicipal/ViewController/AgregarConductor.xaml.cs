@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_DelegacionMunicipal.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,41 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            
+            string nombre = txtNombre.Text;
+            string apellidos = txtApellidos.Text;
+            string fechaNacimiento = txtNacimiento.Text;
+            string numLicencia = txtLicencia.Text;
+            string telefono = txtTelefono.Text;
+
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(fechaNacimiento) || string.IsNullOrEmpty(numLicencia) || string.IsNullOrEmpty(telefono))
+            {
+                MessageBox.Show("Usuario y/o password Vacios...", "Error");
+                return;
+            }
+            try
+            {
+                //IQueryable query;
+                using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+                {
+                    Conductor conductor = new Conductor
+                    {
+                        nombre = nombre,
+                        apellidos = apellidos,
+                        //fechaNacimiento = fechaNacimiento,
+                        numLicencia = numLicencia,
+                        telefono = telefono
+                    };
+                    db.Conductor.Add(conductor);
+                    db.SaveChanges();
+                    MessageBox.Show("Agregado con éxito");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+
+            }
+
         }
     }
 }

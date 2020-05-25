@@ -47,7 +47,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(1);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new Conductor());
+                GridPrincipal.Children.Add(new ListaConductor());
             }
         }
 

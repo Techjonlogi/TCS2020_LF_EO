@@ -21,8 +21,49 @@ namespace Sistema_DelegacionMunicipal.ViewController
         public Chat()
         {
             InitializeComponent();
+            intentarConexion();
+        }
 
-            Conectar();
+
+        //Verificar que el servidor esté activo
+        public void intentarConexion()
+        {
+            ocultarErrorConexion();
+
+            try
+            {
+                Conectar();
+            }
+            catch (Exception)
+            {
+                mostrarErrorConexion();
+            }
+        }
+
+
+        private void btnReintentarConexión_Click(object sender, RoutedEventArgs e)
+        {
+            intentarConexion();
+        }
+
+        private void mostrarErrorConexion()
+        {
+            iconoConexion.Visibility = Visibility.Visible;
+            labelConexion.Visibility = Visibility.Visible;
+            btnReintentarConexión.Visibility = Visibility.Visible;
+            iconoReintentar.Visibility = Visibility.Visible;
+            labelReintentar.Visibility = Visibility.Visible;
+
+            socketCliente.Close();
+        }
+
+        private void ocultarErrorConexion()
+        {
+            iconoConexion.Visibility = Visibility.Hidden;
+            labelConexion.Visibility = Visibility.Hidden;
+            btnReintentarConexión.Visibility = Visibility.Hidden;
+            iconoReintentar.Visibility = Visibility.Hidden;
+            labelReintentar.Visibility = Visibility.Hidden;
         }
 
 
@@ -175,8 +216,8 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void Conectar()
         {
+            socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             LoopConnect();
-
             socketCliente.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), socketCliente);
         }
 
@@ -189,19 +230,38 @@ namespace Sistema_DelegacionMunicipal.ViewController
         //Recibir información del servidor
         private void ReceiveData(IAsyncResult ar)
         {
-            Socket socket = (Socket)ar.AsyncState;
-            int received = socket.EndReceive(ar);
-            byte[] dataBuf = new byte[received];
-            Array.Copy(receivedBuf, dataBuf, received);
-            mensaje = (Encoding.Default.GetString(dataBuf));
+            try
+            {
+                Socket socket = (Socket)ar.AsyncState;
+                int received = socket.EndReceive(ar);
+                byte[] dataBuf = new byte[received];
+                Array.Copy(receivedBuf, dataBuf, received);
+                mensaje = (Encoding.Default.GetString(dataBuf));
+            }
+            catch (SocketException)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    mostrarErrorConexion();
+                });
+                return;
+            }
+
 
             this.Dispatcher.Invoke(() =>
             {
                 recibirMensaje(mensaje);
             });
 
-            socketCliente.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), socketCliente);
 
+            try
+            {
+                socketCliente.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), socketCliente);
+            }
+            catch (SocketException)
+            {
+                return;
+            }
 
         }
 
@@ -209,15 +269,16 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void LoopConnect()
         {
+
             while (!socketCliente.Connected)
             {
                 try
                 {
                     socketCliente.Connect(IPAddress.Loopback, 100);
                 }
-                catch (SocketException)
+                catch (Exception)
                 {
-
+                    return;
                 }
             }
         }
@@ -233,7 +294,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         }
 
-
+        
     }
 }
 

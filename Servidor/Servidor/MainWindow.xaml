@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Servidor"
         mc:Ignorable="d"
-        Title="SERVIDOR" Height="258.36" Width="257.729" ResizeMode="NoResize">
-    <Grid Margin="0,0,-8,-21">
+        Title="SERVIDOR" Height="171.293" Width="247.281" ResizeMode="NoResize">
+    <Grid Margin="0,0,-6,-3">
+        <Label x:Name="lbServer" Content="..." HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,46,0,0" VerticalAlignment="Top" Width="247" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Historic"/>
+        <Rectangle Fill="#FF17AE1D" HorizontalAlignment="Left" Height="11" Margin="0,111,0,0" VerticalAlignment="Top" Width="247"/>
 
     </Grid>
 </Window>

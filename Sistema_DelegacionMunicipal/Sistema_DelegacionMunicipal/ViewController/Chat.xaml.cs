@@ -1,23 +1,11 @@
 ﻿using Sistema_DelegacionMunicipal.ChatMsj;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Sistema_DelegacionMunicipal.ViewController
 {
@@ -34,7 +22,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
         {
             InitializeComponent();
 
-            //Conectar();
+            Conectar();
         }
 
 
@@ -45,7 +33,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
                 enviarMensaje();
             }
         }
-    
+
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
@@ -62,7 +50,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void btnEnviarImagen_Click(object sender, RoutedEventArgs e)
         {
-            recibirMensaje(txtBoxMensaje.Text);
+
         }
 
         public void recibirMensaje(string mensajeRecibido)
@@ -116,7 +104,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
             {
 
                 envioMsj(texto);
-                txtMensajeRecibido.Text = texto;  
+                txtMensajeRecibido.Text = texto;
 
                 //Crear user control del mensaje
 
@@ -151,7 +139,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
                     gridAmpliado = true;
 
-                    
+
                 }
 
                 scrollChat.ScrollToVerticalOffset(GridBaseChatRecibido.Height - 1);
@@ -182,32 +170,38 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         // MANEJO DE MENSAJES
 
+        private Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
 
         private void Conectar()
         {
             LoopConnect();
 
-            _clientSocket.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), _clientSocket);
-            byte[] buffer = Encoding.ASCII.GetBytes("@@" + "CLIENTE");
-            _clientSocket.Send(buffer);
+            socketCliente.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), socketCliente);
         }
 
 
 
 
-        private Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
         byte[] receivedBuf = new byte[1024];
 
+        //Recibir información del servidor
         private void ReceiveData(IAsyncResult ar)
         {
             Socket socket = (Socket)ar.AsyncState;
             int received = socket.EndReceive(ar);
             byte[] dataBuf = new byte[received];
             Array.Copy(receivedBuf, dataBuf, received);
-            mensaje = (Encoding.ASCII.GetString(dataBuf));
+            mensaje = (Encoding.Default.GetString(dataBuf));
 
-            _clientSocket.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), _clientSocket);
+            this.Dispatcher.Invoke(() =>
+            {
+                recibirMensaje(mensaje);
+            });
+
+            socketCliente.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), socketCliente);
+
 
         }
 
@@ -215,13 +209,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void LoopConnect()
         {
-            int attempts = 0;
-            while (!_clientSocket.Connected)
+            while (!socketCliente.Connected)
             {
                 try
                 {
-                    attempts++;
-                    _clientSocket.Connect(IPAddress.Loopback, 100);
+                    socketCliente.Connect(IPAddress.Loopback, 100);
                 }
                 catch (SocketException)
                 {
@@ -232,16 +224,16 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void envioMsj(string msj)
         {
-            if (_clientSocket.Connected)
+            if (socketCliente.Connected)
             {
 
-                byte[] buffer = Encoding.ASCII.GetBytes(msj);
-                _clientSocket.Send(buffer);
+                byte[] buffer = Encoding.Default.GetBytes(msj);
+                socketCliente.Send(buffer);
             }
 
         }
 
-        
+
     }
 }
 

@@ -214,7 +214,6 @@ C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunici
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarConductor.g.cs
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarVehiculo.g.cs
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Chat.g.cs
-C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Conductor.g.cs
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Dictamen.g.cs
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\HistorialReportes.g.cs
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Inicio.g.cs
@@ -306,7 +305,6 @@ C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunici
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarConductor.baml
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\AgregarVehiculo.baml
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Chat.baml
-C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Conductor.baml
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Dictamen.baml
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\HistorialReportes.baml
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Inicio.baml
@@ -435,3 +433,10 @@ C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistem
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csproj.GenerateResource.cache
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csproj.CoreCompileInputs.cache
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csproj.CopyComplete
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\EntityFramework.dll
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\EntityFramework.xml
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\ListaConductor.g.cs
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal_Content.g.cs
+C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\ListaConductor.baml

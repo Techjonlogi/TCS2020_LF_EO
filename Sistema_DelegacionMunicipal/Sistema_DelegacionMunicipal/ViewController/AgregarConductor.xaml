@@ -31,6 +31,7 @@
                 <Button Content="Agregar" HorizontalAlignment="Left" Margin="382,490,0,0" VerticalAlignment="Top" Width="184" Click="BtnAgregar_Click" Background="#FF307CD6" FontSize="16" FontFamily="Impact" BorderBrush="#FF307CD6"/>
                 <TextBox x:Name="txtApellidos" HorizontalAlignment="Left" Height="42" Margin="300,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
                 <Label Content="Apellidos" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <Label Content="DD/MM/AAAA" HorizontalAlignment="Left" Margin="300,277,0,0" VerticalAlignment="Top" Width="143"/>
 
 
             </Grid>

@@ -58,7 +58,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
                     {
                         nombre = nombre,
                         apellidos = apellidos,
-                        //fechaNacimiento = fechaNacimiento,
+                        fechaNacimiento = fechaNacimiento,
                         numLicencia = numLicencia,
                         telefono = telefono
                     };

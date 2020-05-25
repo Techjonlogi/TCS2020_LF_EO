@@ -140,6 +140,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChatMsj\MensajeChat.xaml.cs">
+      <DependentUpon>MensajeChat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatMsj\MensajeEnviado.xaml.cs">
+      <DependentUpon>MensajeEnviado.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Conductor.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
@@ -200,6 +206,14 @@
     <Compile Include="ViewController\VisualizarReportes.xaml.cs">
       <DependentUpon>VisualizarReportes.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChatMsj\MensajeChat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChatMsj\MensajeEnviado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

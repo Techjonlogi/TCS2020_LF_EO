@@ -35,9 +35,9 @@ namespace Sistema_DelegacionMunicipal
         }
 
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        private void cuadroUsuario_MouseDown(object sender, MouseButtonEventArgs e)
         {
-             DragMove();
+            DragMove();
         }
 
 
@@ -189,5 +189,7 @@ namespace Sistema_DelegacionMunicipal
             if (botonSeleccionado != 4)
                 btnChat.Background = Brushes.Transparent;
         }
+
+        
     }
 }

@@ -22,7 +22,7 @@
                 <ComboBox HorizontalAlignment="Left" Margin="203,212,0,0" VerticalAlignment="Top" Width="249" FontSize="18" Height="42" RenderTransformOrigin="0.257,0.482"/>
                 <Label Content="1.- Selecciona a los involucrados" HorizontalAlignment="Left" Margin="0,81,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Button HorizontalAlignment="Center" Content="Añadir" FontFamily="Impact" FontSize="14" Width="144" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="179,293,556,318" Height="Auto"/>
-                <Label Content="Involucrados añadidos" HorizontalAlignment="Left" Margin="494,81,0,0" VerticalAlignment="Top" Width="384" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF36342F" Foreground="#DDFFFFFF" />
+                <Label Content="Involucrados añadidos" HorizontalAlignment="Left" Margin="494,81,0,0" VerticalAlignment="Top" Width="384" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FFA3081F" Foreground="#DDFFFFFF" />
 
                 <DataGrid x:Name="dataGridInvolucrados" SelectionMode="Single"  AutoGenerateColumns="False" IsReadOnly="True" Height="202" Margin="494,123,0,0" VerticalAlignment="Top" ItemsSource="{Binding}" RowBackground="#FFF1E6E6" CanUserResizeRows="False" FontSize="14">
                     <DataGrid.Columns>
@@ -35,7 +35,7 @@
 
                 <Label Content="2.- Completa información" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="3.- Agrega fotografías" HorizontalAlignment="Left" Margin="0,511,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Label Content="Fotografías seleccionadas" HorizontalAlignment="Left" Margin="494,353,0,0" VerticalAlignment="Top" Width="384" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF36342F" Foreground="#DDFFFFFF" />
+                <Label Content="Fotografías seleccionadas" HorizontalAlignment="Left" Margin="494,353,0,0" VerticalAlignment="Top" Width="384" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FFA3081F" Foreground="#DDFFFFFF" />
                 <Button HorizontalAlignment="Center" Content="Seleccionar Fotografías" FontFamily="Impact" FontSize="14" Width="174" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="166,588,539,23" Height="Auto"/>
                 <Button HorizontalAlignment="Center" Content="Levantar Reporte" FontFamily="Impact" FontSize="14" Width="174" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="606,588,99,23" Height="Auto"/>
 

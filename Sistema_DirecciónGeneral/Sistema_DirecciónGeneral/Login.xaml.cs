@@ -65,7 +65,7 @@ namespace Sistema_DirecciónGeneral
             catch
             {
                 MessageBox.Show("Error");
-                
+                 
             }            
         }
 

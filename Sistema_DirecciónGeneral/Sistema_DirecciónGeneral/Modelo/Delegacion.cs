@@ -26,7 +26,6 @@ namespace Sistema_DirecciónGeneral.Modelo
         public string calle { get; set; }
         public string colonia { get; set; }
         public string codigoPostal { get; set; }
-        
         public string telefono { get; set; }
         public string correo { get; set; }
     

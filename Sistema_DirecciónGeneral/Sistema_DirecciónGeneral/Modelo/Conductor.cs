@@ -23,6 +23,7 @@ namespace Sistema_DirecciónGeneral.Modelo
         public int idConductor { get; set; }
         public string nombre { get; set; }
         public string apellidos { get; set; }
+        public string fechaNacimiento { get; set; }
         public string numLicencia { get; set; }
         public string telefono { get; set; }
     

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Sistema_DelegacionMunicipal"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Gestión" Height="643.096" Width="1024.238" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" MouseDown="Window_MouseDown">
+        Title="Gestión" Height="643.096" Width="1024.238" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" >
 
     <Grid>
         <Grid.Background>
@@ -31,7 +31,7 @@
 
 
             <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="645" VerticalAlignment="Top" Width="147" Margin="-20,10,0,-2"/>
-            <Rectangle Fill="#A3081F" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="147" Margin="-20,0,0,0"/>
+            <Rectangle Fill="#A3081F" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="147" Margin="-20,0,0,0" MouseDown="cuadroUsuario_MouseDown"/>
 
 
             <Label Content="Historial" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,319,0,0" VerticalAlignment="Top" Width="85" Height="91" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208"/>

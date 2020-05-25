@@ -22,11 +22,15 @@ namespace Sistema_DelegacionMunicipal.ViewController
     public partial class ListaConductor : UserControl
     {
 
+        Modelo.SistemaReportesVehiculosEntities db = new Modelo.SistemaReportesVehiculosEntities();
+
         public ListaConductor()
         {
             InitializeComponent();
             GridConductor.Children.Clear();
-            
+
+            //dataGridConductores.ItemsSource = db.Conductor.ToList();
+
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)

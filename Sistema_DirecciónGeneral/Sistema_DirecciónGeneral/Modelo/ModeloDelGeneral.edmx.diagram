@@ -5,21 +5,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b5d3e44470234987a09d3be739b0597a" Name="Diagram1">
-        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Conductor" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Delegacion" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Dictaman" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Municipio" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Reporte" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Usuario" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Vehiculo" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.VehiculoReporte" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
-        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor" ManuallyRouted="false" />
-        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Delegacion_Municipio" ManuallyRouted="false" />
-        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Reporte_Delegacion" ManuallyRouted="false" />
-        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Usuario_Delegacion" ManuallyRouted="false" />
-        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" ManuallyRouted="false" />
-        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" ManuallyRouted="false" />
-        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Conductor" Width="1.5" PointX="6" PointY="7.5" />
+        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Delegacion" Width="1.5" PointX="3" PointY="3.25" />
+        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Dictaman" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Municipio" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Reporte" Width="1.5" PointX="8.25" PointY="3.375" />
+        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Usuario" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.Vehiculo" Width="1.5" PointX="8.25" PointY="7.375" />
+        <EntityTypeShape EntityType="SistemaReportesVehiculosModel.VehiculoReporte" Width="1.5" PointX="10.5" PointY="4" />
+        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor" />
+        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Delegacion_Municipio" />
+        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Reporte_Delegacion" />
+        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Usuario_Delegacion" />
+        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" />
+        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" />
+        <AssociationConnector Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

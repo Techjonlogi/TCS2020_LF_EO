@@ -43,43 +43,51 @@ namespace Sistema_DirecciónGeneral.ViewController
             }
         }
 
-    }
+
+
         private void Btn_RegistrarUsuario(object sender, RoutedEventArgs e)
         {
-           string nombre = txt_nombre.Text,
-           string apellidos = txt_apellidos.Text,
-           string username = txt_user.Text;          
-           string contrasenia = txt_contrasenia.Text;
-           //string delegacion = cb_contrasenia.Text;
-           string cargo = cb_cargo.Text;
+            string nombre = txt_nombre.Text;
+            string apellidos = txt_apellidos.Text;
+            string username = txt_user.Text;
+            string contrasenia = txt_contrasenia.Text;
+            //string delegacion = cb_contrasenia.Text;
+            string cargo = cb_cargo.Text;
 
-           if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(contrasenia) || string.IsNullOrEmpty(cargo))
-           {
-               MessageBox.Show("Usuario y/o password Vacios...", "Error");            
-               return;
-           }
-           try
-           {
-               //IQueryable query;
-               using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
-               {
-                   Usuario usuario = new Usuario
-                   {
-                       nombre = nombre,
-                       apellidos = apellidos,
-                       usuario1 = username,
-                       //Delegacion = delegacion,                       
-                       cargo = cargo
-                   };
-                   db.Usuarios.Add(usuario);
-                   db.SaveChanges();
-               }
-           }
-           catch
-           {
-               MessageBox.Show("Error");
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(contrasenia) || string.IsNullOrEmpty(cargo))
+            {
+                MessageBox.Show("Usuario y/o password Vacios...", "Error");
+                return;
+            }
+            try
+            {
+                //IQueryable query;
+                using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+                {
+                    Usuario usuario = new Usuario
+                    {
+                        nombre = nombre,
+                        apellidos = apellidos,
+                        usuario1 = username,
+                        //Delegacion = delegacion,                       
+                        cargo = cargo
+                    };
+                    db.Usuarios.Add(usuario);
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error");
 
-           }
+            }
         }
+
+        private void btn_RegistrarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
+        
         
 }

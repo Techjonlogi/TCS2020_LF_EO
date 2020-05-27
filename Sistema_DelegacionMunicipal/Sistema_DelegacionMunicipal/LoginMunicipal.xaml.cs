@@ -32,7 +32,7 @@ namespace Sistema_DelegacionMunicipal
 
         private void Button_Click_IniciarSesion(object sender, RoutedEventArgs e)
         {
-            /*
+            
             if (string.IsNullOrEmpty(txt_user.Text) || string.IsNullOrEmpty(txt_pass.Password))
             {
                 MessageBox.Show("Usuario y/o password Vacios...", "Error");
@@ -65,11 +65,12 @@ namespace Sistema_DelegacionMunicipal
                 MessageBox.Show("Error");
 
             }
-            */
+            /*
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
 
             this.Close();
+            */
         }
     }
 }

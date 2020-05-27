@@ -40,8 +40,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
             dataGridVehiculos.ItemsSource = db.Vehiculo.Where(x => x.idConductor == idConductorSeleccionado).ToList();
         }
 
-
-
+        
         private void dataGridConductores_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

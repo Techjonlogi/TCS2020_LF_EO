@@ -41,11 +41,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
             string nombreAseguradora = txt_nomAseguradora.Text;
             string numPoliza = txt_numPoliza.Text;
             string placas = txt_placas.Text;
-            //int idCondutor = cb_dueño.SelectedIndex;
+            int idCondutor = cb_dueño.SelectedIndex +1;
 
-            if (string.IsNullOrEmpty(marca) || string.IsNullOrEmpty(modelo) || string.IsNullOrEmpty(anio) || string.IsNullOrEmpty(color) || string.IsNullOrEmpty(numPoliza) || string.IsNullOrEmpty(nombreAseguradora) || string.IsNullOrEmpty(placas))
+            if (string.IsNullOrEmpty(marca) || string.IsNullOrEmpty(modelo) || string.IsNullOrEmpty(anio) || string.IsNullOrEmpty(color) || string.IsNullOrEmpty(placas))
             {
-                MessageBox.Show("Usuario y/o password Vacios...", "Error");
+                MessageBox.Show("Campos Vacios...", "Error");
                 return;
             }
             try
@@ -61,7 +61,8 @@ namespace Sistema_DelegacionMunicipal.ViewController
                         color = color,
                         nombreAseguradora = nombreAseguradora,
                         numPoliza = int.Parse(numPoliza),
-                        placas = placas
+                        placas = placas,
+                        idConductor = idCondutor
                     };
                     db.Vehiculo.Add(vehiculo);
                     db.SaveChanges();
@@ -85,6 +86,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
                 cb_dueño.DisplayMemberPath = "nombre";
                 cb_dueño.SelectedValuePath = "idConductor";
             }
+        }
+
+        private void cb_dueño_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

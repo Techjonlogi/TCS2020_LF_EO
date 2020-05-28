@@ -71,7 +71,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
             }
             catch
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error, no se pudo agregar el conductor");
 
             }
 

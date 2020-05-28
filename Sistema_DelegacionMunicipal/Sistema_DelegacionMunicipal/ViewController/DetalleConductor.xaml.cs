@@ -22,10 +22,15 @@ namespace Sistema_DelegacionMunicipal.ViewController
     public partial class DetalleConductor : UserControl
     {
 
-        public DetalleConductor(int idConductorSeleccionado)
+        Modelo.SistemaReportesVehiculosEntities db = new Modelo.SistemaReportesVehiculosEntities();
+        int idConductorSeleccionado = 0;
+
+        public DetalleConductor(int idConductorSeleccionado_)
         {
             InitializeComponent();
-            llenarTablaVehiculos(idConductorSeleccionado);
+            this.idConductorSeleccionado = idConductorSeleccionado_;
+            llenarTablaVehiculos();
+            llenarInformacion();
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
@@ -34,10 +39,19 @@ namespace Sistema_DelegacionMunicipal.ViewController
         }
 
 
-        public void llenarTablaVehiculos(int idConductorSeleccionado)
+        public void llenarTablaVehiculos()
         {
-            Modelo.SistemaReportesVehiculosEntities db = new Modelo.SistemaReportesVehiculosEntities();
             dataGridVehiculos.ItemsSource = db.Vehiculo.Where(x => x.idConductor == idConductorSeleccionado).ToList();
+        }
+
+        public void llenarInformacion()
+        {
+            txtNombre.Text = db.Conductor.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.nombre).FirstOrDefault().ToString() +
+                             " " + db.Conductor.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.apellidos).FirstOrDefault().ToString();
+
+            txtNacimiento.Text = db.Conductor.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.fechaNacimiento).FirstOrDefault().ToString();
+            txtLicencia.Text = db.Conductor.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.numLicencia).FirstOrDefault().ToString();
+            txtTelefono.Text = db.Conductor.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.telefono).FirstOrDefault().ToString();
         }
 
         

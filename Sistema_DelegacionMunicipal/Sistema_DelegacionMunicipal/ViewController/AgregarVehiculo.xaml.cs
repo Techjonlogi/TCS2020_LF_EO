@@ -41,7 +41,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
             string nombreAseguradora = txt_nomAseguradora.Text;
             string numPoliza = txt_numPoliza.Text;
             string placas = txt_placas.Text;
-            int idCondutor = cb_dueño.SelectedIndex +1;
+            int idConductor = cb_dueño.SelectedIndex +1;
 
             if (string.IsNullOrEmpty(marca) || string.IsNullOrEmpty(modelo) || string.IsNullOrEmpty(anio) || string.IsNullOrEmpty(color) || string.IsNullOrEmpty(placas))
             {
@@ -55,7 +55,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
             }
             try
             {
-                //IQueryable query;
+
                 using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
                 {
                     Vehiculo vehiculo = new Vehiculo
@@ -67,7 +67,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
                         nombreAseguradora = nombreAseguradora,
                         numPoliza = int.Parse(numPoliza),
                         placas = placas,
-                        idConductor = idCondutor
+                        idConductor = idConductor
                     };
                     db.Vehiculo.Add(vehiculo);
                     db.SaveChanges();

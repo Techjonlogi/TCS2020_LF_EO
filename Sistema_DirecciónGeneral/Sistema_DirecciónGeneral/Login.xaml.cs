@@ -45,7 +45,7 @@ namespace Sistema_DirecciónGeneral
                 //IQueryable query;
                 using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
                 {                   
-                    var query = from Usuario in db.Usuarios
+                    var query = from Usuario in db.Usuario
                                 where Usuario.usuario1 == txt_user.Text && Usuario.contrasenia == txt_pass.Password
                                 select Usuario;
                     if(query.Count() > 0)

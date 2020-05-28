@@ -17,7 +17,7 @@ namespace Sistema_DirecciónGeneral.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Vehiculo()
         {
-            this.VehiculoReportes = new HashSet<VehiculoReporte>();
+            this.VehiculoReporte = new HashSet<VehiculoReporte>();
         }
     
         public string placas { get; set; }
@@ -27,9 +27,10 @@ namespace Sistema_DirecciónGeneral.Modelo
         public string color { get; set; }
         public string nombreAseguradora { get; set; }
         public Nullable<int> numPoliza { get; set; }
+        public int idConductor { get; set; }
     
         public virtual Conductor Conductor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VehiculoReporte> VehiculoReportes { get; set; }
+        public virtual ICollection<VehiculoReporte> VehiculoReporte { get; set; }
     }
 }

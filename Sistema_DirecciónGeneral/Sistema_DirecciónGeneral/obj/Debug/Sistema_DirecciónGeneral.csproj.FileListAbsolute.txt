@@ -324,3 +324,7 @@ C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DirecciónGenera
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeChat.g.cs
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeChat.baml
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeEnviado.baml
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeChat.g.cs
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeEnviado.g.cs
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeChat.baml
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeEnviado.baml

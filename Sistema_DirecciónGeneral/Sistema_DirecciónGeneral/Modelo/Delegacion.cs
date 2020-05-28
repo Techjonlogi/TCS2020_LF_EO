@@ -17,8 +17,8 @@ namespace Sistema_DirecciónGeneral.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Delegacion()
         {
-            this.Reportes = new HashSet<Reporte>();
-            this.Usuarios = new HashSet<Usuario>();
+            this.Reporte = new HashSet<Reporte>();
+            this.Usuario = new HashSet<Usuario>();
         }
     
         public int idDelegacion { get; set; }
@@ -26,13 +26,14 @@ namespace Sistema_DirecciónGeneral.Modelo
         public string calle { get; set; }
         public string colonia { get; set; }
         public string codigoPostal { get; set; }
+        public int idMunicipio { get; set; }
         public string telefono { get; set; }
         public string correo { get; set; }
     
         public virtual Municipio Municipio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reporte> Reportes { get; set; }
+        public virtual ICollection<Reporte> Reporte { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

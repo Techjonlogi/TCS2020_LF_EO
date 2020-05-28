@@ -25,13 +25,13 @@ namespace Sistema_DirecciónGeneral.Modelo
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Conductor> Conductors { get; set; }
-        public virtual DbSet<Delegacion> Delegacions { get; set; }
-        public virtual DbSet<Dictaman> Dictamen { get; set; }
-        public virtual DbSet<Municipio> Municipios { get; set; }
-        public virtual DbSet<Reporte> Reportes { get; set; }
-        public virtual DbSet<Usuario> Usuarios { get; set; }
-        public virtual DbSet<Vehiculo> Vehiculoes { get; set; }
-        public virtual DbSet<VehiculoReporte> VehiculoReportes { get; set; }
+        public virtual DbSet<Conductor> Conductor { get; set; }
+        public virtual DbSet<Delegacion> Delegacion { get; set; }
+        public virtual DbSet<Dictamen> Dictamen { get; set; }
+        public virtual DbSet<Municipio> Municipio { get; set; }
+        public virtual DbSet<Reporte> Reporte { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Vehiculo> Vehiculo { get; set; }
+        public virtual DbSet<VehiculoReporte> VehiculoReporte { get; set; }
     }
 }

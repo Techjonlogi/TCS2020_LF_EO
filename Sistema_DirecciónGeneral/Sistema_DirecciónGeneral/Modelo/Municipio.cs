@@ -17,13 +17,13 @@ namespace Sistema_DirecciónGeneral.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Municipio()
         {
-            this.Delegacions = new HashSet<Delegacion>();
+            this.Delegacion = new HashSet<Delegacion>();
         }
     
         public int idMunicipio { get; set; }
         public string municipio1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Delegacion> Delegacions { get; set; }
+        public virtual ICollection<Delegacion> Delegacion { get; set; }
     }
 }

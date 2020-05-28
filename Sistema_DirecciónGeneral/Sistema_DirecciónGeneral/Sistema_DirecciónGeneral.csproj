@@ -152,7 +152,7 @@
     <Compile Include="Modelo\Delegacion.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Dictaman.cs">
+    <Compile Include="Modelo\Dictamen.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\ModeloDelGeneral.Context.cs">

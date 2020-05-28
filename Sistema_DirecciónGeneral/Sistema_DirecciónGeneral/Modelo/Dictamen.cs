@@ -12,12 +12,12 @@ namespace Sistema_DirecciónGeneral.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Dictaman
+    public partial class Dictamen
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Dictaman()
+        public Dictamen()
         {
-            this.Reportes = new HashSet<Reporte>();
+            this.Reporte = new HashSet<Reporte>();
         }
     
         public string folio { get; set; }
@@ -26,6 +26,6 @@ namespace Sistema_DirecciónGeneral.Modelo
         public int idUsuario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reporte> Reportes { get; set; }
+        public virtual ICollection<Reporte> Reporte { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace Sistema_DirecciónGeneral.ViewController
         private void LlenarDelegacion()
         {
             SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
-            var list = db.Delegacions.ToList();
+            var list = db.Delegacion.ToList();
             if (list.Count() > 0)
             {
                 cb_delegacion.ItemsSource = list;
@@ -51,12 +51,12 @@ namespace Sistema_DirecciónGeneral.ViewController
             string apellidos = txt_apellidos.Text;
             string username = txt_user.Text;
             string contrasenia = txt_contrasenia.Text;
-            //string delegacion = cb_contrasenia.Text;
+            int idDelegacion = cb_delegacion.SelectedIndex + 1;
             string cargo = cb_cargo.Text;
 
             if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(contrasenia) || string.IsNullOrEmpty(cargo))
             {
-                MessageBox.Show("Usuario y/o password Vacios...", "Error");
+                MessageBox.Show("Campos Vacios...", "Error");
                 return;
             }
             try
@@ -69,11 +69,13 @@ namespace Sistema_DirecciónGeneral.ViewController
                         nombre = nombre,
                         apellidos = apellidos,
                         usuario1 = username,
-                        //Delegacion = delegacion,                       
+                        contrasenia = contrasenia,
+                        idDelegación = idDelegacion,
                         cargo = cargo
                     };
-                    db.Usuarios.Add(usuario);
+                    db.Usuario.Add(usuario);
                     db.SaveChanges();
+                    MessageBox.Show("Usuario registrado con éxito");
                 }
             }
             catch

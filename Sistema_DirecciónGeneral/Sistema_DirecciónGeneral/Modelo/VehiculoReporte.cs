@@ -15,6 +15,8 @@ namespace Sistema_DirecciónGeneral.Modelo
     public partial class VehiculoReporte
     {
         public int idVehiculoReporte { get; set; }
+        public string placas { get; set; }
+        public int idReporte { get; set; }
     
         public virtual Reporte Reporte { get; set; }
         public virtual Vehiculo Vehiculo { get; set; }

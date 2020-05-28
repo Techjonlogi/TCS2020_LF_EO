@@ -48,6 +48,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
                 MessageBox.Show("Campos Vacios...", "Error");
                 return;
             }
+            if (string.IsNullOrEmpty(nombreAseguradora) || string.IsNullOrEmpty(numPoliza))
+            {
+                nombreAseguradora = "Ninguna";
+                numPoliza = "0";
+            }
             try
             {
                 //IQueryable query;
@@ -66,7 +71,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
                     };
                     db.Vehiculo.Add(vehiculo);
                     db.SaveChanges();
-                    MessageBox.Show("Agregado con éxito");
+                    MessageBox.Show("Vehículo agregado con éxito");
                 }
             }
             catch

@@ -20,6 +20,7 @@ namespace Sistema_DirecciónGeneral.Modelo
         public string nombre { get; set; }
         public string apellidos { get; set; }
         public string cargo { get; set; }
+        public int idDelegación { get; set; }
     
         public virtual Delegacion Delegacion { get; set; }
     }

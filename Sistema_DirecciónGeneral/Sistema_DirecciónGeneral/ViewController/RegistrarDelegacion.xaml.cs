@@ -34,7 +34,7 @@ namespace Sistema_DirecciónGeneral.ViewController
         private void LlenarMunicipios()
         {
             SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
-            var list = db.Municipios.ToList();
+            var list = db.Municipio.ToList();
             if(list.Count() > 0)
             {
                 cbMunicipio.ItemsSource = list;
@@ -54,14 +54,14 @@ namespace Sistema_DirecciónGeneral.ViewController
             string alias = txt_alias.Text;
             string calle = txt_calle.Text + " " + txt_numero;
             string codigoPostal = txt_codigoPostal.Text;
-            //Municipio municipio = cbMunicipio.SelectedValue;
+            int idMunicipio = cbMunicipio.SelectedIndex + 1;
             string colonia = txt_colonia.Text;
             string correo = txt_colonia.Text;
             string telefono = txt_telefono.Text;
 
             if (string.IsNullOrEmpty(alias) || string.IsNullOrEmpty(calle) || string.IsNullOrEmpty(codigoPostal) || string.IsNullOrEmpty(codigoPostal) || string.IsNullOrEmpty(colonia) || string.IsNullOrEmpty(txt_numero.Text) || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(telefono) || string.IsNullOrEmpty(cbMunicipio.Text))
             {
-                MessageBox.Show("Usuario y/o password Vacios...", "Error");
+                MessageBox.Show("Campos Vacios...", "Error");
                 return;
             }
             try
@@ -75,12 +75,13 @@ namespace Sistema_DirecciónGeneral.ViewController
                         calle = calle,
                         colonia = colonia,
                         codigoPostal = codigoPostal,
-                        //Municipio = idMunicipio ,
+                        idMunicipio = idMunicipio ,
                         telefono = telefono,
                         correo = correo
                     };
-                    db.Delegacions.Add(delegacion);
+                    db.Delegacion.Add(delegacion);
                     db.SaveChanges();
+                    MessageBox.Show("Delegación registrada con éxito");
                 }
             }
             catch

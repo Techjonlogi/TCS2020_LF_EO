@@ -218,41 +218,41 @@
     <edmx:ConceptualModels>
       <Schema Namespace="SistemaReportesVehiculosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="SistemaReportesVehiculosEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Conductors" EntityType="SistemaReportesVehiculosModel.Conductor" />
-          <EntitySet Name="Delegacions" EntityType="SistemaReportesVehiculosModel.Delegacion" />
-          <EntitySet Name="Dictamen" EntityType="SistemaReportesVehiculosModel.Dictaman" />
-          <EntitySet Name="Municipios" EntityType="SistemaReportesVehiculosModel.Municipio" />
-          <EntitySet Name="Reportes" EntityType="SistemaReportesVehiculosModel.Reporte" />
-          <EntitySet Name="Usuarios" EntityType="SistemaReportesVehiculosModel.Usuario" />
-          <EntitySet Name="Vehiculoes" EntityType="SistemaReportesVehiculosModel.Vehiculo" />
-          <EntitySet Name="VehiculoReportes" EntityType="SistemaReportesVehiculosModel.VehiculoReporte" />
+          <EntitySet Name="Conductor" EntityType="SistemaReportesVehiculosModel.Conductor" />
+          <EntitySet Name="Delegacion" EntityType="SistemaReportesVehiculosModel.Delegacion" />
+          <EntitySet Name="Dictamen" EntityType="SistemaReportesVehiculosModel.Dictamen" />
+          <EntitySet Name="Municipio" EntityType="SistemaReportesVehiculosModel.Municipio" />
+          <EntitySet Name="Reporte" EntityType="SistemaReportesVehiculosModel.Reporte" />
+          <EntitySet Name="Usuario" EntityType="SistemaReportesVehiculosModel.Usuario" />
+          <EntitySet Name="Vehiculo" EntityType="SistemaReportesVehiculosModel.Vehiculo" />
+          <EntitySet Name="VehiculoReporte" EntityType="SistemaReportesVehiculosModel.VehiculoReporte" />
           <AssociationSet Name="FK_Vehiculo_Conductor" Association="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor">
-            <End Role="Conductor" EntitySet="Conductors" />
-            <End Role="Vehiculo" EntitySet="Vehiculoes" />
+            <End Role="Conductor" EntitySet="Conductor" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
           </AssociationSet>
           <AssociationSet Name="FK_Delegacion_Municipio" Association="SistemaReportesVehiculosModel.FK_Delegacion_Municipio">
-            <End Role="Municipio" EntitySet="Municipios" />
-            <End Role="Delegacion" EntitySet="Delegacions" />
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Delegacion" EntitySet="Delegacion" />
           </AssociationSet>
           <AssociationSet Name="FK_Reporte_Delegacion" Association="SistemaReportesVehiculosModel.FK_Reporte_Delegacion">
-            <End Role="Delegacion" EntitySet="Delegacions" />
-            <End Role="Reporte" EntitySet="Reportes" />
+            <End Role="Delegacion" EntitySet="Delegacion" />
+            <End Role="Reporte" EntitySet="Reporte" />
           </AssociationSet>
           <AssociationSet Name="FK_Usuario_Delegacion" Association="SistemaReportesVehiculosModel.FK_Usuario_Delegacion">
-            <End Role="Delegacion" EntitySet="Delegacions" />
-            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Delegacion" EntitySet="Delegacion" />
+            <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="FK_Reporte_Dictamen" Association="SistemaReportesVehiculosModel.FK_Reporte_Dictamen">
-            <End Role="Dictaman" EntitySet="Dictamen" />
-            <End Role="Reporte" EntitySet="Reportes" />
+            <End Role="Dictamen" EntitySet="Dictamen" />
+            <End Role="Reporte" EntitySet="Reporte" />
           </AssociationSet>
           <AssociationSet Name="FK_VehiculoReporte_Reporte" Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte">
-            <End Role="Reporte" EntitySet="Reportes" />
-            <End Role="VehiculoReporte" EntitySet="VehiculoReportes" />
+            <End Role="Reporte" EntitySet="Reporte" />
+            <End Role="VehiculoReporte" EntitySet="VehiculoReporte" />
           </AssociationSet>
           <AssociationSet Name="FK_VehiculoReporte_Vehiculo" Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo">
-            <End Role="Vehiculo" EntitySet="Vehiculoes" />
-            <End Role="VehiculoReporte" EntitySet="VehiculoReportes" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="VehiculoReporte" EntitySet="VehiculoReporte" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Conductor">
@@ -265,7 +265,7 @@
           <Property Name="fechaNacimiento" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="numLicencia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Vehiculoes" Relationship="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor" FromRole="Conductor" ToRole="Vehiculo" />
+          <NavigationProperty Name="Vehiculo" Relationship="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor" FromRole="Conductor" ToRole="Vehiculo" />
         </EntityType>
         <EntityType Name="Delegacion">
           <Key>
@@ -276,13 +276,14 @@
           <Property Name="calle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="colonia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="codigoPostal" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="idMunicipio" Type="Int32" Nullable="false" />
           <Property Name="telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="correo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Municipio" Relationship="SistemaReportesVehiculosModel.FK_Delegacion_Municipio" FromRole="Delegacion" ToRole="Municipio" />
-          <NavigationProperty Name="Reportes" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Delegacion" FromRole="Delegacion" ToRole="Reporte" />
-          <NavigationProperty Name="Usuarios" Relationship="SistemaReportesVehiculosModel.FK_Usuario_Delegacion" FromRole="Delegacion" ToRole="Usuario" />
+          <NavigationProperty Name="Reporte" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Delegacion" FromRole="Delegacion" ToRole="Reporte" />
+          <NavigationProperty Name="Usuario" Relationship="SistemaReportesVehiculosModel.FK_Usuario_Delegacion" FromRole="Delegacion" ToRole="Usuario" />
         </EntityType>
-        <EntityType Name="Dictaman">
+        <EntityType Name="Dictamen">
           <Key>
             <PropertyRef Name="folio" />
           </Key>
@@ -290,7 +291,7 @@
           <Property Name="descripcion" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="fechaHora" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="idUsuario" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Reportes" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" FromRole="Dictaman" ToRole="Reporte" />
+          <NavigationProperty Name="Reporte" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" FromRole="Dictamen" ToRole="Reporte" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
@@ -298,7 +299,7 @@
           </Key>
           <Property Name="idMunicipio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="municipio1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Delegacions" Relationship="SistemaReportesVehiculosModel.FK_Delegacion_Municipio" FromRole="Municipio" ToRole="Delegacion" />
+          <NavigationProperty Name="Delegacion" Relationship="SistemaReportesVehiculosModel.FK_Delegacion_Municipio" FromRole="Municipio" ToRole="Delegacion" />
         </EntityType>
         <EntityType Name="Reporte">
           <Key>
@@ -310,9 +311,11 @@
           <Property Name="codigoPostal" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="numCarrosInvolucrados" Type="Int32" Nullable="false" />
           <Property Name="evidencia" Type="Boolean" Nullable="false" />
+          <Property Name="folio" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="idDelegación" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Delegacion" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Delegacion" FromRole="Reporte" ToRole="Delegacion" />
-          <NavigationProperty Name="Dictaman" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" FromRole="Reporte" ToRole="Dictaman" />
-          <NavigationProperty Name="VehiculoReportes" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" FromRole="Reporte" ToRole="VehiculoReporte" />
+          <NavigationProperty Name="Dictamen" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" FromRole="Reporte" ToRole="Dictamen" />
+          <NavigationProperty Name="VehiculoReporte" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" FromRole="Reporte" ToRole="VehiculoReporte" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -324,6 +327,7 @@
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="apellidos" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="cargo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idDelegación" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Delegacion" Relationship="SistemaReportesVehiculosModel.FK_Usuario_Delegacion" FromRole="Usuario" ToRole="Delegacion" />
         </EntityType>
         <EntityType Name="Vehiculo">
@@ -337,52 +341,111 @@
           <Property Name="color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="nombreAseguradora" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="numPoliza" Type="Int32" />
+          <Property Name="idConductor" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Conductor" Relationship="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor" FromRole="Vehiculo" ToRole="Conductor" />
-          <NavigationProperty Name="VehiculoReportes" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo" FromRole="Vehiculo" ToRole="VehiculoReporte" />
+          <NavigationProperty Name="VehiculoReporte" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo" FromRole="Vehiculo" ToRole="VehiculoReporte" />
         </EntityType>
         <EntityType Name="VehiculoReporte">
           <Key>
             <PropertyRef Name="idVehiculoReporte" />
           </Key>
           <Property Name="idVehiculoReporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="placas" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="idReporte" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Reporte" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" FromRole="VehiculoReporte" ToRole="Reporte" />
           <NavigationProperty Name="Vehiculo" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo" FromRole="VehiculoReporte" ToRole="Vehiculo" />
         </EntityType>
         <Association Name="FK_Vehiculo_Conductor">
           <End Type="SistemaReportesVehiculosModel.Conductor" Role="Conductor" Multiplicity="1" />
           <End Type="SistemaReportesVehiculosModel.Vehiculo" Role="Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Conductor">
+              <PropertyRef Name="idConductor" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="idConductor" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delegacion_Municipio">
           <End Type="SistemaReportesVehiculosModel.Municipio" Role="Municipio" Multiplicity="1" />
           <End Type="SistemaReportesVehiculosModel.Delegacion" Role="Delegacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="idMunicipio" />
+            </Principal>
+            <Dependent Role="Delegacion">
+              <PropertyRef Name="idMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Reporte_Delegacion">
           <End Type="SistemaReportesVehiculosModel.Delegacion" Role="Delegacion" Multiplicity="1" />
           <End Type="SistemaReportesVehiculosModel.Reporte" Role="Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Delegacion">
+              <PropertyRef Name="idDelegacion" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="idDelegación" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Usuario_Delegacion">
           <End Type="SistemaReportesVehiculosModel.Delegacion" Role="Delegacion" Multiplicity="1" />
           <End Type="SistemaReportesVehiculosModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Delegacion">
+              <PropertyRef Name="idDelegacion" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idDelegación" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Reporte_Dictamen">
-          <End Type="SistemaReportesVehiculosModel.Dictaman" Role="Dictaman" Multiplicity="1" />
+          <End Type="SistemaReportesVehiculosModel.Dictamen" Role="Dictamen" Multiplicity="1" />
           <End Type="SistemaReportesVehiculosModel.Reporte" Role="Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dictamen">
+              <PropertyRef Name="folio" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="folio" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_VehiculoReporte_Reporte">
           <End Type="SistemaReportesVehiculosModel.Reporte" Role="Reporte" Multiplicity="1" />
           <End Type="SistemaReportesVehiculosModel.VehiculoReporte" Role="VehiculoReporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reporte">
+              <PropertyRef Name="idReporte" />
+            </Principal>
+            <Dependent Role="VehiculoReporte">
+              <PropertyRef Name="idReporte" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_VehiculoReporte_Vehiculo">
           <End Type="SistemaReportesVehiculosModel.Vehiculo" Role="Vehiculo" Multiplicity="1" />
           <End Type="SistemaReportesVehiculosModel.VehiculoReporte" Role="VehiculoReporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="placas" />
+            </Principal>
+            <Dependent Role="VehiculoReporte">
+              <PropertyRef Name="placas" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SistemaReportesVehiculosModelStoreContainer" CdmEntityContainer="SistemaReportesVehiculosEntities">
-          <EntitySetMapping Name="Conductors">
+          <EntitySetMapping Name="Conductor">
             <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Conductor">
               <MappingFragment StoreEntitySet="Conductor">
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
@@ -394,11 +457,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Delegacions">
+          <EntitySetMapping Name="Delegacion">
             <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Delegacion">
               <MappingFragment StoreEntitySet="Delegacion">
                 <ScalarProperty Name="correo" ColumnName="correo" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
                 <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
                 <ScalarProperty Name="colonia" ColumnName="colonia" />
                 <ScalarProperty Name="calle" ColumnName="calle" />
@@ -408,7 +472,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Dictamen">
-            <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Dictaman">
+            <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Dictamen">
               <MappingFragment StoreEntitySet="Dictamen">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="fechaHora" ColumnName="fechaHora" />
@@ -417,7 +481,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Municipios">
+          <EntitySetMapping Name="Municipio">
             <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Municipio">
               <MappingFragment StoreEntitySet="Municipio">
                 <ScalarProperty Name="municipio1" ColumnName="municipio" />
@@ -425,9 +489,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Reportes">
+          <EntitySetMapping Name="Reporte">
             <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Reporte">
               <MappingFragment StoreEntitySet="Reporte">
+                <ScalarProperty Name="idDelegación" ColumnName="idDelegación" />
+                <ScalarProperty Name="folio" ColumnName="folio" />
                 <ScalarProperty Name="evidencia" ColumnName="evidencia" />
                 <ScalarProperty Name="numCarrosInvolucrados" ColumnName="numCarrosInvolucrados" />
                 <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
@@ -437,9 +503,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Usuarios">
+          <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idDelegación" ColumnName="idDelegación" />
                 <ScalarProperty Name="cargo" ColumnName="cargo" />
                 <ScalarProperty Name="apellidos" ColumnName="apellidos" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -449,9 +516,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Vehiculoes">
+          <EntitySetMapping Name="Vehiculo">
             <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Vehiculo">
               <MappingFragment StoreEntitySet="Vehiculo">
+                <ScalarProperty Name="idConductor" ColumnName="idConductor" />
                 <ScalarProperty Name="numPoliza" ColumnName="numPoliza" />
                 <ScalarProperty Name="nombreAseguradora" ColumnName="nombreAseguradora" />
                 <ScalarProperty Name="color" ColumnName="color" />
@@ -462,69 +530,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="VehiculoReportes">
+          <EntitySetMapping Name="VehiculoReporte">
             <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.VehiculoReporte">
               <MappingFragment StoreEntitySet="VehiculoReporte">
+                <ScalarProperty Name="idReporte" ColumnName="idReporte" />
+                <ScalarProperty Name="placas" ColumnName="placas" />
                 <ScalarProperty Name="idVehiculoReporte" ColumnName="idVehiculoReporte" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK_Vehiculo_Conductor" TypeName="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor" StoreEntitySet="Vehiculo">
-            <EndProperty Name="Vehiculo">
-              <ScalarProperty Name="placas" ColumnName="placas" />
-            </EndProperty>
-            <EndProperty Name="Conductor">
-              <ScalarProperty Name="idConductor" ColumnName="idConductor" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Delegacion_Municipio" TypeName="SistemaReportesVehiculosModel.FK_Delegacion_Municipio" StoreEntitySet="Delegacion">
-            <EndProperty Name="Delegacion">
-              <ScalarProperty Name="idDelegacion" ColumnName="idDelegacion" />
-            </EndProperty>
-            <EndProperty Name="Municipio">
-              <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Reporte_Delegacion" TypeName="SistemaReportesVehiculosModel.FK_Reporte_Delegacion" StoreEntitySet="Reporte">
-            <EndProperty Name="Reporte">
-              <ScalarProperty Name="idReporte" ColumnName="idReporte" />
-            </EndProperty>
-            <EndProperty Name="Delegacion">
-              <ScalarProperty Name="idDelegacion" ColumnName="idDelegación" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Usuario_Delegacion" TypeName="SistemaReportesVehiculosModel.FK_Usuario_Delegacion" StoreEntitySet="Usuario">
-            <EndProperty Name="Usuario">
-              <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-            </EndProperty>
-            <EndProperty Name="Delegacion">
-              <ScalarProperty Name="idDelegacion" ColumnName="idDelegación" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Reporte_Dictamen" TypeName="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" StoreEntitySet="Reporte">
-            <EndProperty Name="Reporte">
-              <ScalarProperty Name="idReporte" ColumnName="idReporte" />
-            </EndProperty>
-            <EndProperty Name="Dictaman">
-              <ScalarProperty Name="folio" ColumnName="folio" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_VehiculoReporte_Reporte" TypeName="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" StoreEntitySet="VehiculoReporte">
-            <EndProperty Name="VehiculoReporte">
-              <ScalarProperty Name="idVehiculoReporte" ColumnName="idVehiculoReporte" />
-            </EndProperty>
-            <EndProperty Name="Reporte">
-              <ScalarProperty Name="idReporte" ColumnName="idReporte" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_VehiculoReporte_Vehiculo" TypeName="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo" StoreEntitySet="VehiculoReporte">
-            <EndProperty Name="VehiculoReporte">
-              <ScalarProperty Name="idVehiculoReporte" ColumnName="idVehiculoReporte" />
-            </EndProperty>
-            <EndProperty Name="Vehiculo">
-              <ScalarProperty Name="placas" ColumnName="placas" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -539,8 +553,8 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>

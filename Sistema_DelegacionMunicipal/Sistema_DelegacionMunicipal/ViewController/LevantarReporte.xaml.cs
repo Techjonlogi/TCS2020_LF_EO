@@ -134,6 +134,13 @@ namespace Sistema_DelegacionMunicipal.ViewController
                     {
                         case 0:
                             imagen1.Source = new BitmapImage(new Uri(archivoImagen[i]));
+                            imagen2.Source = null;
+                            imagen3.Source = null;
+                            imagen4.Source = null;
+                            imagen5.Source = null;
+                            imagen6.Source = null;
+                            imagen7.Source = null;
+                            imagen8.Source = null;
                             break;
                         case 1:
                             imagen2.Source = new BitmapImage(new Uri(archivoImagen[i]));

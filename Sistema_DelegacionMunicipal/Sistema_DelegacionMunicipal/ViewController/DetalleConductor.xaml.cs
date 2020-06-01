@@ -63,7 +63,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void btnNuevoVehiculo_Click(object sender, RoutedEventArgs e)
         {
-            AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
+            AgregarVehiculo agregarVehiculo = new AgregarVehiculo(idConductorSeleccionado);
             gridVehiculo.Children.Clear();
             gridVehiculo.Children.Add(agregarVehiculo);
         }

@@ -8,42 +8,36 @@
              mc:Ignorable="d" Height="705.88" Width="878.999">
 
     <Grid>
-        <Rectangle Fill="#FF6C6CB2" HorizontalAlignment="Left" Height="643" Stroke="Black" VerticalAlignment="Top" Width="893"/>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595">
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595" Margin="-2,-2,2.2,2.6">
 
             <Grid>
+                <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="111" Background="#FFC13434" BorderBrush="{x:Null}" Margin="221,409,547.2,260.8" Height="Auto" Click="btnVolver_Click" />
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="899"/>
                 <Label Content="Registro de delegaciones municipales " HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="899" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <Label Content="Nombre (Alias)" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox x:Name="txt_alias" HorizontalAlignment="Left" Height="42" Margin="171,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <Label Content="Ingrese la dirección de la delegación " HorizontalAlignment="Left" Margin="0,71,0,0" VerticalAlignment="Top" Width="878" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Label Content="Complete información" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="869" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Label Content="Calle:" HorizontalAlignment="Left" Margin="0,197,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Número:" HorizontalAlignment="Left" Margin="0,273,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Código Postal:" HorizontalAlignment="Left" Margin="408,273,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox x:Name="txt_calle" HorizontalAlignment="Left" Height="42" Margin="171,197,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <TextBox x:Name="txt_numero" HorizontalAlignment="Left" Height="42" Margin="166,273,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <TextBox x:Name="txt_codigoPostal" HorizontalAlignment="Left" Height="42" Margin="579,273,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <Label Content="Colonia:" HorizontalAlignment="Left" Margin="408,118,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox x:Name="txt_colonia" HorizontalAlignment="Left" Height="42" Margin="579,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <Label Content="Municipio:" HorizontalAlignment="Left" Margin="408,197,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <ComboBox x:Name="cbMunicipio" ItemsSource="{Binding Municipio}" HorizontalAlignment="Left" Margin="574,197,0,0" VerticalAlignment="Top" Width="237" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
-                <Label Content="Correo:" HorizontalAlignment="Left" Margin="166,413,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Telefono:" HorizontalAlignment="Left" Margin="90,460,0,0" VerticalAlignment="Top" Width="242" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox x:Name="txt_correo" HorizontalAlignment="Left" Height="42" Margin="387,413,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" FontSize="22"/>
-                <TextBox x:Name="txt_telefono" HorizontalAlignment="Left" Height="42" Margin="387,460,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" FontSize="22" RenderTransformOrigin="1.091,0.349"/>
-                <Button x:Name="btn_registrarDelegacion" HorizontalAlignment="Center" Content="Registrar Delegación" FontFamily="Impact" FontSize="14" Width="201" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="332,566,346,104" Height="Auto" Click="btn_registrarDelegacion_Click"/>
+                <Label Content="Nombre (Alias)" HorizontalAlignment="Left" Margin="0,89,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txt_alias" HorizontalAlignment="Left" Height="42" Margin="166,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label Content="Ingrese la dirección de la delegación " HorizontalAlignment="Left" Margin="1,42,0,0" VerticalAlignment="Top" Width="878" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Label Content="Complete información" HorizontalAlignment="Left" Margin="1,247,0,0" VerticalAlignment="Top" Width="869" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Label Content="Calle:" HorizontalAlignment="Left" Margin="0,136,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Número:" HorizontalAlignment="Left" Margin="-5,183,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Código Postal:" HorizontalAlignment="Left" Margin="403,183,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txt_calle" HorizontalAlignment="Left" Height="42" Margin="166,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <TextBox x:Name="txt_numero" HorizontalAlignment="Left" Height="42" Margin="166,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <TextBox x:Name="txt_codigoPostal" HorizontalAlignment="Left" Height="42" Margin="579,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label Content="Colonia:" HorizontalAlignment="Left" Margin="408,89,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txt_colonia" HorizontalAlignment="Left" Height="42" Margin="579,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label Content="Municipio:" HorizontalAlignment="Left" Margin="408,136,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <ComboBox x:Name="cbMunicipio" ItemsSource="{Binding Municipio}" HorizontalAlignment="Left" Margin="574,136,0,0" VerticalAlignment="Top" Width="237" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
+                <Label Content="Correo:" HorizontalAlignment="Left" Margin="166,294,0,0" VerticalAlignment="Top" Width="166" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Telefono:" HorizontalAlignment="Left" Margin="90,341,0,0" VerticalAlignment="Top" Width="242" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txt_correo" HorizontalAlignment="Left" Height="42" Margin="387,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" FontSize="22"/>
+                <TextBox x:Name="txt_telefono" HorizontalAlignment="Left" Height="42" Margin="387,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" FontSize="22" RenderTransformOrigin="1.091,0.349"/>
+                <Button x:Name="btn_registrarDelegacion" HorizontalAlignment="Center" Content="Registrar Delegación" FontFamily="Impact" FontSize="14" Width="201" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="451,409,227.2,260.8" Height="Auto" Click="btn_registrarDelegacion_Click"/>
 
 
             </Grid>
 
         </materialDesign:TransitioningContent>
-
-        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="857,2,0,684" Height="20" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="857,0,-1,684" Width="23" Height="Auto" Click="Button_Salir" />
-
-
-
 
     </Grid>
 </UserControl>

@@ -84,7 +84,11 @@ namespace Sistema_DirecciónGeneral.ViewController
 
             }
         }
-                
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
     }
         
         

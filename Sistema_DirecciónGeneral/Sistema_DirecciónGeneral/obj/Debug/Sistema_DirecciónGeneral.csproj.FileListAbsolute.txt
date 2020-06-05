@@ -328,3 +328,7 @@ C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeEnviado.g.cs
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeChat.baml
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ChatMsj\MensajeEnviado.baml
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ViewController\ListaDelegaciones.g.cs
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ViewController\ListaUsuarios.g.cs
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ViewController\ListaDelegaciones.baml
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\ViewController\ListaUsuarios.baml

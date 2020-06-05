@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\App.xaml
-11945527732
+13-1722387906
 2-751645451
-26-609465592
+28-407943625
 43-1855424897
-ChatMsj\MensajeChat.xaml;ChatMsj\MensajeEnviado.xaml;Login.xaml;MainWindow.xaml;ViewController\ChatGrupal.xaml;ViewController\DetallesReporte.xaml;ViewController\DictaminarReporte.xaml;ViewController\Inicio.xaml;ViewController\RegistrarDelegacion.xaml;ViewController\RegistrarUsuario.xaml;ViewController\VisualizarReportes.xaml;
+ChatMsj\MensajeChat.xaml;ChatMsj\MensajeEnviado.xaml;Login.xaml;MainWindow.xaml;ViewController\ChatGrupal.xaml;ViewController\DetallesReporte.xaml;ViewController\DictaminarReporte.xaml;ViewController\Inicio.xaml;ViewController\ListaDelegaciones.xaml;ViewController\ListaUsuarios.xaml;ViewController\RegistrarDelegacion.xaml;ViewController\RegistrarUsuario.xaml;ViewController\VisualizarReportes.xaml;
 
 False
 

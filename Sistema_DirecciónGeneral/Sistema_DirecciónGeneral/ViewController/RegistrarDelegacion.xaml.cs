@@ -43,10 +43,7 @@ namespace Sistema_DirecciónGeneral.ViewController
             }
         }
 
-        public void ObtenerIdMuniciío()
-        {
-
-        }
+     
 
 
         private void btn_registrarDelegacion_Click(object sender, RoutedEventArgs e)
@@ -56,7 +53,7 @@ namespace Sistema_DirecciónGeneral.ViewController
             string codigoPostal = txt_codigoPostal.Text;
             int idMunicipio = cbMunicipio.SelectedIndex + 1;
             string colonia = txt_colonia.Text;
-            string correo = txt_colonia.Text;
+            string correo = txt_correo.Text;
             string telefono = txt_telefono.Text;
 
             if (string.IsNullOrEmpty(alias) || string.IsNullOrEmpty(calle) || string.IsNullOrEmpty(codigoPostal) || string.IsNullOrEmpty(codigoPostal) || string.IsNullOrEmpty(colonia) || string.IsNullOrEmpty(txt_numero.Text) || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(telefono) || string.IsNullOrEmpty(cbMunicipio.Text))
@@ -89,6 +86,11 @@ namespace Sistema_DirecciónGeneral.ViewController
                 MessageBox.Show("Error");
 
             }
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
         }
     }
 }

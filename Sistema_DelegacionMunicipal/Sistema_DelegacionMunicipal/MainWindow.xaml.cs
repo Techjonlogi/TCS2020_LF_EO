@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Sistema_DelegacionMunicipal.Modelo;
 using Sistema_DelegacionMunicipal.ViewController;
 
 namespace Sistema_DelegacionMunicipal
@@ -22,17 +23,34 @@ namespace Sistema_DelegacionMunicipal
     public partial class MainWindow : Window
     {
         private int botonSeleccionado = 5;
+        int idUser = 1;
 
-        Chat chat = new Chat();
+        Chat chat; 
         LevantarReporte levantarReporte = new LevantarReporte();
         Inicio inicio = new Inicio();
 
-        public MainWindow()
+        public MainWindow(int idUser)
         {
             InitializeComponent();
             GridPrincipal.Children.Add(inicio);
             btnInicio.Background = Brushes.White;
+
+
+            SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
+            string usuarioEmisor = db.Usuario.Where(x => x.idUsuario == idUser).Select(x => x.usuario1).FirstOrDefault().ToString();
+
+            string delegacionEmisor = (from u in db.Usuario.Where(x => x.idUsuario == idUser)
+                                       from d in db.Delegacion.Where(x => x.idDelegacion == u.idDelegación)
+                                       select d.nombre).FirstOrDefault().ToString();
+
+
+            this.idUser = idUser;
+            chat = new Chat(idUser, usuarioEmisor, delegacionEmisor);
         }
+
+
+
+
 
 
         private void cuadroUsuario_MouseDown(object sender, MouseButtonEventArgs e)

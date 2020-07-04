@@ -11,10 +11,10 @@ false
 DEBUG;TRACE
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\App.xaml
 13-2015912192
-2-1863064997
-30834098312
+10-1863619973
+311021248272
 43-1008016792
 ChatMsj\MensajeChat.xaml;ChatMsj\MensajeEnviado.xaml;LoginMunicipal.xaml;MainWindow.xaml;ViewController\AgregarConductor.xaml;ViewController\AgregarVehiculo.xaml;ViewController\Chat.xaml;ViewController\ListaConductor.xaml;ViewController\DetalleConductor.xaml;ViewController\Dictamen.xaml;ViewController\HistorialReportes.xaml;ViewController\Inicio.xaml;ViewController\LevantarReporte.xaml;
 
-True
+False
 

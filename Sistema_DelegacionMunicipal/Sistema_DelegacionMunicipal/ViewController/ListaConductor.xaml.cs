@@ -2,6 +2,8 @@
 using Sistema_DelegacionMunicipal.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,18 +26,23 @@ namespace Sistema_DelegacionMunicipal.ViewController
     {
 
         int conductorSeleccionado = 0;
+        List<string> listaConductores = new List<string>();
 
         public ListaConductor()
         {
             InitializeComponent();
             GridConductor.Children.Clear();
+
             llenarTablaConductores();
+
         }
 
-        public void llenarTablaConductores()
+        public async Task llenarTablaConductores()
         {
-            Modelo.SistemaReportesVehiculosEntities db = new Modelo.SistemaReportesVehiculosEntities();
-            dataGridConductores.ItemsSource = db.Conductor.ToList();
+            using (var db = new SistemaReportesVehiculosEntities())
+            {
+                dataGridConductores.ItemsSource = await db.Conductor.ToListAsync();
+            }
         }
 
 

@@ -45,11 +45,13 @@ namespace Sistema_DelegacionMunicipal
                 {
                     var query = from Usuario in db.Usuario
                                 where Usuario.usuario1 == txt_user.Text && Usuario.contrasenia == txt_pass.Password
-                                select Usuario;
+                                select Usuario.idUsuario;
                     if (query.Count() > 0)
                     {
+                        int idUser = db.Usuario.Where(x => x.usuario1 == txt_user.Text).Select(x => x.idUsuario).FirstOrDefault();
+
                         MessageBox.Show(this, "Bienvenido: " + txt_user.Text, "Información");
-                        MainWindow mainWindow = new MainWindow();
+                        MainWindow mainWindow = new MainWindow(idUser);
                         mainWindow.Show();
                         this.Close();
                     }

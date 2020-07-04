@@ -1,11 +1,17 @@
 ﻿using Sistema_DelegacionMunicipal.ChatMsj;
+using Sistema_DelegacionMunicipal.Classes;
+using Sistema_DelegacionMunicipal.Modelo;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 
 namespace Sistema_DelegacionMunicipal.ViewController
 {
@@ -14,22 +20,36 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// </summary>
     public partial class Chat : UserControl
     {
+        EnvioMensajeChat envioMensajeChat = new EnvioMensajeChat();
+        ClienteConectado cc = new ClienteConectado();
+
+        SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
+
         int posicionMensaje = 0;
         bool gridAmpliado = false;
         string mensaje = "";
+        string usuarioEmisor = "";
+        string delegacionEmisor = "";
 
-        public Chat()
+        List<string> listaConectados = new List<string>();
+
+        public Chat(int idUser, string usuarioEmisor, string delegacionEmisor)
         {
             InitializeComponent();
+            this.usuarioEmisor = usuarioEmisor;
+            this.delegacionEmisor = delegacionEmisor;
+
             intentarConexion();
         }
+
+        
 
 
         //Verificar que el servidor esté activo
         public void intentarConexion()
         {
             ocultarErrorConexion();
-
+            
             try
             {
                 Conectar();
@@ -94,11 +114,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         }
 
-        public void recibirMensaje(string mensajeRecibido)
+        public void recibirMensaje(string mensajeRecibido, string usuarioEmisor)
         {
             //Crear user control del mensaje
 
-            GridChatRecibido.Children.Add(new MensajeChat(posicionMensaje, mensajeRecibido));
+            GridChatRecibido.Children.Add(new MensajeChat(posicionMensaje, mensajeRecibido, usuarioEmisor));
 
             txtMensajeRecibido.Text = mensajeRecibido;
 
@@ -213,17 +233,24 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-
         private void Conectar()
         {
             socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             LoopConnect();
             socketCliente.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), socketCliente);
+            
+            
+            byte[] buffer = Encoding.Default.GetBytes(serializarMensaje("", false, false));
+            socketCliente.Send(buffer);
         }
 
 
-
-
+        //Actualizar valores del mensaje y serializarlos
+        public string serializarMensaje(string contenidoMensaje, bool isMensajeConexion, bool isMensaje)
+        {
+            EnvioMensajeChat mensajeChat = new EnvioMensajeChat(contenidoMensaje, usuarioEmisor, delegacionEmisor, isMensaje, false);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(mensajeChat).ToString();
+        }
 
         byte[] receivedBuf = new byte[1024];
 
@@ -236,7 +263,9 @@ namespace Sistema_DelegacionMunicipal.ViewController
                 int received = socket.EndReceive(ar);
                 byte[] dataBuf = new byte[received];
                 Array.Copy(receivedBuf, dataBuf, received);
+
                 mensaje = (Encoding.Default.GetString(dataBuf));
+
             }
             catch (SocketException)
             {
@@ -248,9 +277,32 @@ namespace Sistema_DelegacionMunicipal.ViewController
             }
 
 
+
+            //envioMensajeChat = Newtonsoft.Json.JsonConvert.DeserializeObject<EnvioMensajeChat>(mensaje);
+            ClienteConectado cc = Newtonsoft.Json.JsonConvert.DeserializeObject<ClienteConectado>(mensaje);
+
+            envioMensajeChat = new EnvioMensajeChat();
+            envioMensajeChat.usuarioEmisor = "";
+            envioMensajeChat.contenidoMensaje = "" + mensaje;
+            envioMensajeChat.delegacionEmisor = " " + usuarioEmisor;
+
+            //Llenar lista con nombre de usuario y delegacion
+            listaConectados = new List<string>();
+            for (int i = 0; i < cc.usuariosEmisores.Count; i++)
+            {
+                listaConectados.Add(cc.usuariosEmisores[i] + " (" + cc.delegacionesEmisores[i] + ")");
+            }
+
             this.Dispatcher.Invoke(() =>
             {
-                recibirMensaje(mensaje);
+                if (cc.usuariosEmisores != null)
+                {
+                    dataGridUsuariosConectados.ItemsSource = listaConectados;
+                 
+                }
+                    
+                
+                recibirMensaje(envioMensajeChat.contenidoMensaje + " de " + envioMensajeChat.usuarioEmisor, envioMensajeChat.usuarioEmisor);
             });
 
 
@@ -287,14 +339,9 @@ namespace Sistema_DelegacionMunicipal.ViewController
         {
             if (socketCliente.Connected)
             {
-
-                byte[] buffer = Encoding.Default.GetBytes(msj);
+                byte[] buffer = Encoding.Default.GetBytes(serializarMensaje(msj, false, true));
                 socketCliente.Send(buffer);
             }
-
         }
-
-        
     }
 }
-

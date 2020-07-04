@@ -147,7 +147,8 @@
     <Compile Include="ChatMsj\MensajeEnviado.xaml.cs">
       <DependentUpon>MensajeEnviado.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\JMessage.cs" />
+    <Compile Include="Classes\ClienteConectado.cs" />
+    <Compile Include="Classes\EnvioMensajeChat.cs" />
     <Compile Include="Modelo\Conductor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -300,6 +301,11 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
     <None Include="Modelo\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -319,9 +325,13 @@
     <Resource Include="Imagenes\veracruzGob.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sockets\" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Modelo\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

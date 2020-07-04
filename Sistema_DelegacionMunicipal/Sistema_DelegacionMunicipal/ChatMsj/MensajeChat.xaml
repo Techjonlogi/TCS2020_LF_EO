@@ -22,7 +22,7 @@
                     BorderBrush="Gray"
                     BorderThickness="1"
                     >
-                    <TextBlock Text="LM"
+                    <TextBlock x:Name="txtEmisor" Text="TT"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            Foreground="White" FontFamily="Segoe UI Historic" FontWeight="Bold"

@@ -1,21 +1,10 @@
-﻿using Servidor;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Servidor
 {
@@ -28,7 +17,12 @@ namespace Servidor
         private byte[] buffer = new byte[1024];
         private List<SocketServer> socketsClientes { get; set; }
 
+        List<string> listaClientesConectados = new List<string>();
+        List<string> listaClienteDelegaciones = new List<string>();
+        List<string> listaDirecciones = new List<string>();
+
         private Socket socketServidor = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        ClienteConectado cc = new ClienteConectado();
 
         string cliente = "";
 
@@ -56,7 +50,7 @@ namespace Servidor
 
 
 
-        //Escuchar conexiones y sockets para clientes
+         // Escuchar conexiones y sockets para clientes
         private void AceptarCallBack(IAsyncResult ar)
         {
             //Aceptar intento de conexión
@@ -64,7 +58,7 @@ namespace Servidor
 
             //Añadir cliente nuevo a la lista
             socketsClientes.Add(new SocketServer(socket));
-
+            
             //Comenzar a recibir datos 
 
             socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback(ReceiveCallback), socket);
@@ -99,6 +93,13 @@ namespace Servidor
                         if (socketsClientes[i].socket.RemoteEndPoint.ToString().Equals(socket.RemoteEndPoint.ToString()))
                         {
                             socketsClientes.RemoveAt(i);
+
+                            cc.delegacionesEmisores.RemoveAt(i);
+                            cc.direccionesUsuario.RemoveAt(i);
+                            cc.usuariosEmisores.RemoveAt(i);
+
+                            string ccActualizado = Newtonsoft.Json.JsonConvert.SerializeObject(cc).ToString();
+                            enviarListaATodos(ccActualizado);
                         }
                     }
 
@@ -110,6 +111,8 @@ namespace Servidor
                     Array.Copy(buffer, dataBuf, received);
                     string texto = Encoding.Default.GetString(dataBuf);
 
+                    
+                    
 
                     string respuesta = string.Empty;
 
@@ -125,8 +128,35 @@ namespace Servidor
                     }
 
 
-                    respuesta = "" + texto;
-                    reenviarATodos(respuesta, cliente);
+                    //Deserializar objeto
+
+                    EnvioMensajeChat mensajeChat = Newtonsoft.Json.JsonConvert.DeserializeObject<EnvioMensajeChat>(texto);
+
+                    //Añadir nuevo conectado a la lista
+                    if (!mensajeChat.isMensaje)
+                    {
+                        listaClientesConectados.Add(mensajeChat.usuarioEmisor);
+                        listaClienteDelegaciones.Add(mensajeChat.delegacionEmisor);
+                        listaDirecciones.Add(cliente);
+                        
+
+                        cc = new ClienteConectado(listaClientesConectados, listaClienteDelegaciones, listaDirecciones);
+                        
+
+                        //Enviar lista de conectados a todos los clientes
+                        respuesta = Newtonsoft.Json.JsonConvert.SerializeObject(cc).ToString();
+
+                        enviarListaATodos(respuesta);
+                    }
+
+
+                    //Reenviar respuesta con el contenido del mensaje
+
+                    if (mensajeChat.isMensaje)
+                    {
+                        reenviarATodos(texto, cliente);
+                    }
+                    
 
 
                 }
@@ -137,6 +167,13 @@ namespace Servidor
                         if (socketsClientes[i].socket.RemoteEndPoint.ToString().Equals(socket.RemoteEndPoint.ToString()))
                         {
                             socketsClientes.RemoveAt(i);
+
+                            cc.delegacionesEmisores.RemoveAt(i);
+                            cc.direccionesUsuario.RemoveAt(i);
+                            cc.usuariosEmisores.RemoveAt(i);
+
+                            string ccActualizado = Newtonsoft.Json.JsonConvert.SerializeObject(cc).ToString();
+                            enviarListaATodos(ccActualizado);
                         }
                     }
                 }
@@ -148,9 +185,20 @@ namespace Servidor
 
 
 
-        public void reenviarATodos(string mensaje, string cliente)
+        public void enviarListaATodos(string listaSerializada)
         {
 
+            for (int i = 0; i < socketsClientes.Count; i++)
+            {
+                EnviarInfo(socketsClientes[i].socket, listaSerializada);
+            }
+
+        }
+
+
+        public void reenviarATodos(string mensaje, string cliente)
+        {
+           
             for (int i = 0; i < socketsClientes.Count; i++)
             {
                 //Verificar que el que envió el mensaje no lo reciba
@@ -158,7 +206,7 @@ namespace Servidor
                     EnviarInfo(socketsClientes[i].socket, mensaje);
 
             }
-
+            
         }
 
 

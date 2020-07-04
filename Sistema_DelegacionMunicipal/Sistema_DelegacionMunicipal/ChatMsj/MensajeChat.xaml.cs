@@ -20,7 +20,7 @@ namespace Sistema_DelegacionMunicipal.ChatMsj
     /// </summary>
     public partial class MensajeChat : UserControl
     {
-        public MensajeChat(int posicionMensaje,string mensaje)
+        public MensajeChat(int posicionMensaje,string mensaje, string usuarioEmisor)
         {
             InitializeComponent();
 

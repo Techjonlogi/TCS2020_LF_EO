@@ -21,16 +21,10 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// </summary>
     public partial class AgregarVehiculo : UserControl
     {
-        int idConductorSeleccionado;
-        SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
-
-        public AgregarVehiculo(int idConductor)
+        public AgregarVehiculo()
         {
             InitializeComponent();
-            idConductorSeleccionado = idConductor;
-
-            txtDuenio.Text = db.Conductor.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.nombre).FirstOrDefault().ToString();
-            txtDuenio.Text += " " + db.Conductor.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.apellidos).FirstOrDefault().ToString();
+            CargarConductores();
         }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
@@ -47,7 +41,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
             string nombreAseguradora = txt_nomAseguradora.Text;
             string numPoliza = txt_numPoliza.Text;
             string placas = txt_placas.Text;
-            int idConductor = idConductorSeleccionado;
+            int idConductor = cb_dueño.SelectedIndex +1;
 
             if (string.IsNullOrEmpty(marca) || string.IsNullOrEmpty(modelo) || string.IsNullOrEmpty(anio) || string.IsNullOrEmpty(color) || string.IsNullOrEmpty(placas))
             {
@@ -78,14 +72,24 @@ namespace Sistema_DelegacionMunicipal.ViewController
                     db.Vehiculo.Add(vehiculo);
                     db.SaveChanges();
                     MessageBox.Show("Vehículo agregado con éxito");
-
-                    this.Visibility = Visibility.Collapsed;
                 }
             }
             catch
             {
                 MessageBox.Show("Error");
 
+            }
+        }
+
+        private void CargarConductores()
+        {
+            SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
+            var list = db.Conductor.ToList();
+            if (list.Count() > 0)
+            {
+                cb_dueño.ItemsSource = list;
+                cb_dueño.DisplayMemberPath = "nombre";
+                cb_dueño.SelectedValuePath = "idConductor";
             }
         }
 

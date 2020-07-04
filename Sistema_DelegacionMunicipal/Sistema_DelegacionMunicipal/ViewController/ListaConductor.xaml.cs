@@ -59,6 +59,16 @@ namespace Sistema_DelegacionMunicipal.ViewController
             GridConductor.Children.Add(agregarConductor);
         }
 
+
+
+        private void btnNuevoVehiculo_Click(object sender, RoutedEventArgs e)
+        {
+            AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
+            GridConductor.Children.Clear();
+            GridConductor.Children.Add(agregarVehiculo);
+
+        }
+
         private void dataGridConductores_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             /*

@@ -41,7 +41,7 @@ namespace Sistema_DirecciónGeneral
             {
                 cambiarBoton(1);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new RegistrarUsuario());
+                GridPrincipal.Children.Add(new ListaUsuarios());
             }
         }
 
@@ -51,7 +51,7 @@ namespace Sistema_DirecciónGeneral
             {
                 cambiarBoton(2);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new RegistrarDelegacion());
+                GridPrincipal.Children.Add(new ListaDelegaciones());
             }
         }
 

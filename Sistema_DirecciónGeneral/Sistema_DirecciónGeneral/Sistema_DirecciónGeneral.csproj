@@ -197,6 +197,12 @@
     <Compile Include="ViewController\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewController\ListaDelegaciones.xaml.cs">
+      <DependentUpon>ListaDelegaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\ListaUsuarios.xaml.cs">
+      <DependentUpon>ListaUsuarios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewController\RegistrarDelegacion.xaml.cs">
       <DependentUpon>RegistrarDelegacion.xaml</DependentUpon>
     </Compile>
@@ -246,6 +252,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewController\Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewController\ListaDelegaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewController\ListaUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

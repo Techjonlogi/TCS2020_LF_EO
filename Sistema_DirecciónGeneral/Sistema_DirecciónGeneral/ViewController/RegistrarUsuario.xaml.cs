@@ -45,7 +45,7 @@ namespace Sistema_DirecciónGeneral.ViewController
 
 
 
-        private void Btn_RegistrarUsuario(object sender, RoutedEventArgs e)
+        private void btn_RegistrarUsuario_Click(object sender, RoutedEventArgs e)
         {
             string nombre = txt_nombre.Text;
             string apellidos = txt_apellidos.Text;
@@ -85,9 +85,9 @@ namespace Sistema_DirecciónGeneral.ViewController
             }
         }
 
-        private void btn_RegistrarUsuario_Click(object sender, RoutedEventArgs e)
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Visibility = Visibility.Collapsed;
         }
     }
         

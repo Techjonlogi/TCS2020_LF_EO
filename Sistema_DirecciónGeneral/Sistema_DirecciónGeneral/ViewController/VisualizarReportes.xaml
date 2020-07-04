@@ -14,7 +14,21 @@
             <Grid>
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
                 <Label Content="Visualizar Reportes" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <DataGrid HorizontalAlignment="Left" Height="465" Margin="100,101,0,0" VerticalAlignment="Top" Width="681"/>
+                <DataGrid HorizontalAlignment="Left" Height="465" Margin="100,101,0,0" VerticalAlignment="Top" Width="681">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#7A6E46" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding folio}" ClipboardContentBinding="{x:Null}" Header="Folio" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre conductor"  Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Delegación" Width="130" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding numCarrosInvolucrados}" ClipboardContentBinding="{x:Null}" Header="Carros involucrados" Width="160" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
 
                 <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="126" Background="#FFC13434" BorderBrush="{x:Null}" Margin="100,601,653,10" Height="Auto" Click="BtnVolver_Click" />
                 <Button x:Name="btnVerDetalles" HorizontalAlignment="Center" Content="Ver más detalles" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="602,601,98,10" Height="Auto" Click="BtnVerDetalles_Click"/>

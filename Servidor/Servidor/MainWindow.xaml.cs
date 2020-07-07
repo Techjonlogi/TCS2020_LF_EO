@@ -178,7 +178,14 @@ namespace Servidor
                     }
                 }
             }
-            socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback(ReceiveCallback), socket);
+            try
+            {
+                socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback(ReceiveCallback), socket);
+            }
+            catch (SocketException)
+            {
+
+            }
         }
 
 
@@ -212,9 +219,16 @@ namespace Servidor
 
         void EnviarInfo(Socket socket, string mensaje)
         {
-            byte[] data = Encoding.Default.GetBytes(mensaje);
-            socket.BeginSend(data, 0, data.Length, SocketFlags.None, new AsyncCallback(SendCallback), socket);
-            socketServidor.BeginAccept(new AsyncCallback(AceptarCallBack), null);
+            try
+            {
+                byte[] data = Encoding.Default.GetBytes(mensaje);
+                socket.BeginSend(data, 0, data.Length, SocketFlags.None, new AsyncCallback(SendCallback), socket);
+                socketServidor.BeginAccept(new AsyncCallback(AceptarCallBack), null);
+            }
+            catch(SocketException){
+
+            }
+            
         }
 
         private void SendCallback(IAsyncResult AR)

@@ -37,7 +37,7 @@
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="348" Margin="531,0,0,0"/>
                 <Label Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="343" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="536,0,0,0"/>
 
-                <DataGrid x:Name="dataGridUsuariosConectados" RowBackground="#FF6A6A6A" SelectionMode="Single" AutoGenerateColumns="False" IsReadOnly="True" Height="601" Margin="531,42,0,0" VerticalAlignment="Top"  CanUserResizeRows="False" FontSize="17" Background="#FF6A6A6A" FontFamily="Segoe UI Historic" Foreground="#DDFFFFFF">
+                <DataGrid x:Name="dataGridUsuariosConectados" IsHitTestVisible="False" RowBackground="#FF6A6A6A" SelectionMode="Single" AutoGenerateColumns="False" IsReadOnly="True" Height="601" Margin="531,42,0,0" VerticalAlignment="Top"  CanUserResizeRows="False" FontSize="17" Background="#FF6A6A6A" FontFamily="Segoe UI Historic" Foreground="#DDFFFFFF">
                     <DataGrid.Columns>
                         <DataGridTextColumn  Binding="{Binding}" Width="345" CanUserReorder="False" CanUserResize="False" CanUserSort="False">
                             <DataGridTextColumn.ElementStyle>

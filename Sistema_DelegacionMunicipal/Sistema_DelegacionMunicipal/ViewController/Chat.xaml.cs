@@ -21,8 +21,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
     public partial class Chat : UserControl
     {
         EnvioMensajeChat envioMensajeChat = new EnvioMensajeChat();
-        ClienteConectado cc = new ClienteConectado();
-
         SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
 
         int posicionMensaje = 0;
@@ -277,33 +275,41 @@ namespace Sistema_DelegacionMunicipal.ViewController
             }
 
 
+            // Manejo de conectados y nuevos mensajes
 
-            //envioMensajeChat = Newtonsoft.Json.JsonConvert.DeserializeObject<EnvioMensajeChat>(mensaje);
-            ClienteConectado cc = Newtonsoft.Json.JsonConvert.DeserializeObject<ClienteConectado>(mensaje);
+            string objetoSerializado = mensaje;
 
-            envioMensajeChat = new EnvioMensajeChat();
-            envioMensajeChat.usuarioEmisor = "";
-            envioMensajeChat.contenidoMensaje = "" + mensaje;
-            envioMensajeChat.delegacionEmisor = " " + usuarioEmisor;
+            envioMensajeChat = Newtonsoft.Json.JsonConvert.DeserializeObject<EnvioMensajeChat>(mensaje);
 
-            //Llenar lista con nombre de usuario y delegacion
-            listaConectados = new List<string>();
-            for (int i = 0; i < cc.usuariosEmisores.Count; i++)
+            if (envioMensajeChat.contenidoMensaje == null)
             {
-                listaConectados.Add(cc.usuariosEmisores[i] + " (" + cc.delegacionesEmisores[i] + ")");
+                ClienteConectado cc = Newtonsoft.Json.JsonConvert.DeserializeObject<ClienteConectado>(objetoSerializado);
+                //Llenar lista con nombre de usuario y delegacion
+                listaConectados = new List<string>();
+                for (int i = 0; i < cc.usuariosEmisores.Count; i++)
+                {
+                    listaConectados.Add(cc.usuariosEmisores[i] + " (" + cc.delegacionesEmisores[i] + ")");
+                }
+
+                this.Dispatcher.Invoke(() =>
+                {
+                    if (cc.usuariosEmisores != null)
+                    {
+                        dataGridUsuariosConectados.ItemsSource = listaConectados;
+
+                    }
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    recibirMensaje(envioMensajeChat.contenidoMensaje, envioMensajeChat.usuarioEmisor);
+                });
             }
 
-            this.Dispatcher.Invoke(() =>
-            {
-                if (cc.usuariosEmisores != null)
-                {
-                    dataGridUsuariosConectados.ItemsSource = listaConectados;
-                 
-                }
-                    
-                
-                recibirMensaje(envioMensajeChat.contenidoMensaje + " de " + envioMensajeChat.usuarioEmisor, envioMensajeChat.usuarioEmisor);
-            });
+            
+
 
 
             try

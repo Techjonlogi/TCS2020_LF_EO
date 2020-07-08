@@ -25,6 +25,16 @@ namespace Sistema_DelegacionMunicipal.ChatMsj
             InitializeComponent();
 
             txtMensaje.Text = mensaje;
+
+            if (usuarioEmisor.Length > 4)
+            {
+                txtEmisor.Text = usuarioEmisor.Remove(4, usuarioEmisor.Length - 4);
+            }
+            else
+            {
+                txtEmisor.Text = usuarioEmisor;
+            }
+            
             this.Margin = new Thickness(0, posicionMensaje, 71, 0);
 
             string minutos = "";

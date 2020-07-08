@@ -22,7 +22,7 @@
                         </Style>
                     </DataGrid.Resources>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding folio}" ClipboardContentBinding="{x:Null}" Header="Folio" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding folio}" ClipboardContentBinding="{x:Null}" Header="Folio del dictamen" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                         <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre conductor"  Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                         <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Delegación" Width="130" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                         <DataGridTextColumn Binding="{Binding numCarrosInvolucrados}" ClipboardContentBinding="{x:Null}" Header="Carros involucrados" Width="160" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>

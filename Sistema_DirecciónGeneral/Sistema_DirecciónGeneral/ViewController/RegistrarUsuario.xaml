@@ -8,37 +8,33 @@
              mc:Ignorable="d" Height="705.88" Width="878.999">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="101*"/>
-            <RowDefinition Height="252*"/>
-        </Grid.RowDefinitions>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595" Margin="0,0,0.2,0.6" Grid.RowSpan="2">
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595" Margin="-2,-2,2.2,2.6">
 
             <Grid>
-                <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="111" Background="#FFC13434" BorderBrush="{x:Null}" Margin="216,466,552.2,203.8" Height="Auto" Click="btnVolver_Click" />
+                <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="111" Background="#FFC13434" BorderBrush="{x:Null}" Margin="208,442,560.2,227.8" Height="Auto" Click="btnVolver_Click" />
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="879"/>
                 <Label Content="Registrar usuarios" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="879" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <Label Content="Nombre:" HorizontalAlignment="Left" Margin="148,94,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Apellidos" HorizontalAlignment="Left" Margin="158,141,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Cargo" HorizontalAlignment="Left" Margin="116,393,0,0" VerticalAlignment="Top" Width="211" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="1.- Ingrese sus datos personales" HorizontalAlignment="Left" Margin="0,47,0,0" VerticalAlignment="Top" Width="879" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Label Content="Nombre:" HorizontalAlignment="Left" Margin="81,84,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Apellidos" HorizontalAlignment="Left" Margin="91,131,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Cargo" HorizontalAlignment="Left" Margin="49,366,0,0" VerticalAlignment="Top" Width="211" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="1.- Ingrese sus datos personales" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="879" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
 
-                <Label Content="2.- Selecciona el cargo" HorizontalAlignment="Left" Margin="0,346,0,0" VerticalAlignment="Top" Width="879" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Label Content="Username" HorizontalAlignment="Left" Margin="158,188,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" RenderTransformOrigin="0.755,0.606"/>
-                <Label Content="Contraseña" HorizontalAlignment="Left" Margin="158,235,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="42" Margin="332,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
-                <TextBox x:Name="txt_apellidos" HorizontalAlignment="Left" Height="42" Margin="332,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.444,0.47"/>
-                <TextBox x:Name="txt_user" HorizontalAlignment="Left" Height="42" Margin="332,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
-                <TextBox x:Name="txt_contrasenia" HorizontalAlignment="Left" Height="42" Margin="332,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.246,-0.01"/>
-                <ComboBox x:Name="cb_cargo" HorizontalAlignment="Left" Margin="327,393,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.665,0.42">
+                <Label Content="2.- Selecciona el cargo" HorizontalAlignment="Left" Margin="0,319,0,0" VerticalAlignment="Top" Width="879" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Label Content="Username" HorizontalAlignment="Left" Margin="91,178,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" RenderTransformOrigin="0.755,0.606"/>
+                <Label Content="Contraseña" HorizontalAlignment="Left" Margin="91,225,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="42" Margin="291,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
+                <TextBox x:Name="txt_apellidos" HorizontalAlignment="Left" Height="42" Margin="291,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.444,0.47"/>
+                <TextBox x:Name="txt_user" HorizontalAlignment="Left" Height="42" Margin="291,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
+                <TextBox x:Name="txt_contrasenia" HorizontalAlignment="Left" Height="42" Margin="291,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.246,-0.01"/>
+                <ComboBox x:Name="cb_cargo" HorizontalAlignment="Left" Margin="291,366,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.665,0.42">
                     <ComboBoxItem>Administrativo</ComboBoxItem>
                     <ComboBoxItem>Perito</ComboBoxItem>
                     <ComboBoxItem>Soporte</ComboBoxItem>
                     <ComboBoxItem>Atención</ComboBoxItem>
                 </ComboBox>
-                <Label Content="Delegación" HorizontalAlignment="Left" Margin="126,282,0,0" VerticalAlignment="Top" Width="201" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <ComboBox x:Name="cb_delegacion" ItemsSource="{Binding Delegacion}" HorizontalAlignment="Left" Margin="327,282,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
-                <Button x:Name="btn_RegistrarUsuario" HorizontalAlignment="Center" Content="Registrar Usuario" FontFamily="Impact" FontSize="14" Width="202" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="491,466,186.2,203.8" Height="Auto" Click="btn_RegistrarUsuario_Click"/>
+                <Label Content="Delegación" HorizontalAlignment="Left" Margin="59,272,0,0" VerticalAlignment="Top" Width="201" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <ComboBox x:Name="cb_delegacion" ItemsSource="{Binding Delegacion}" HorizontalAlignment="Left" Margin="291,272,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
+                <Button x:Name="btn_RegistrarUsuario" HorizontalAlignment="Center" Content="Registrar Usuario" FontFamily="Impact" FontSize="14" Width="202" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="455,442,222.2,227.8" Height="Auto" Click="btn_RegistrarUsuario_Click"/>
 
 
             </Grid>

@@ -24,6 +24,7 @@ namespace Sistema_DirecciónGeneral.Modelo
         public int idDelegacion { get; set; }
         public string nombre { get; set; }
         public string calle { get; set; }
+        public string numero { get; set; }
         public string colonia { get; set; }
         public string codigoPostal { get; set; }
         public int idMunicipio { get; set; }

@@ -12,11 +12,9 @@
             <Grid>
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
                 <Label Content="Lista de usuarios" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <Button x:Name="btnEliminar" HorizontalAlignment="Center" Content="Eliminar" FontFamily="Impact" FontSize="14" Width="126" Background="#FFC13434" BorderBrush="{x:Null}" Margin="122,601,631.2,10.2" Height="Auto" Click="btnEliminar_Click" />
                 <Button x:Name="btnAgregarUsuario" HorizontalAlignment="Center" Content="Agregar usuario" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="602,601,98,10" Height="Auto" Click="btnAgregarUsuario_Click"/>
-                <Button x:Name="btnEditarUsuario" HorizontalAlignment="Center" Content="Editar usuario" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="346,601,354,10" Height="Auto" Click="btnEditarUsuario_Click"/>
-                
-                <DataGrid x:Name="dgUsuarios" AutoGenerateColumns="False" SelectionChanged="dgUsuarios_SelectionChanged" HorizontalAlignment="Left" Height="465" Margin="100,101,0,0" VerticalAlignment="Top" Width="681">
+
+                <DataGrid x:Name="dgUsuarios" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="465" Margin="35,101,0,0" VerticalAlignment="Top" Width="808">
                     <DataGrid.Resources>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Background" Value="#7A6E46" />
@@ -24,10 +22,28 @@
                         </Style>
                     </DataGrid.Resources>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding usuario1}" ClipboardContentBinding="{x:Null}" Header="Usuario" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre"  Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-                        <DataGridTextColumn Binding="{Binding cargo}" ClipboardContentBinding="{x:Null}" Header="Cargo" Width="130" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding usuario1}" ClipboardContentBinding="{x:Null}" Header="Usuario" Width="140" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre"  Width="150" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding apellidos}" ClipboardContentBinding="{x:Null}" Header="Apellidos"  Width="150" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding cargo}" ClipboardContentBinding="{x:Null}" Header="Cargo" Width="100" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                         <DataGridTextColumn Binding="{Binding delegacion}" ClipboardContentBinding="{x:Null}" Header="Delegación" Width="160" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Button CommandParameter="{Binding idUsuario}" Click="Button_Eliminar" Background="#FFC13434">
+                                            <materialDesign:PackIcon Kind="Delete" VerticalAlignment="Center" Foreground="White"/>
+                                        </Button>
+                                        <Button CommandParameter="{Binding idUsuario}" Click="Button_Modificar" Background="Gray">
+                                            <materialDesign:PackIcon Kind="Edit"  VerticalAlignment="Center" Foreground="White"/>
+                                        </Button>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
 
                     </DataGrid.Columns>
                 </DataGrid>
@@ -40,13 +56,9 @@
 
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
         <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="856,0,0,621" Width="23" Height="Auto" Click="Button_Salir" />
-        
-        <Grid Margin="96,99,89.2,0.2">
-            <Grid x:Name="GridUsuario" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
 
-        <Grid Margin="0,0,0,59">
-            <Grid x:Name="GridDetallesUsurio" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid Margin="10,55,24.2,0.2">
+            <Grid x:Name="GridUsuario"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
 
     </Grid>

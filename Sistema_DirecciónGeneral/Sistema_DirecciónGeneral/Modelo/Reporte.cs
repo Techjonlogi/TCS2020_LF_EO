@@ -28,6 +28,7 @@ namespace Sistema_DirecciónGeneral.Modelo
         public bool evidencia { get; set; }
         public string folio { get; set; }
         public int idDelegación { get; set; }
+        public Nullable<int> idImagen { get; set; }
     
         public virtual Delegacion Delegacion { get; set; }
         public virtual Dictamen Dictamen { get; set; }

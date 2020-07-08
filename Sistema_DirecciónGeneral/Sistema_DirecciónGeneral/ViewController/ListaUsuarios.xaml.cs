@@ -1,4 +1,5 @@
-﻿using Sistema_DirecciónGeneral.Modelo;
+﻿using Sistema_DirecciónGeneral.Interfaces;
+using Sistema_DirecciónGeneral.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,10 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para ListaUsuarios.xaml
     /// </summary>
-    public partial class ListaUsuarios : UserControl
+    public partial class ListaUsuarios : UserControl, IUsuario
     {
 
-        int usuarioSeleccionado = 0;
+   
         public ListaUsuarios()
         {
             InitializeComponent();
@@ -40,8 +41,11 @@ namespace Sistema_DirecciónGeneral.ViewController
                              {
                                  idUsuario = u.idUsuario,
                                  usuario1 = u.usuario1,
+                                 contrasenia = u.contrasenia,
                                  nombre = u.nombre,
+                                 apellidos = u.apellidos,
                                  cargo = u.cargo,
+                                 idDelegacion = u.idDelegación,
                                  delegacion = d.nombre
                              }).ToList();
                 dgUsuarios.ItemsSource = query;
@@ -50,19 +54,9 @@ namespace Sistema_DirecciónGeneral.ViewController
 
         private void btnAgregarUsuario_Click(object sender, RoutedEventArgs e)
         {
-            RegistrarUsuario registrarUsuario = new RegistrarUsuario();
+            RegistrarUsuario registrarUsuario = new RegistrarUsuario(0, this);
             GridUsuario.Children.Clear();
             GridUsuario.Children.Add(registrarUsuario);
-        }
-
-        private void btnEliminar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnEditarUsuario_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void Button_Salir(object sender, RoutedEventArgs e)
@@ -70,9 +64,41 @@ namespace Sistema_DirecciónGeneral.ViewController
             Application.Current.Shutdown();
         }
 
-        private void dgUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Eliminar(object sender, RoutedEventArgs e)
         {
-            usuarioSeleccionado = dgUsuarios.SelectedIndex + 1;
+            int idUsuario = (int)((Button)sender).CommandParameter;
+
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                var usuario = db.Usuario.Find(idUsuario);
+
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("¿Desea eliminarlo?", "Confirmación", System.Windows.MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    db.Usuario.Remove(usuario);
+                    db.SaveChanges();
+
+                }
+
+            }
+            LlenarTablaUsuarios();
+        }
+
+        private void Button_Modificar(object sender, RoutedEventArgs e)
+        {
+            int idUsuario = (int)((Button)sender).CommandParameter;
+
+            RegistrarUsuario registrarUsuario = new RegistrarUsuario(idUsuario, this);
+            GridUsuario.Children.Clear();
+            GridUsuario.Children.Add(registrarUsuario);
+
+            LlenarTablaUsuarios();
+        }
+
+        
+        public void Actualizar(int idUsuario)
+        {
+            LlenarTablaUsuarios();
         }
     }
 }

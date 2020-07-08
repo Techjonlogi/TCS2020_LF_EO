@@ -48,7 +48,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                 txt_user.Text = userEdit.usuario1;
                 txt_contrasenia.Text = userEdit.contrasenia;
                 cb_cargo.Text = userEdit.cargo;
-                cb_delegacion.SelectedIndex = userEdit.idDelegación;
+                cb_delegacion.SelectedIndex = userEdit.idDelegación - 1;
                 btn_RegistrarUsuario.Content = "Actualizar";
             }
         }
@@ -79,7 +79,7 @@ namespace Sistema_DirecciónGeneral.ViewController
             string apellidos = txt_apellidos.Text;
             string username = txt_user.Text;
             string contrasenia = txt_contrasenia.Text;
-            int idDelegacion = cb_delegacion.SelectedIndex;
+            int idDelegacion = cb_delegacion.SelectedIndex + 1;
             string cargo = cb_cargo.Text;
 
             int idUserAux = idUsuario;
@@ -120,7 +120,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                         userEdit.usuario1 = txt_user.Text;
                         userEdit.contrasenia = txt_contrasenia.Text;
                         userEdit.cargo = cb_cargo.Text;
-                        userEdit.idDelegación = cb_delegacion.SelectedIndex;
+                        userEdit.idDelegación = cb_delegacion.SelectedIndex + 1;
                         db.Entry(userEdit).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
                         MessageBox.Show("Usuario editada con éxito");

@@ -49,7 +49,7 @@ namespace Sistema_DirecciónGeneral.ViewController
             txt_colonia.Text = delegacionEdit.colonia;
             txt_correo.Text = delegacionEdit.correo;
             txt_telefono.Text = delegacionEdit.telefono;
-            cbMunicipio.SelectedIndex = delegacionEdit.idMunicipio;
+            cbMunicipio.SelectedIndex = delegacionEdit.idMunicipio - 1;
             btn_registrarDelegacion.Content = "Actualizar";
             }
         }
@@ -79,7 +79,7 @@ namespace Sistema_DirecciónGeneral.ViewController
             string calle = txt_calle.Text;
             string numero = txt_numero.Text;
             string codigoPostal = txt_codigoPostal.Text;
-            int idMunicipio = cbMunicipio.SelectedIndex + 1;
+            int idMunicipio = cbMunicipio.SelectedIndex +1;
             string colonia = txt_colonia.Text;
             string correo = txt_correo.Text;
             string telefono = txt_telefono.Text;
@@ -125,7 +125,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                         delegacionEdit.numero = txt_numero.Text;
                         delegacionEdit.colonia = txt_colonia.Text;
                         delegacionEdit.codigoPostal = txt_codigoPostal.Text;
-                        delegacionEdit.idMunicipio = cbMunicipio.SelectedIndex;
+                        delegacionEdit.idMunicipio = cbMunicipio.SelectedIndex + 1;
                         delegacionEdit.colonia = txt_colonia.Text;
                         delegacionEdit.correo = txt_correo.Text;
                         delegacionEdit.telefono = txt_telefono.Text;

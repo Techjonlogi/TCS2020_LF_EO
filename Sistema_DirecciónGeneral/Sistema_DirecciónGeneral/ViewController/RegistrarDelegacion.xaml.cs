@@ -77,7 +77,7 @@ namespace Sistema_DirecciónGeneral.ViewController
         {
             string alias = txt_alias.Text;
             string calle = txt_calle.Text;
-            int numero = int.Parse(txt_numero.Text);
+            string numero = txt_numero.Text;
             string codigoPostal = txt_codigoPostal.Text;
             int idMunicipio = cbMunicipio.SelectedIndex + 1;
             string colonia = txt_colonia.Text;
@@ -101,6 +101,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                         {
                             nombre = alias,
                             calle = calle,
+                            numero = numero,
                             colonia = colonia,
                             codigoPostal = codigoPostal,
                             idMunicipio = idMunicipio ,

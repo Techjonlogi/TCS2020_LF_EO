@@ -12,25 +12,18 @@ namespace Sistema_DirecciónGeneral.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Imagenes
+    public partial class Cargo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Imagenes()
+        public Cargo()
         {
-            this.Reporte = new HashSet<Reporte>();
+            this.Usuario = new HashSet<Usuario>();
         }
     
-        public int idImagenes { get; set; }
-        public byte[] imagen1 { get; set; }
-        public byte[] imagen2 { get; set; }
-        public byte[] imagen3 { get; set; }
-        public byte[] imagen4 { get; set; }
-        public byte[] imagen5 { get; set; }
-        public byte[] imagen6 { get; set; }
-        public byte[] imagen7 { get; set; }
-        public byte[] imagen8 { get; set; }
+        public int idCargo { get; set; }
+        public string tipoCargo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reporte> Reporte { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

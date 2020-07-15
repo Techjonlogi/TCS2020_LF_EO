@@ -148,6 +148,9 @@
     </Compile>
     <Compile Include="Interfaces\IDelegacion.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
+    <Compile Include="Modelo\Cargo.cs">
+      <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Conductor.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>

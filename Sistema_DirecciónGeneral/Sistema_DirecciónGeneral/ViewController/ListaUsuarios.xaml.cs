@@ -37,6 +37,7 @@ namespace Sistema_DirecciónGeneral.ViewController
             {
                 var query = (from u in db.Usuario
                              join d in db.Delegacion on u.idDelegación equals d.idDelegacion
+                             join crg in db.Cargo on u.idCargo equals crg.idCargo
                              select new
                              {
                                  idUsuario = u.idUsuario,
@@ -44,7 +45,8 @@ namespace Sistema_DirecciónGeneral.ViewController
                                  contrasenia = u.contrasenia,
                                  nombre = u.nombre,
                                  apellidos = u.apellidos,
-                                 cargo = u.cargo,
+                                 idCargo = u.idCargo,
+                                 cargo = crg.tipoCargo,
                                  idDelegacion = u.idDelegación,
                                  delegacion = d.nombre
                              }).ToList();

@@ -27,6 +27,7 @@ namespace Sistema_DirecciónGeneral.Modelo
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cargo> Cargo { get; set; }
         public virtual DbSet<Conductor> Conductor { get; set; }
         public virtual DbSet<Delegacion> Delegacion { get; set; }
         public virtual DbSet<Dictamen> Dictamen { get; set; }

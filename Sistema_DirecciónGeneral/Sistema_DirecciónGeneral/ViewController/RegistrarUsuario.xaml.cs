@@ -28,6 +28,7 @@ namespace Sistema_DirecciónGeneral.ViewController
         {
             InitializeComponent();
             LlenarDelegacion();
+            LlenarCargo();
             this.idUsuario = idUsuario;
             if (this.idUsuario > 0)
             {
@@ -47,7 +48,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                 txt_apellidos.Text = userEdit.apellidos;
                 txt_user.Text = userEdit.usuario1;
                 txt_contrasenia.Text = userEdit.contrasenia;
-                cb_cargo.Text = userEdit.cargo;
+                cb_cargo.SelectedIndex = userEdit.idCargo - 1;
                 cb_delegacion.SelectedIndex = userEdit.idDelegación - 1;
                 btn_RegistrarUsuario.Content = "Actualizar";
             }
@@ -71,6 +72,17 @@ namespace Sistema_DirecciónGeneral.ViewController
             }
         }
 
+        private void LlenarCargo()
+        {
+            SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
+            var list = db.Cargo.ToList();
+            if (list.Count() > 0)
+            {
+                cb_cargo.ItemsSource = list;
+                cb_cargo.DisplayMemberPath = "tipoCargo";
+                cb_cargo.SelectedValue = "idCargo";
+            }
+        }
 
 
         private void btn_RegistrarUsuario_Click(object sender, RoutedEventArgs e)
@@ -80,11 +92,11 @@ namespace Sistema_DirecciónGeneral.ViewController
             string username = txt_user.Text;
             string contrasenia = txt_contrasenia.Text;
             int idDelegacion = cb_delegacion.SelectedIndex + 1;
-            string cargo = cb_cargo.Text;
+            int idCargo = cb_cargo.SelectedIndex + 1;
 
             int idUserAux = idUsuario;
 
-            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(contrasenia) || string.IsNullOrEmpty(cargo))
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(contrasenia) || string.IsNullOrEmpty(idCargo.ToString()))
             {
                 MessageBox.Show("Campos Vacios...", "Error");
                 return;
@@ -102,7 +114,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                             usuario1 = username,
                             contrasenia = contrasenia,
                             idDelegación = idDelegacion,
-                            cargo = cargo
+                            idCargo = idCargo
                         };
                         db.Usuario.Add(usuarioNew);
                         db.SaveChanges();
@@ -119,7 +131,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                         userEdit.apellidos = txt_apellidos.Text;
                         userEdit.usuario1 = txt_user.Text;
                         userEdit.contrasenia = txt_contrasenia.Text;
-                        userEdit.cargo = cb_cargo.Text;
+                        userEdit.idCargo = cb_cargo.SelectedIndex + 1;
                         userEdit.idDelegación = cb_delegacion.SelectedIndex + 1;
                         db.Entry(userEdit).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();

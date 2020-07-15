@@ -14,18 +14,13 @@ namespace Sistema_DirecciónGeneral.Modelo
     
     public partial class Dictamen
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Dictamen()
-        {
-            this.Reporte = new HashSet<Reporte>();
-        }
-    
         public string folio { get; set; }
         public string descripcion { get; set; }
         public System.DateTime fechaHora { get; set; }
         public int idUsuario { get; set; }
+        public int idReporte { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reporte> Reporte { get; set; }
+        public virtual Reporte Reporte { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

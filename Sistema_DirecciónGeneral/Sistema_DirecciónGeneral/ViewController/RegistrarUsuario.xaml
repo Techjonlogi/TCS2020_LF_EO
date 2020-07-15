@@ -26,12 +26,7 @@
                 <TextBox x:Name="txt_apellidos" HorizontalAlignment="Left" Height="42" Margin="291,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.444,0.47"/>
                 <TextBox x:Name="txt_user" HorizontalAlignment="Left" Height="42" Margin="291,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
                 <TextBox x:Name="txt_contrasenia" HorizontalAlignment="Left" Height="42" Margin="291,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.246,-0.01"/>
-                <ComboBox x:Name="cb_cargo" HorizontalAlignment="Left" Margin="291,366,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.665,0.42">
-                    <ComboBoxItem>Administrativo</ComboBoxItem>
-                    <ComboBoxItem>Perito</ComboBoxItem>
-                    <ComboBoxItem>Soporte</ComboBoxItem>
-                    <ComboBoxItem>Atención</ComboBoxItem>
-                </ComboBox>
+                <ComboBox x:Name="cb_cargo" ItemsSource="{Binding Cargo}" HorizontalAlignment="Left" Margin="291,366,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.665,0.42"/>
                 <Label Content="Delegación" HorizontalAlignment="Left" Margin="59,272,0,0" VerticalAlignment="Top" Width="201" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <ComboBox x:Name="cb_delegacion" ItemsSource="{Binding Delegacion}" HorizontalAlignment="Left" Margin="291,272,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
                 <Button x:Name="btn_RegistrarUsuario" HorizontalAlignment="Center" Content="Registrar Usuario" FontFamily="Impact" FontSize="14" Width="202" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="455,442,222.2,227.8" Height="Auto" Click="btn_RegistrarUsuario_Click"/>

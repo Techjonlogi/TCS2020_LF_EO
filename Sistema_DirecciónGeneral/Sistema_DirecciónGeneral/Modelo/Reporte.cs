@@ -17,21 +17,19 @@ namespace Sistema_DirecciónGeneral.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Reporte()
         {
+            this.Dictamen = new HashSet<Dictamen>();
             this.VehiculoReporte = new HashSet<VehiculoReporte>();
         }
     
         public int idReporte { get; set; }
-        public string calle { get; set; }
-        public string colonia { get; set; }
-        public string codigoPostal { get; set; }
+        public string direccion { get; set; }
         public int numCarrosInvolucrados { get; set; }
-        public bool evidencia { get; set; }
-        public string folio { get; set; }
         public int idDelegación { get; set; }
-        public Nullable<int> idImagen { get; set; }
+        public Nullable<int> idImagenes { get; set; }
     
         public virtual Delegacion Delegacion { get; set; }
-        public virtual Dictamen Dictamen { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dictamen> Dictamen { get; set; }
         public virtual Imagenes Imagenes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehiculoReporte> VehiculoReporte { get; set; }

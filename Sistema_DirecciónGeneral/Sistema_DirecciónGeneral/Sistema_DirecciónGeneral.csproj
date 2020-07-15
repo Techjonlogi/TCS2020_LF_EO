@@ -147,6 +147,8 @@
       <DependentUpon>MensajeEnviado.xaml</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IDelegacion.cs" />
+    <Compile Include="Interfaces\IDictamen.cs" />
+    <Compile Include="Interfaces\IReporte.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
     <Compile Include="Modelo\Cargo.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
@@ -188,6 +190,9 @@
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sysdiagrams.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Usuario.cs">

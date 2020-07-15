@@ -12,16 +12,12 @@ namespace Sistema_DirecciónGeneral.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Dictamen
+    public partial class sysdiagrams
     {
-        public string folio { get; set; }
-        public string descripcion { get; set; }
-        public string responsable { get; set; }
-        public System.DateTime fechaHora { get; set; }
-        public int idUsuario { get; set; }
-        public int idReporte { get; set; }
-    
-        public virtual Reporte Reporte { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

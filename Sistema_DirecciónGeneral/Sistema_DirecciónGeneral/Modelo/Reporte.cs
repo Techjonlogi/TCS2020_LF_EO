@@ -26,6 +26,7 @@ namespace Sistema_DirecciónGeneral.Modelo
         public int numCarrosInvolucrados { get; set; }
         public int idDelegación { get; set; }
         public Nullable<int> idImagenes { get; set; }
+        public System.DateTime fechaHora { get; set; }
     
         public virtual Delegacion Delegacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

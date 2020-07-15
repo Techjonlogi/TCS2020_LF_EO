@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sistema_DirecciónGeneral.Interfaces;
+using Sistema_DirecciónGeneral.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,25 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// </summary>
     public partial class DetallesReporte : UserControl
     {
-        public DetallesReporte()
+        IReporte itActualizar;
+        int idReporte = 0;
+        
+        public DetallesReporte(int idReporte, IReporte itActualizar)
         {
             InitializeComponent();
+            this.idReporte = idReporte;
+            this.itActualizar = itActualizar;
+            CargarDetallesReportes();
+        }
+
+        private void CargarDetallesReportes()
+        {
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                Reporte reporte = db.Reporte.Find(idReporte);
+                txt_direccion.Text = reporte.direccion;
+                
+            }
         }
 
         private void Button_Salir(object sender, RoutedEventArgs e)
@@ -29,5 +47,9 @@ namespace Sistema_DirecciónGeneral.ViewController
             Application.Current.Shutdown();
         }
 
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
     }
 }

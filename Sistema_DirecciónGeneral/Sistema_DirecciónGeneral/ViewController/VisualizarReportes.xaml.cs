@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sistema_DirecciónGeneral.Interfaces;
+using Sistema_DirecciónGeneral.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +19,40 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para VisualizarReportes.xaml
     /// </summary>
-    public partial class VisualizarReportes : UserControl
+    public partial class VisualizarReportes : UserControl, IReporte
     {
         public VisualizarReportes()
         {
             InitializeComponent();
-            btnVolver.Visibility = Visibility.Hidden;
-            btnFinalizarDictamen.Visibility = Visibility.Hidden;
+            gridDictamen.Children.Clear();
+            LlenarTablaReportes();
+
         }
 
+        private void LlenarTablaReportes()
+        {
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                var query = (from r in db.Reporte
+                             join d in db.Delegacion on r.idDelegación equals d.idDelegacion
+                             join dic in db.Dictamen on r.idReporte equals dic.idReporte
+                             join v in db.Vehiculo on dic.responsable equals v.placas
+                             join c in db.Conductor on v.idConductor equals c.idConductor
+                             select new
+                             {
+                                 idReporte = r.idReporte,
+                                 direccion = r.direccion,
+                                 numCarrosInvolucrados = r.numCarrosInvolucrados,
+                                 idDelegación = r.idDelegación,
+                                 idImagenes = r.idImagenes,
+                                 delegacion = d.nombre,
+                                 folio = dic.folio,
+                                 nombre = c.nombre +" "+ c.apellidos                               
+                             }).ToList();
+                dgReportes.ItemsSource = query;
+                
+            }
+        }
 
         private void Button_Salir(object sender, RoutedEventArgs e)
         {
@@ -34,59 +61,31 @@ namespace Sistema_DirecciónGeneral.ViewController
 
         private void BtnDictaminar_Click(object sender, RoutedEventArgs e)
         {
-            if (gridDictamen.Children.Count < 1)
-            {
-                gridDictamen.Children.Clear();
-                gridDictamen.Children.Add(new DictaminarReporte());
+            int idReporte = (int)((Button)sender).CommandParameter;
 
-                btnVolver.Visibility = Visibility.Visible;
-                btnVolver.Content = "Cancelar";
-                btnFinalizarDictamen.Visibility = Visibility.Visible;
+            DictaminarReporte dictaminar = new DictaminarReporte(idReporte, this);
+            gridDictamen.Children.Clear();
+            gridDictamen.Children.Add(dictaminar);
 
-                btnDictaminarReporte.Visibility = Visibility.Hidden;
-                btnVerDetalles.Visibility = Visibility.Hidden;
-            }
-
+            LlenarTablaReportes();
         }
 
 
         private void BtnVerDetalles_Click(object sender, RoutedEventArgs e)
         {
-            if (gridDetalles.Children.Count < 1)
-            {
-                gridDetalles.Children.Clear();
-                gridDetalles.Children.Add(new DetallesReporte());
+            int idReporte = (int)((Button)sender).CommandParameter;
+            //string folio = dgReportes.Items.1;
 
-                btnVolver.Visibility = Visibility.Visible;
-                btnVolver.Content = "Volver";
+            DetallesReporte detalles = new DetallesReporte(idReporte, this);
+            gridDictamen.Children.Clear();
+            gridDictamen.Children.Add(detalles);
 
-                btnDictaminarReporte.Visibility = Visibility.Hidden;
-                btnVerDetalles.Visibility = Visibility.Hidden;
-            }
+            LlenarTablaReportes();
         }
 
-        private void BtnVolver_Click(object sender, RoutedEventArgs e)
+        public void Actualizar(int idReporte)
         {
-            if (gridDetalles.Children.Count > 0)
-            {
-                btnVolver.Visibility = Visibility.Hidden;
-
-                btnDictaminarReporte.Visibility = Visibility.Visible;
-                btnVerDetalles.Visibility = Visibility.Visible;
-
-                gridDetalles.Children.RemoveAt(0);
-            }
-
-            if (gridDictamen.Children.Count > 0)
-            {
-                btnVolver.Visibility = Visibility.Hidden;
-                btnFinalizarDictamen.Visibility = Visibility.Hidden;
-
-                btnDictaminarReporte.Visibility = Visibility.Visible;
-                btnVerDetalles.Visibility = Visibility.Visible;
-
-                gridDictamen.Children.RemoveAt(0);
-            }
+            LlenarTablaReportes();
         }
     }
 }

@@ -12,15 +12,15 @@
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.4}" Background="#FFB6B6B6" Margin="0,0,-0.2,0.2">
 
             <Grid>
+                <Button x:Name="btn_dictaminar" HorizontalAlignment="Center" Content="Finalizar dictamen" FontFamily="Impact" FontSize="14" Width="202" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="383,364,156.6,242.2" Height="Auto" Click="btn_dictaminar_Click"/>
+                <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="107" Background="#FFC13434" BorderBrush="{x:Null}" Margin="141,364,493.6,242.2" Height="Auto" Click="btnVolver_Click" />
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="707"/>
-                <Label Content="Dictaminar Reporte" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="707" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <Label Content="Folio:" HorizontalAlignment="Left" Margin="0,121,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Seleccione el reporte que desea dictaminar" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="707" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <ComboBox HorizontalAlignment="Left" Margin="219,121,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
+                <Label Content="Dictaminar Reporte" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="732" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
+                <Label Content="Seleccione las placas del vehículo responsable y una descripción" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="732" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Descripción" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="219,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" VerticalContentAlignment="Bottom"/>
-                <Label Content="Responsabilidad" HorizontalAlignment="Left" Margin="0,168,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <ComboBox HorizontalAlignment="Left" Margin="219,168,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
+                <TextBox x:Name="txt_descripcion" HorizontalAlignment="Left" Height="42" Margin="219,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" VerticalContentAlignment="Bottom"/>
+                <Label Content="Responsable" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <ComboBox x:Name="cb_responsable" ItemsSource="{Binding auto}" HorizontalAlignment="Left" Margin="219,140,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
 
             </Grid>
 

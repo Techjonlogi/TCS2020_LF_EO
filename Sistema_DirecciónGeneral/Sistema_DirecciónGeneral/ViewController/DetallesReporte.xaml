@@ -14,11 +14,11 @@
             <Grid>
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="879"/>
                 <Label Content="Reporte detallado" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="879" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <Label Content="Conductor" HorizontalAlignment="Left" Margin="0,128,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="179,411,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label Content="Responsable" HorizontalAlignment="Left" Margin="0,128,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label x:Name="txt_direccion" HorizontalAlignment="Left" Height="42" Margin="179,440,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Vehículo" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Calle" HorizontalAlignment="Left" Margin="-5,411,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Responsable" HorizontalAlignment="Left" Margin="0,86,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Label Content="Dirección" HorizontalAlignment="Left" Margin="-5,440,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Dictamen" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Involucrados" HorizontalAlignment="Left" Margin="495,86,0,0" VerticalAlignment="Top" Width="383" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF36342F" Foreground="#DDFFFFFF" />
 
                 <DataGrid x:Name="dataGridInvolucrados" SelectionMode="Single"  AutoGenerateColumns="False" IsReadOnly="True" Height="202" Margin="494,127,0.2,0" VerticalAlignment="Top" ItemsSource="{Binding}" RowBackground="#FFF1E6E6" CanUserResizeRows="False">
@@ -30,21 +30,20 @@
                 <Label Content="Dirección" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Fotografías" HorizontalAlignment="Left" Margin="494,353,0,0" VerticalAlignment="Top" Width="384" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF36342F" Foreground="#DDFFFFFF" />
                 <DataGrid HorizontalAlignment="Left" Height="238" Margin="495,395,0,0" VerticalAlignment="Top" Width="384" Background="#FFC7C7C7"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="179,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <Label Content="Folio" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="179,39,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="179,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <Label Content="Colonia" HorizontalAlignment="Left" Margin="-5,458,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="179,458,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <Label Content="Fecha y Hora " HorizontalAlignment="Left" Margin="5,222,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="179,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label x:Name="txt_responsable" HorizontalAlignment="Left" Height="42" Margin="214,128,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label Content="Folio" HorizontalAlignment="Left" Margin="0,81,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label x:Name="txt_folio" HorizontalAlignment="Left" Height="42" Margin="214,81,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label x:Name="txt_vehiculo" HorizontalAlignment="Left" Height="42" Margin="214,175,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label Content="Fecha y Hora" HorizontalAlignment="Left" Margin="5,222,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label x:Name="txt_fechaHora" HorizontalAlignment="Left" Height="42" Margin="214,222,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Perito " HorizontalAlignment="Left" Margin="5,269,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="179,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label x:Name="txt_perito" HorizontalAlignment="Left" Height="42" Margin="214,269,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Estatus" HorizontalAlignment="Left" Margin="416,39,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="595,39,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label x:Name="txt_estatus" HorizontalAlignment="Left" Height="42" Margin="595,39,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Delegación" HorizontalAlignment="Left" Margin="-5,505,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="179,500,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label x:Name="txt_delegacion" HorizontalAlignment="Left" Height="42" Margin="179,500,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
 
+                <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="111" Background="#FFC13434" BorderBrush="{x:Null}" Margin="179,590,589.2,27.2" Height="Auto" Click="btnVolver_Click" />
             </Grid>
 
         </materialDesign:TransitioningContent>

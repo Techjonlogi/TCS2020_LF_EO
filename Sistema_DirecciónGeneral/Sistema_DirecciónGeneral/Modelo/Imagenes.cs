@@ -14,7 +14,13 @@ namespace Sistema_DirecciónGeneral.Modelo
     
     public partial class Imagenes
     {
-        public int idImagenes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Imagenes()
+        {
+            this.Reporte = new HashSet<Reporte>();
+        }
+    
+        public int idImagen { get; set; }
         public byte[] imagen1 { get; set; }
         public byte[] imagen2 { get; set; }
         public byte[] imagen3 { get; set; }
@@ -23,5 +29,8 @@ namespace Sistema_DirecciónGeneral.Modelo
         public byte[] imagen6 { get; set; }
         public byte[] imagen7 { get; set; }
         public byte[] imagen8 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reporte> Reporte { get; set; }
     }
 }

@@ -181,6 +181,12 @@
     <Compile Include="Modelo\Reporte.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Usuario.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>

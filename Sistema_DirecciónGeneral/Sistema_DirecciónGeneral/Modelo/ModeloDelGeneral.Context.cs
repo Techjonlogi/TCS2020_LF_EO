@@ -30,12 +30,12 @@ namespace Sistema_DirecciónGeneral.Modelo
         public virtual DbSet<Conductor> Conductor { get; set; }
         public virtual DbSet<Delegacion> Delegacion { get; set; }
         public virtual DbSet<Dictamen> Dictamen { get; set; }
+        public virtual DbSet<Imagenes> Imagenes { get; set; }
         public virtual DbSet<Municipio> Municipio { get; set; }
         public virtual DbSet<Reporte> Reporte { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Vehiculo> Vehiculo { get; set; }
         public virtual DbSet<VehiculoReporte> VehiculoReporte { get; set; }
-        public virtual DbSet<Imagenes> Imagenes { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -92,9 +92,31 @@ namespace Sistema_DirecciónGeneral.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
     
-       
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
     
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
         {

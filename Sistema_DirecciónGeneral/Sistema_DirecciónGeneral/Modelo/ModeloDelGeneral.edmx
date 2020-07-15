@@ -41,9 +41,9 @@
         </EntityType>
         <EntityType Name="Imagenes">
           <Key>
-            <PropertyRef Name="idImagenes" />
+            <PropertyRef Name="idImagen" />
           </Key>
-          <Property Name="idImagenes" Type="int" Nullable="false" />
+          <Property Name="idImagen" Type="int" Nullable="false" />
           <Property Name="imagen1" Type="varbinary(max)" />
           <Property Name="imagen2" Type="varbinary(max)" />
           <Property Name="imagen3" Type="varbinary(max)" />
@@ -140,6 +140,18 @@
             </Principal>
             <Dependent Role="Reporte">
               <PropertyRef Name="folio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reporte_Imagenes">
+          <End Role="Imagenes" Type="Self.Imagenes" Multiplicity="0..1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imagenes">
+              <PropertyRef Name="idImagen" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="idImagen" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -244,6 +256,10 @@
             <End Role="Dictamen" EntitySet="Dictamen" />
             <End Role="Reporte" EntitySet="Reporte" />
           </AssociationSet>
+          <AssociationSet Name="FK_Reporte_Imagenes" Association="Self.FK_Reporte_Imagenes">
+            <End Role="Imagenes" EntitySet="Imagenes" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
           <AssociationSet Name="FK_Usuario_Delegacion" Association="Self.FK_Usuario_Delegacion">
             <End Role="Delegacion" EntitySet="Delegacion" />
             <End Role="Usuario" EntitySet="Usuario" />
@@ -266,43 +282,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="SistemaReportesVehiculosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="SistemaReportesVehiculosEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Conductor" EntityType="SistemaReportesVehiculosModel.Conductor" />
-          <EntitySet Name="Delegacion" EntityType="SistemaReportesVehiculosModel.Delegacion" />
-          <EntitySet Name="Dictamen" EntityType="SistemaReportesVehiculosModel.Dictamen" />
-          <EntitySet Name="Municipio" EntityType="SistemaReportesVehiculosModel.Municipio" />
-          <EntitySet Name="Reporte" EntityType="SistemaReportesVehiculosModel.Reporte" />
-          <EntitySet Name="Usuario" EntityType="SistemaReportesVehiculosModel.Usuario" />
-          <EntitySet Name="Vehiculo" EntityType="SistemaReportesVehiculosModel.Vehiculo" />
-          <EntitySet Name="VehiculoReporte" EntityType="SistemaReportesVehiculosModel.VehiculoReporte" />
-          <EntitySet Name="Imagenes" EntityType="SistemaReportesVehiculosModel.Imagenes" />
-          <AssociationSet Name="FK_Vehiculo_Conductor" Association="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor">
-            <End Role="Conductor" EntitySet="Conductor" />
-            <End Role="Vehiculo" EntitySet="Vehiculo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Delegacion_Municipio" Association="SistemaReportesVehiculosModel.FK_Delegacion_Municipio">
-            <End Role="Municipio" EntitySet="Municipio" />
-            <End Role="Delegacion" EntitySet="Delegacion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Reporte_Delegacion" Association="SistemaReportesVehiculosModel.FK_Reporte_Delegacion">
-            <End Role="Delegacion" EntitySet="Delegacion" />
-            <End Role="Reporte" EntitySet="Reporte" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Delegacion" Association="SistemaReportesVehiculosModel.FK_Usuario_Delegacion">
-            <End Role="Delegacion" EntitySet="Delegacion" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Reporte_Dictamen" Association="SistemaReportesVehiculosModel.FK_Reporte_Dictamen">
-            <End Role="Dictamen" EntitySet="Dictamen" />
-            <End Role="Reporte" EntitySet="Reporte" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VehiculoReporte_Reporte" Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte">
-            <End Role="Reporte" EntitySet="Reporte" />
-            <End Role="VehiculoReporte" EntitySet="VehiculoReporte" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VehiculoReporte_Vehiculo" Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo">
-            <End Role="Vehiculo" EntitySet="Vehiculo" />
-            <End Role="VehiculoReporte" EntitySet="VehiculoReporte" />
-          </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -333,7 +312,59 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-        </EntityContainer>
+          <EntitySet Name="Conductor" EntityType="SistemaReportesVehiculosModel.Conductor" />
+          <EntitySet Name="Delegacion" EntityType="SistemaReportesVehiculosModel.Delegacion" />
+          <EntitySet Name="Dictamen" EntityType="SistemaReportesVehiculosModel.Dictamen" />
+          <EntitySet Name="Imagenes" EntityType="SistemaReportesVehiculosModel.Imagenes" />
+          <EntitySet Name="Municipio" EntityType="SistemaReportesVehiculosModel.Municipio" />
+          <EntitySet Name="Reporte" EntityType="SistemaReportesVehiculosModel.Reporte" />
+          <EntitySet Name="Usuario" EntityType="SistemaReportesVehiculosModel.Usuario" />
+          <EntitySet Name="Vehiculo" EntityType="SistemaReportesVehiculosModel.Vehiculo" />
+          <EntitySet Name="VehiculoReporte" EntityType="SistemaReportesVehiculosModel.VehiculoReporte" />
+          <AssociationSet Name="FK_Vehiculo_Conductor" Association="SistemaReportesVehiculosModel.FK_Vehiculo_Conductor">
+            <End Role="Conductor" EntitySet="Conductor" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Delegacion_Municipio" Association="SistemaReportesVehiculosModel.FK_Delegacion_Municipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Delegacion" EntitySet="Delegacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reporte_Delegacion" Association="SistemaReportesVehiculosModel.FK_Reporte_Delegacion">
+            <End Role="Delegacion" EntitySet="Delegacion" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Delegacion" Association="SistemaReportesVehiculosModel.FK_Usuario_Delegacion">
+            <End Role="Delegacion" EntitySet="Delegacion" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reporte_Dictamen" Association="SistemaReportesVehiculosModel.FK_Reporte_Dictamen">
+            <End Role="Dictamen" EntitySet="Dictamen" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reporte_Imagenes" Association="SistemaReportesVehiculosModel.FK_Reporte_Imagenes">
+            <End Role="Imagenes" EntitySet="Imagenes" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiculoReporte_Reporte" Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte">
+            <End Role="Reporte" EntitySet="Reporte" />
+            <End Role="VehiculoReporte" EntitySet="VehiculoReporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiculoReporte_Vehiculo" Association="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="VehiculoReporte" EntitySet="VehiculoReporte" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
         <EntityType Name="Conductor">
           <Key>
             <PropertyRef Name="idConductor" />
@@ -373,6 +404,21 @@
           <Property Name="idUsuario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Reporte" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" FromRole="Dictamen" ToRole="Reporte" />
         </EntityType>
+        <EntityType Name="Imagenes">
+          <Key>
+            <PropertyRef Name="idImagen" />
+          </Key>
+          <Property Name="idImagen" Type="Int32" Nullable="false" />
+          <Property Name="imagen1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagen4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagen5" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagen6" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagen7" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagen8" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Reporte" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Imagenes" FromRole="Imagenes" ToRole="Reporte" />
+        </EntityType>
         <EntityType Name="Municipio">
           <Key>
             <PropertyRef Name="idMunicipio" />
@@ -396,6 +442,7 @@
           <Property Name="idImagen" Type="Int32" />
           <NavigationProperty Name="Delegacion" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Delegacion" FromRole="Reporte" ToRole="Delegacion" />
           <NavigationProperty Name="Dictamen" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Dictamen" FromRole="Reporte" ToRole="Dictamen" />
+          <NavigationProperty Name="Imagenes" Relationship="SistemaReportesVehiculosModel.FK_Reporte_Imagenes" FromRole="Reporte" ToRole="Imagenes" />
           <NavigationProperty Name="VehiculoReporte" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" FromRole="Reporte" ToRole="VehiculoReporte" />
         </EntityType>
         <EntityType Name="Usuario">
@@ -435,20 +482,6 @@
           <Property Name="idReporte" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Reporte" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Reporte" FromRole="VehiculoReporte" ToRole="Reporte" />
           <NavigationProperty Name="Vehiculo" Relationship="SistemaReportesVehiculosModel.FK_VehiculoReporte_Vehiculo" FromRole="VehiculoReporte" ToRole="Vehiculo" />
-        </EntityType>
-        <EntityType Name="Imagenes">
-          <Key>
-            <PropertyRef Name="idImagenes" />
-          </Key>
-          <Property Name="idImagenes" Type="Int32" Nullable="false" />
-          <Property Name="imagen1" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen4" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen5" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen6" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen7" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen8" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Vehiculo_Conductor">
           <End Type="SistemaReportesVehiculosModel.Conductor" Role="Conductor" Multiplicity="1" />
@@ -510,6 +543,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Reporte_Imagenes">
+          <End Type="SistemaReportesVehiculosModel.Imagenes" Role="Imagenes" Multiplicity="0..1" />
+          <End Type="SistemaReportesVehiculosModel.Reporte" Role="Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imagenes">
+              <PropertyRef Name="idImagen" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="idImagen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_VehiculoReporte_Reporte">
           <End Type="SistemaReportesVehiculosModel.Reporte" Role="Reporte" Multiplicity="1" />
           <End Type="SistemaReportesVehiculosModel.VehiculoReporte" Role="VehiculoReporte" Multiplicity="*" />
@@ -534,23 +579,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SistemaReportesVehiculosModelStoreContainer" CdmEntityContainer="SistemaReportesVehiculosEntities">
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SistemaReportesVehiculosModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SistemaReportesVehiculosModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SistemaReportesVehiculosModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SistemaReportesVehiculosModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SistemaReportesVehiculosModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SistemaReportesVehiculosModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SistemaReportesVehiculosModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SistemaReportesVehiculosModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SistemaReportesVehiculosModel.Store.sp_upgraddiagrams" />
           <EntitySetMapping Name="Conductor">
             <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Conductor">
               <MappingFragment StoreEntitySet="Conductor">
@@ -585,6 +643,21 @@
                 <ScalarProperty Name="fechaHora" ColumnName="fechaHora" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="folio" ColumnName="folio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imagenes">
+            <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Imagenes">
+              <MappingFragment StoreEntitySet="Imagenes">
+                <ScalarProperty Name="imagen8" ColumnName="imagen8" />
+                <ScalarProperty Name="imagen7" ColumnName="imagen7" />
+                <ScalarProperty Name="imagen6" ColumnName="imagen6" />
+                <ScalarProperty Name="imagen5" ColumnName="imagen5" />
+                <ScalarProperty Name="imagen4" ColumnName="imagen4" />
+                <ScalarProperty Name="imagen3" ColumnName="imagen3" />
+                <ScalarProperty Name="imagen2" ColumnName="imagen2" />
+                <ScalarProperty Name="imagen1" ColumnName="imagen1" />
+                <ScalarProperty Name="idImagen" ColumnName="idImagen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -647,46 +720,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Imagenes">
-            <EntityTypeMapping TypeName="SistemaReportesVehiculosModel.Imagenes">
-              <MappingFragment StoreEntitySet="Imagenes">
-                <ScalarProperty Name="imagen8" ColumnName="imagen8" />
-                <ScalarProperty Name="imagen7" ColumnName="imagen7" />
-                <ScalarProperty Name="imagen6" ColumnName="imagen6" />
-                <ScalarProperty Name="imagen5" ColumnName="imagen5" />
-                <ScalarProperty Name="imagen4" ColumnName="imagen4" />
-                <ScalarProperty Name="imagen3" ColumnName="imagen3" />
-                <ScalarProperty Name="imagen2" ColumnName="imagen2" />
-                <ScalarProperty Name="imagen1" ColumnName="imagen1" />
-                <ScalarProperty Name="idImagenes" ColumnName="idImagenes" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SistemaReportesVehiculosModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SistemaReportesVehiculosModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SistemaReportesVehiculosModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SistemaReportesVehiculosModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SistemaReportesVehiculosModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SistemaReportesVehiculosModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SistemaReportesVehiculosModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SistemaReportesVehiculosModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SistemaReportesVehiculosModel.Store.sp_upgraddiagrams" />
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

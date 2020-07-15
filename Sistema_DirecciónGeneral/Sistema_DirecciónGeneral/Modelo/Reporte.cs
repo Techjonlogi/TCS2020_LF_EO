@@ -32,6 +32,7 @@ namespace Sistema_DirecciónGeneral.Modelo
     
         public virtual Delegacion Delegacion { get; set; }
         public virtual Dictamen Dictamen { get; set; }
+        public virtual Imagenes Imagenes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehiculoReporte> VehiculoReporte { get; set; }
     }

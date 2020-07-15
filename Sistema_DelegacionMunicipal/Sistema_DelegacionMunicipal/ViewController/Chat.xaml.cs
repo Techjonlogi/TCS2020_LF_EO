@@ -23,6 +23,8 @@ namespace Sistema_DelegacionMunicipal.ViewController
         EnvioMensajeChat envioMensajeChat = new EnvioMensajeChat();
         SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
 
+        private Socket socketCliente;
+
         int posicionMensaje = 0;
         bool gridAmpliado = false;
         string mensaje = "";
@@ -31,16 +33,15 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         List<string> listaConectados = new List<string>();
 
-        public Chat(int idUser, string usuarioEmisor, string delegacionEmisor)
+        public Chat(int idUser, string usuarioEmisor, string delegacionEmisor, Socket socketCliente)
         {
             InitializeComponent();
             this.usuarioEmisor = usuarioEmisor;
             this.delegacionEmisor = delegacionEmisor;
+            this.socketCliente = socketCliente;
 
             intentarConexion();
         }
-
-        
 
 
         //Verificar que el servidor esté activo
@@ -229,12 +230,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         // MANEJO DE MENSAJES
 
-        private Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
         private void Conectar()
         {
             socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             LoopConnect();
+
             socketCliente.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), socketCliente);
             
             
@@ -281,7 +281,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
             envioMensajeChat = Newtonsoft.Json.JsonConvert.DeserializeObject<EnvioMensajeChat>(mensaje);
 
-            if (envioMensajeChat.contenidoMensaje == null)
+            if (envioMensajeChat.contenidoMensaje == null && envioMensajeChat.reporteVerificacion == null)
             {
                 ClienteConectado cc = Newtonsoft.Json.JsonConvert.DeserializeObject<ClienteConectado>(objetoSerializado);
                 //Llenar lista con nombre de usuario y delegacion
@@ -300,12 +300,16 @@ namespace Sistema_DelegacionMunicipal.ViewController
                     }
                 });
             }
-            else
+            else if (envioMensajeChat.contenidoMensaje != null)
             {
                 this.Dispatcher.Invoke(() =>
                 {
                     recibirMensaje(envioMensajeChat.contenidoMensaje, envioMensajeChat.usuarioEmisor);
                 });
+            }
+            else if (envioMensajeChat.reporteVerificacion != null && envioMensajeChat.contenidoMensaje == null)
+            {
+                MessageBox.Show("REPORTE RECIBIDO");
             }
 
             
@@ -346,6 +350,17 @@ namespace Sistema_DelegacionMunicipal.ViewController
             if (socketCliente.Connected)
             {
                 byte[] buffer = Encoding.Default.GetBytes(serializarMensaje(msj, false, true));
+                socketCliente.Send(buffer);
+            }
+        }
+
+
+        //Metodo de envio para el reporte de la clase LevantarReporte
+        public void EnviarReporte(string infoReporte)
+        {
+            if (socketCliente.Connected)
+            {
+                byte[] buffer = Encoding.Default.GetBytes(infoReporte);
                 socketCliente.Send(buffer);
             }
         }

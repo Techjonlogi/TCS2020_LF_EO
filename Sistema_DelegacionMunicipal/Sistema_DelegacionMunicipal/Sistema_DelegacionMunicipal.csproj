@@ -150,6 +150,10 @@
     </Compile>
     <Compile Include="Classes\ClienteConectado.cs" />
     <Compile Include="Classes\EnvioMensajeChat.cs" />
+    <Compile Include="Classes\InformacionReporteEnvio.cs" />
+    <Compile Include="Modelo\Cargo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Conductor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -157,6 +161,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Dictamen.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Imagenes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Model1.Context.cs">

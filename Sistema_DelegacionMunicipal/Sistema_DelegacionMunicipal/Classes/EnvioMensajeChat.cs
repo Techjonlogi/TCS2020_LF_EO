@@ -11,6 +11,7 @@ namespace Sistema_DelegacionMunicipal.Classes
         public string delegacionEmisor { get; set; }
         public bool isMensaje { get; set; }
         public bool isReporte { get; set; }
+        public string reporteVerificacion { get; set; }
 
         public EnvioMensajeChat()
         {
@@ -24,6 +25,7 @@ namespace Sistema_DelegacionMunicipal.Classes
             this.delegacionEmisor = delegacionEmisor;
             this.isMensaje = isMensaje;
             this.isReporte = isReporte;
+            reporteVerificacion = " ";
         }
 
     }

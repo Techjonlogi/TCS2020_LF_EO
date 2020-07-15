@@ -1,21 +1,17 @@
 ﻿using Microsoft.Win32;
+using Sistema_DelegacionMunicipal.Classes;
 using Sistema_DelegacionMunicipal.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Sistema_DelegacionMunicipal.ViewController
 {
@@ -26,19 +22,37 @@ namespace Sistema_DelegacionMunicipal.ViewController
     {
         SistemaReportesVehiculosEntities db;
         int idConductorSeleccionado = 0;
+        int idImagen = 0;
 
         List<Involucrado> listaInvolucrados = new List<Involucrado>();
-        List<int> idVehiculosInvolucradosSeleccionados = new List<int>();
+        List<string> placasVehiculosInvolucrados = new List<string>();
 
         List<string> listNombresConductores = new List<string>();
         List<string> listApellidosConductores = new List<string>();
         List<string> listMarcasVehiculos = new List<string>();
         List<string> listModelosVehiculos = new List<string>();
         List<int> listAniosVehiculos = new List<int>();
+        List<string> listPlacasVehiculos = new List<string>();
+
+        List<string> archivoImagen = new List<string>();
+        List<Stream> streamImagen = new List<Stream>();
+
+
+        int idDelegacionEmisor = 0;
+
+        Socket socketCliente;
+        Chat chat;
+        public LevantarReporte(int idDelegacionEmisor, Socket socketCliente, Chat chat)
+        {
+            this.idDelegacionEmisor = idDelegacionEmisor;
+            this.socketCliente = socketCliente;
+            this.chat = chat;
+            InitializeComponent();
+            
+        }
 
         public LevantarReporte()
         {
-            InitializeComponent();
 
         }
 
@@ -63,7 +77,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
             listNombresConductores = db.Conductor.Select(x => x.nombre).ToList();
             listApellidosConductores = db.Conductor.Select(x => x.apellidos).ToList();
             
-
         }
 
         public void llenarComboVehiculos()
@@ -83,7 +96,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
             listModelosVehiculos = db.Vehiculo.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.modelo).ToList();
             listAniosVehiculos = db.Vehiculo.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.anio).ToList();
 
-
+            listPlacasVehiculos = db.Vehiculo.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.placas).ToList();
         }
 
         private void cbConductores_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -102,6 +115,9 @@ namespace Sistema_DelegacionMunicipal.ViewController
                                  + " " + listModelosVehiculos[cbVehiculos.SelectedIndex] + " "
                                  + listAniosVehiculos[cbVehiculos.SelectedIndex];
 
+
+                placasVehiculosInvolucrados.Add(listPlacasVehiculos[cbVehiculos.SelectedIndex]);
+
                 listaInvolucrados.Add(new Involucrado(nombre, vehiculo));
                 dataGridInvolucrados.ItemsSource = null;
                 dataGridInvolucrados.ItemsSource = listaInvolucrados;
@@ -114,9 +130,10 @@ namespace Sistema_DelegacionMunicipal.ViewController
             llenarComboConductores();
         }
 
+
         private void btnSeleccionarFotografias_Click(object sender, RoutedEventArgs e)
         {
-            List<string> archivoImagen = new List<string>();
+            
 
             OpenFileDialog op = new OpenFileDialog();
 
@@ -127,9 +144,13 @@ namespace Sistema_DelegacionMunicipal.ViewController
             if (op.ShowDialog() == true)
             {
                 archivoImagen = op.FileNames.ToList();
+                streamImagen.Clear();
+                
 
-                for(int i = 0; i < archivoImagen.Count; i++)
+                for (int i = 0; i < archivoImagen.Count; i++)
                 {
+                    streamImagen.Add(op.OpenFiles()[i]);
+
                     switch (i)
                     {
                         case 0:
@@ -165,11 +186,147 @@ namespace Sistema_DelegacionMunicipal.ViewController
                             break;
 
                     }
-                    
+
                 }
-       
             }
         }
+
+
+
+        private void BtnLevantarReporte_Click(object sender, RoutedEventArgs e)
+        {
+            //GUARDAR LAS IMÁGENES EN LA BASE
+
+            Imagenes img = new Imagenes();
+
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                for (int i = 0; i < streamImagen.Count(); i++)
+                {
+                    byte[] file = null;
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        streamImagen[i].CopyTo(ms);
+                        file = ms.ToArray();
+                    }
+
+                    switch (i)
+                    {
+                        case 0:
+                            img.imagen1 = file;
+                            db.Imagenes.Add(img);
+                            break;
+                        case 1:
+                            img.imagen2 = file;
+                            db.Imagenes.Add(img);
+                            break;
+                        case 2:
+                            img.imagen3 = file;
+                            db.Imagenes.Add(img);
+                            break;
+                        case 3:
+                            img.imagen4 = file;
+                            db.Imagenes.Add(img);
+                            break;
+                        case 4:
+                            img.imagen5 = file;
+                            db.Imagenes.Add(img);
+                            break;
+                        case 5:
+                            img.imagen6 = file;
+                            db.Imagenes.Add(img);
+                            break;
+                        case 6:
+                            img.imagen7 = file;
+                            db.Imagenes.Add(img);
+                            break;
+                        case 7:
+                            img.imagen8 = file;
+                            db.Imagenes.Add(img);
+                            break;
+                    }
+                }
+                db.SaveChanges();
+            }
+
+
+            //GUARDAR TODO EN REPORTE DE LA BASE
+
+            int idReporte = 0;
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                //Buscar id de las imagenes
+                try
+                {
+                    idImagen = db.Imagenes.Select(x => x.idImagenes).Count();
+                }
+                catch
+                {
+                    MessageBox.Show("Error, no se pudo conseguir idImagen y no se guardo el reporte.");
+                    return;
+                }
+
+                //Guardar reporte
+                try
+                {
+                    Reporte reporte = new Reporte();
+                    reporte.direccion = txtDireccion.Text;
+                    reporte.numCarrosInvolucrados = listaInvolucrados.Count();
+                    reporte.idDelegación = idDelegacionEmisor;
+                    reporte.idImagenes = idImagen;
+
+                    db.Reporte.Add(reporte);
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Error, no se pudo guardar el reporte");
+                    return;
+                }
+                //Buscar id del reporte
+                try
+                {
+                    idReporte = db.Reporte.Select(x => x.idReporte).Count();
+                }
+                catch
+                {
+                    MessageBox.Show("Error, no se pudo conseguir idReporte.");
+                    return;
+                }
+
+                //Guardar matriculas de vehiculos de reporte
+                try
+                {
+                    VehiculoReporte vr = new VehiculoReporte();
+
+                    for (int i = 0; i < idReporte; i++)
+                    {
+                        vr.idReporte = idReporte;
+                        db.VehiculoReporte.Add(vr);
+                        vr.placas = placasVehiculosInvolucrados[i];
+                        db.VehiculoReporte.Add(vr);
+                        db.SaveChanges();
+                    }
+                }
+                catch
+                {
+                    
+                }
+            }
+
+            //Enviar notificación de reporte a Servidor
+            InformacionReporteEnvio infoNotificacionReporte = new InformacionReporteEnvio(false, true, " ");
+            EnviarNotificacionReporte(infoNotificacionReporte);
+        }
+
+        private void EnviarNotificacionReporte(InformacionReporteEnvio infoReporte)
+        {
+            string infoReporteSerializado = Newtonsoft.Json.JsonConvert.SerializeObject(infoReporte).ToString();
+            chat.EnviarReporte(infoReporteSerializado);
+
+            MessageBox.Show("Reporte guardado correctamente");
+        }
+
     }
 
 

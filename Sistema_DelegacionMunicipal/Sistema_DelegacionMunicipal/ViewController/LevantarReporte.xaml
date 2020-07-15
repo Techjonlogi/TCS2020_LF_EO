@@ -15,7 +15,7 @@
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
                 <Label Content="Levantar Reporte" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
                 <Label Content="Conductor" HorizontalAlignment="Left" Margin="0,146,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="203,426,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="249" FontSize="18" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="42" Margin="203,426,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="249" FontSize="18" VerticalContentAlignment="Bottom"/>
                 <Label Content="Vehículo" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label Content="Dirección" HorizontalAlignment="Left" Margin="0,426,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
 
@@ -66,13 +66,14 @@
                 <Button x:Name="btnAñadirInvolucrado" HorizontalAlignment="Center" Content="Añadir" FontFamily="Impact" FontSize="14" Width="144" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="179,293,556,318" Height="Auto" Click="btnAñadirInvolucrado_Click"/>
                 <Label Content="Involucrados añadidos" HorizontalAlignment="Left" Margin="494,81,0,0" VerticalAlignment="Top" Width="375" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FFA3081F" Foreground="#DDFFFFFF" />
 
-                <DataGrid x:Name="dataGridInvolucrados" ItemsSource="{Binding}" SelectionMode="Single" AutoGenerateColumns="False" IsReadOnly="True" Height="202" Margin="494,123,10,0" VerticalAlignment="Top" RowBackground="#FFF1E6E6" CanUserResizeRows="False" FontSize="14" Background="#FF959595">
+                <DataGrid x:Name="dataGridInvolucrados" ItemsSource="{Binding}" SelectionMode="Single" AutoGenerateColumns="False" IsReadOnly="True" Height="202" Margin="494,123,10,0" VerticalAlignment="Top" RowBackground="#FF959595" CanUserResizeRows="False" FontSize="14" Background="#FF959595">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn  Header="Conductor" Binding="{Binding nombreConductor}"  Width="195" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                         <DataGridTextColumn  Header="Vehículo" Binding="{Binding nombreVehiculo}" Width="163" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
 
                     </DataGrid.Columns>
+
 
                 </DataGrid>
 
@@ -81,7 +82,7 @@
                 <Label Content="3.- Agrega fotografías" HorizontalAlignment="Left" Margin="0,511,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Fotografías seleccionadas" HorizontalAlignment="Left" Margin="494,353,0,0" VerticalAlignment="Top" Width="375" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FFA3081F" Foreground="#DDFFFFFF" />
                 <Button x:Name="btnSeleccionarFotografias" HorizontalAlignment="Center" Content="Seleccionar Fotografías" FontFamily="Impact" FontSize="14" Width="174" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="166,588,539,23" Height="Auto" Click="btnSeleccionarFotografias_Click"/>
-                <Button HorizontalAlignment="Center" Content="Levantar Reporte" FontFamily="Impact" FontSize="14" Width="174" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="606,588,99,23" Height="Auto"/>
+                <Button HorizontalAlignment="Center" Content="Levantar Reporte" FontFamily="Impact" FontSize="14" Width="174" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="606,588,99,23" Height="Auto" Click="BtnLevantarReporte_Click"/>
                 <Label x:Name="labelMensajeVehiculos" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="203,246,0,0" VerticalAlignment="Top" Width="269" Height="42" FontSize="16"/>
                 <Label x:Name="labelMensajeConductores" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="203,188,0,0" VerticalAlignment="Top" Width="269" Height="42" FontSize="16"/>
 

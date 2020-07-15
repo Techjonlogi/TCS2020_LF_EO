@@ -60,6 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="ClienteConectado.cs" />
     <Compile Include="EnvioMensajeChat.cs" />
+    <Compile Include="InformacionReporteEnvio.cs" />
     <Compile Include="SocketServer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

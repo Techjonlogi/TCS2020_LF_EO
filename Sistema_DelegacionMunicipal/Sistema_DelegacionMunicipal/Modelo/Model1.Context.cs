@@ -25,9 +25,11 @@ namespace Sistema_DelegacionMunicipal.Modelo
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cargo> Cargo { get; set; }
         public virtual DbSet<Conductor> Conductor { get; set; }
         public virtual DbSet<Delegacion> Delegacion { get; set; }
         public virtual DbSet<Dictamen> Dictamen { get; set; }
+        public virtual DbSet<Imagenes> Imagenes { get; set; }
         public virtual DbSet<Municipio> Municipio { get; set; }
         public virtual DbSet<Reporte> Reporte { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }

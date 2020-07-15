@@ -51,7 +51,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
             }
             try
             {
-                //IQueryable query;
                 using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
                 {
                     Conductor conductor = new Conductor

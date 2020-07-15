@@ -130,10 +130,12 @@ namespace Servidor
 
                     //Deserializar objeto
 
+                    string reporteRecibido = texto;
                     EnvioMensajeChat mensajeChat = Newtonsoft.Json.JsonConvert.DeserializeObject<EnvioMensajeChat>(texto);
+                    
 
-                    //Añadir nuevo conectado a la lista
-                    if (!mensajeChat.isMensaje)
+                    //Añadir nuevo conectado a la lista si es que es mensaje de conexión
+                    if (!mensajeChat.isMensaje && !mensajeChat.isReporte)
                     {
                         listaClientesConectados.Add(mensajeChat.usuarioEmisor);
                         listaClienteDelegaciones.Add(mensajeChat.delegacionEmisor);
@@ -149,8 +151,13 @@ namespace Servidor
                         enviarListaATodos(respuesta);
                     }
 
+                    //Enviar reporte a dirección general en caso de ser un reporte
+                    if (mensajeChat.isReporte)
+                    {
+                        reenviarAGeneral(reporteRecibido);
+                    }
 
-                    //Reenviar respuesta con el contenido del mensaje
+                    //Reenviar respuesta con el contenido del mensaje si es que es mensaje de chat
 
                     if (mensajeChat.isMensaje)
                     {
@@ -214,6 +221,17 @@ namespace Servidor
 
             }
             
+        }
+
+        public void reenviarAGeneral(string reporteSerializado)
+        {
+            for (int i = 0; i < socketsClientes.Count; i++)
+            {
+                if (listaClienteDelegaciones[i] == "Dir General")
+                {
+                    EnviarInfo(socketsClientes[i].socket, reporteSerializado);
+                }
+            }
         }
 
 

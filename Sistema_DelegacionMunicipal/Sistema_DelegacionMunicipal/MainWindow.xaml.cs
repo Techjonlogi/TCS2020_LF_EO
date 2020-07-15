@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,8 +23,8 @@ namespace Sistema_DelegacionMunicipal
         private int botonSeleccionado = 5;
         int idUser = 1;
 
-        Chat chat; 
-        LevantarReporte levantarReporte = new LevantarReporte();
+        Chat chat;
+        LevantarReporte levantarReporte;
         Inicio inicio = new Inicio();
 
         public MainWindow(int idUser)
@@ -40,9 +41,16 @@ namespace Sistema_DelegacionMunicipal
                                        from d in db.Delegacion.Where(x => x.idDelegacion == u.idDelegación)
                                        select d.nombre).FirstOrDefault().ToString();
 
+            int idDelegacionEmisor = (from u in db.Usuario.Where(x => x.idUsuario == idUser)
+                                      from d in db.Delegacion.Where(x => x.idDelegacion == u.idDelegación)
+                                      select d.idDelegacion).FirstOrDefault();
 
             this.idUser = idUser;
-            chat = new Chat(idUser, usuarioEmisor, delegacionEmisor);
+
+            Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            chat = new Chat(idUser, usuarioEmisor, delegacionEmisor, socketCliente);
+
+            levantarReporte = new LevantarReporte(idDelegacionEmisor, socketCliente, chat);
         }
 
 

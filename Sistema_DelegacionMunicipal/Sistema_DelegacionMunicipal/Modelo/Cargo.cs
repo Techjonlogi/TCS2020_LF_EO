@@ -12,28 +12,17 @@ namespace Sistema_DelegacionMunicipal.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Delegacion
+    public partial class Cargo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Delegacion()
+        public Cargo()
         {
-            this.Reporte = new HashSet<Reporte>();
             this.Usuario = new HashSet<Usuario>();
         }
     
-        public int idDelegacion { get; set; }
-        public string nombre { get; set; }
-        public string calle { get; set; }
-        public string numero { get; set; }
-        public string colonia { get; set; }
-        public string codigoPostal { get; set; }
-        public int idMunicipio { get; set; }
-        public string telefono { get; set; }
-        public string correo { get; set; }
+        public int idCargo { get; set; }
+        public string tipoCargo { get; set; }
     
-        public virtual Municipio Municipio { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reporte> Reporte { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuario { get; set; }
     }

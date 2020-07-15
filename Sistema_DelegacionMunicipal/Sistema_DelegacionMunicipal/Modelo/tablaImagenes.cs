@@ -12,16 +12,9 @@ namespace Sistema_DelegacionMunicipal.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Dictamen
+    public partial class tablaImagenes
     {
-        public string folio { get; set; }
-        public string descripcion { get; set; }
-        public string responsable { get; set; }
-        public System.DateTime fechaHora { get; set; }
-        public int idUsuario { get; set; }
-        public int idReporte { get; set; }
-    
-        public virtual Reporte Reporte { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public int id { get; set; }
+        public byte[] imagen1 { get; set; }
     }
 }

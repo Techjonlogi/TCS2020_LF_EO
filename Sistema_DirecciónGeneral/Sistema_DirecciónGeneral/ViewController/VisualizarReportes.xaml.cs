@@ -74,9 +74,18 @@ namespace Sistema_DirecciónGeneral.ViewController
         private void BtnVerDetalles_Click(object sender, RoutedEventArgs e)
         {
             int idReporte = (int)((Button)sender).CommandParameter;
-            //string folio = dgReportes.Items.1;
+            string folioDic = "";
+            string placasRespo = "";
+            using(SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                folioDic = db.Dictamen.Where(x => x.idReporte == idReporte).Select(x => x.folio).FirstOrDefault().ToString();
 
-            DetallesReporte detalles = new DetallesReporte(idReporte, this);
+                
+                
+            }
+            
+            //var dictamen = (Dictamen)dgReportes.SelectedItem;
+            DetallesReporte detalles = new DetallesReporte(idReporte, folioDic, placasRespo, this);
             gridDictamen.Children.Clear();
             gridDictamen.Children.Add(detalles);
 

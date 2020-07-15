@@ -93,10 +93,12 @@ namespace Sistema_DirecciónGeneral.ViewController
                         };
                         db.Dictamen.Add(dictamenNew);
                         db.SaveChanges();
-                        MessageBox.Show("Usuario registrado con éxito");
+                        MessageBox.Show("dictamen registrado con éxito");
                         idReportAux = dictamenNew.idReporte;
                     }
                 }
+                this.Visibility = Visibility.Collapsed;
+                this.itActualizar.Actualizar(idReportAux);
             }
 
 

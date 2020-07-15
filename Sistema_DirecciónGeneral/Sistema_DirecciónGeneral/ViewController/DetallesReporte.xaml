@@ -12,27 +12,26 @@
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.4}" Background="#FF959595">
 
             <Grid>
+                
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="879"/>
                 <Label Content="Reporte detallado" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="879" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
                 <Label Content="Responsable" HorizontalAlignment="Left" Margin="0,128,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label x:Name="txt_direccion" HorizontalAlignment="Left" Height="42" Margin="179,440,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Vehículo" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Dirección" HorizontalAlignment="Left" Margin="-5,440,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Dirección" HorizontalAlignment="Left" Margin="-5,458,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label Content="Dictamen" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Involucrados" HorizontalAlignment="Left" Margin="495,86,0,0" VerticalAlignment="Top" Width="383" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF36342F" Foreground="#DDFFFFFF" />
 
                 <DataGrid x:Name="dataGridInvolucrados" SelectionMode="Single"  AutoGenerateColumns="False" IsReadOnly="True" Height="202" Margin="494,127,0.2,0" VerticalAlignment="Top" ItemsSource="{Binding}" RowBackground="#FFF1E6E6" CanUserResizeRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre Completo" HeaderStringFormat="Nombre" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Placas" HeaderStringFormat="Nombre" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Nombre Completo" HeaderStringFormat="Nombre" Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding placas}" ClipboardContentBinding="{x:Null}" Header="Placas" HeaderStringFormat="Nombre" Width="190" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Label Content="Dirección" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Label Content="Dirección del sinisestro" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Fotografías" HorizontalAlignment="Left" Margin="494,353,0,0" VerticalAlignment="Top" Width="384" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF36342F" Foreground="#DDFFFFFF" />
-                <DataGrid HorizontalAlignment="Left" Height="238" Margin="495,395,0,0" VerticalAlignment="Top" Width="384" Background="#FFC7C7C7"/>
                 <Label x:Name="txt_responsable" HorizontalAlignment="Left" Height="42" Margin="214,128,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Folio" HorizontalAlignment="Left" Margin="0,81,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label x:Name="txt_folio" HorizontalAlignment="Left" Height="42" Margin="214,81,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label x:Name="txt_folio"  HorizontalAlignment="Left" Height="42" Margin="214,81,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label x:Name="txt_vehiculo" HorizontalAlignment="Left" Height="42" Margin="214,175,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Fecha y Hora" HorizontalAlignment="Left" Margin="5,222,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label x:Name="txt_fechaHora" HorizontalAlignment="Left" Height="42" Margin="214,222,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
@@ -40,10 +39,14 @@
                 <Label x:Name="txt_perito" HorizontalAlignment="Left" Height="42" Margin="214,269,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
                 <Label Content="Estatus" HorizontalAlignment="Left" Margin="416,39,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <Label x:Name="txt_estatus" HorizontalAlignment="Left" Height="42" Margin="595,39,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
-                <Label Content="Delegación" HorizontalAlignment="Left" Margin="-5,505,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label x:Name="txt_delegacion" HorizontalAlignment="Left" Height="42" Margin="179,500,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
+                <Label Content="Delegación" HorizontalAlignment="Left" Margin="-5,537,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" RenderTransformOrigin="0.506,0.581"/>
+                <Label x:Name="txt_delegacion" HorizontalAlignment="Left" Height="42" Margin="179,537,0,0" VerticalAlignment="Top" Width="232" FontSize="22"/>
 
                 <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="111" Background="#FFC13434" BorderBrush="{x:Null}" Margin="179,590,589.2,27.2" Height="Auto" Click="btnVolver_Click" />
+                <TextBlock x:Name="txt_direccion" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="179,463,0,0" Text="" VerticalAlignment="Top" Height="60" Width="293" FontFamily="Segoe UI Historic" FontSize="14"/>
+                <Label Content="Descripción" HorizontalAlignment="Left" Margin="5,311,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBlock x:Name="txt_descripcion"  TextWrapping="Wrap" HorizontalAlignment="Left" Margin="179,316,0,0" Text="" VerticalAlignment="Top" Height="60" Width="293" FontFamily="Segoe UI Historic" FontSize="14"/>
+
             </Grid>
 
         </materialDesign:TransitioningContent>

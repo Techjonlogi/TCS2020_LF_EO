@@ -29,5 +29,10 @@ namespace Sistema_DelegacionMunicipal.ViewController
         {
             Application.Current.Shutdown();
         }
+
+        public void MensajeBienvenida(string mensaje)
+        {
+            txtBienvenido.Text = "Bievenido " + mensaje;
+        }
     }
 }

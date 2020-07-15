@@ -79,12 +79,16 @@
 
 
                 <Label Content="2.- Completa información" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Label Content="3.- Agrega fotografías" HorizontalAlignment="Left" Margin="0,511,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Label Content="3.- Agrega fotografías (de 3 a 8)" HorizontalAlignment="Left" Margin="0,511,0,0" VerticalAlignment="Top" Width="472" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
                 <Label Content="Fotografías seleccionadas" HorizontalAlignment="Left" Margin="494,353,0,0" VerticalAlignment="Top" Width="375" Height="42" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FFA3081F" Foreground="#DDFFFFFF" />
                 <Button x:Name="btnSeleccionarFotografias" HorizontalAlignment="Center" Content="Seleccionar Fotografías" FontFamily="Impact" FontSize="14" Width="174" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="166,588,539,23" Height="Auto" Click="btnSeleccionarFotografias_Click"/>
                 <Button HorizontalAlignment="Center" Content="Levantar Reporte" FontFamily="Impact" FontSize="14" Width="174" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="606,588,99,23" Height="Auto" Click="BtnLevantarReporte_Click"/>
                 <Label x:Name="labelMensajeVehiculos" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="203,246,0,0" VerticalAlignment="Top" Width="269" Height="42" FontSize="16"/>
                 <Label x:Name="labelMensajeConductores" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="203,188,0,0" VerticalAlignment="Top" Width="269" Height="42" FontSize="16"/>
+                <Label x:Name="labelMensajeAñadirInvolucrado" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="30,325,0,0" VerticalAlignment="Top" Width="442" Height="28" FontSize="16"/>
+
+                <materialDesign:PackIcon Kind="Trash" Width="47" Height="32" VerticalAlignment="Center" Margin="30,588,0,23" Foreground="White" RenderTransformOrigin="3.1,0.867" Background="#FF307CD6" />
+                <Button x:Name="btnLimpiarCampos" HorizontalAlignment="Center" Content="" FontFamily="Impact" FontSize="14" Width="47" Background="{x:Null}" BorderBrush="{x:Null}" Margin="30,588,802,23" Height="Auto" Click="BtnLimpiarCampos_Click" RenderTransformOrigin="0.107,0.516"/>
 
             </Grid>
 

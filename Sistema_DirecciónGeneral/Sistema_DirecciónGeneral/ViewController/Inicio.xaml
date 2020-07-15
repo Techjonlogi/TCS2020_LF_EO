@@ -24,7 +24,7 @@
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}">
 
             <Grid>
-                <TextBlock Text="Bienvenido, @user" Foreground="#A3081F" HorizontalAlignment="Center" FontSize="48" FontFamily="Champagne &amp; Limousines" FontWeight="Bold" Margin="0,113,0,464" Width="879" TextAlignment="Center"/>
+                <TextBlock x:Name="txtBienvenida" Text="Bienvenido" Foreground="#A3081F" HorizontalAlignment="Center" FontSize="48" FontFamily="Champagne &amp; Limousines" FontWeight="Bold" Margin="0,113,0,464" Width="879" TextAlignment="Center"/>
                 <TextBlock Text="No hay nuevas notificaciones" Foreground="#FF150003" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" FontWeight="Bold" Margin="0,271,0,337" Width="879" TextAlignment="Center"/>
 
             </Grid>

@@ -67,12 +67,6 @@ namespace Sistema_DelegacionMunicipal
                 MessageBox.Show("Error");
 
             }
-            /*
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-
-            this.Close();
-            */
         }
     }
 }

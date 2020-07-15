@@ -110,11 +110,14 @@
     <Reference Include="MahApps.Metro.IconPacks.Zondicons, Version=3.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.3.7.0\lib\net47\MahApps.Metro.IconPacks.Zondicons.dll</HintPath>
     </Reference>
-    <Reference Include="MaterialDesignColors, Version=1.2.3.1244, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialDesignColors.1.2.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    <Reference Include="MaterialDesignColors, Version=1.2.6.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.6\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.0.1244, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.3.1.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -146,6 +149,9 @@
     <Compile Include="ChatMsj\MensajeEnviado.xaml.cs">
       <DependentUpon>MensajeEnviado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ClienteConectado.cs" />
+    <Compile Include="Classes\EnvioMensajeChat.cs" />
+    <Compile Include="Classes\InformacionReporteEnvio.cs" />
     <Compile Include="Interfaces\IDelegacion.cs" />
     <Compile Include="Interfaces\IDictamen.cs" />
     <Compile Include="Interfaces\IReporte.cs" />
@@ -190,9 +196,6 @@
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_helpdiagrams_Result.cs">
-      <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\sysdiagrams.cs">
       <DependentUpon>ModeloDelGeneral.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Usuario.cs">

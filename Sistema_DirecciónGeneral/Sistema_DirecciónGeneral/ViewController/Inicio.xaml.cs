@@ -25,10 +25,20 @@ namespace Sistema_DirecciónGeneral.ViewController
             InitializeComponent();
         }
 
-        private void Button_Salir(object sender, RoutedEventArgs e)
+        private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
+        public void MensajeBienvenida(string mensaje)
+        {
+            txtBienvenida.Text = "Bievenido " + mensaje;
+        }
+
+        private void Button_Salir(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
+
 }

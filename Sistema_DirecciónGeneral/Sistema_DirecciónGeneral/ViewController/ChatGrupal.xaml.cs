@@ -1,5 +1,8 @@
 ﻿using Sistema_DirecciónGeneral.ChatMsj;
+using Sistema_DirecciónGeneral.Classes;
+using Sistema_DirecciónGeneral.Modelo;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -14,13 +17,26 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// </summary>
     public partial class ChatGrupal : UserControl
     {
+        EnvioMensajeChat envioMensajeChat = new EnvioMensajeChat();
+        SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
+
+        private Socket socketCliente;
+
         int posicionMensaje = 0;
         bool gridAmpliado = false;
         string mensaje = "";
+        string usuarioEmisor = "";
+        string delegacionEmisor = "";
 
-        public ChatGrupal()
+        List<string> listaConectados = new List<string>();
+
+        public ChatGrupal(int idUser, string usuarioEmisor, string delegacionEmisor, Socket socketCliente)
         {
             InitializeComponent();
+            this.usuarioEmisor = usuarioEmisor;
+            this.delegacionEmisor = delegacionEmisor;
+            this.socketCliente = socketCliente;
+
             intentarConexion();
         }
 
@@ -94,11 +110,11 @@ namespace Sistema_DirecciónGeneral.ViewController
 
         }
 
-        public void recibirMensaje(string mensajeRecibido)
+        public void recibirMensaje(string mensajeRecibido, string usuarioEmisor)
         {
             //Crear user control del mensaje
 
-            GridChatRecibido.Children.Add(new MensajeChat(posicionMensaje, mensajeRecibido));
+            GridChatRecibido.Children.Add(new MensajeChat(posicionMensaje, mensajeRecibido, usuarioEmisor));
 
             txtMensajeRecibido.Text = mensajeRecibido;
 
@@ -211,19 +227,25 @@ namespace Sistema_DirecciónGeneral.ViewController
 
         // MANEJO DE MENSAJES
 
-        private Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-
         private void Conectar()
         {
             socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             LoopConnect();
+
             socketCliente.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), socketCliente);
+
+
+            byte[] buffer = Encoding.Default.GetBytes(serializarMensaje("", false, false));
+            socketCliente.Send(buffer);
         }
 
 
-
-
+        //Actualizar valores del mensaje y serializarlos
+        public string serializarMensaje(string contenidoMensaje, bool isMensajeConexion, bool isMensaje)
+        {
+            EnvioMensajeChat mensajeChat = new EnvioMensajeChat(contenidoMensaje, usuarioEmisor, delegacionEmisor, isMensaje, false);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(mensajeChat).ToString();
+        }
 
         byte[] receivedBuf = new byte[1024];
 
@@ -236,7 +258,9 @@ namespace Sistema_DirecciónGeneral.ViewController
                 int received = socket.EndReceive(ar);
                 byte[] dataBuf = new byte[received];
                 Array.Copy(receivedBuf, dataBuf, received);
+
                 mensaje = (Encoding.Default.GetString(dataBuf));
+
             }
             catch (SocketException)
             {
@@ -248,10 +272,45 @@ namespace Sistema_DirecciónGeneral.ViewController
             }
 
 
-            this.Dispatcher.Invoke(() =>
+            // Manejo de conectados y nuevos mensajes
+
+            string objetoSerializado = mensaje;
+
+            envioMensajeChat = Newtonsoft.Json.JsonConvert.DeserializeObject<EnvioMensajeChat>(mensaje);
+
+            if (envioMensajeChat.contenidoMensaje == null && envioMensajeChat.reporteVerificacion == null)
             {
-                recibirMensaje(mensaje);
-            });
+                ClienteConectado cc = Newtonsoft.Json.JsonConvert.DeserializeObject<ClienteConectado>(objetoSerializado);
+                //Llenar lista con nombre de usuario y delegacion
+                listaConectados = new List<string>();
+                for (int i = 0; i < cc.usuariosEmisores.Count; i++)
+                {
+                    listaConectados.Add(cc.usuariosEmisores[i] + " (" + cc.delegacionesEmisores[i] + ")");
+                }
+
+                this.Dispatcher.Invoke(() =>
+                {
+                    if (cc.usuariosEmisores != null)
+                    {
+                        dataGridUsuariosConectados.ItemsSource = listaConectados;
+
+                    }
+                });
+            }
+            else if (envioMensajeChat.contenidoMensaje != null)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    recibirMensaje(envioMensajeChat.contenidoMensaje, envioMensajeChat.usuarioEmisor);
+                });
+            }
+            else if (envioMensajeChat.reporteVerificacion != null && envioMensajeChat.contenidoMensaje == null)
+            {
+                MessageBox.Show("REPORTE RECIBIDO");
+            }
+
+
+
 
 
             try
@@ -287,14 +346,20 @@ namespace Sistema_DirecciónGeneral.ViewController
         {
             if (socketCliente.Connected)
             {
-
-                byte[] buffer = Encoding.Default.GetBytes(msj);
+                byte[] buffer = Encoding.Default.GetBytes(serializarMensaje(msj, false, true));
                 socketCliente.Send(buffer);
             }
-
         }
 
 
+        //Metodo de envio para el reporte de la clase LevantarReporte
+        public void EnviarReporte(string infoReporte)
+        {
+            if (socketCliente.Connected)
+            {
+                byte[] buffer = Encoding.Default.GetBytes(infoReporte);
+                socketCliente.Send(buffer);
+            }
+        }
     }
 }
-

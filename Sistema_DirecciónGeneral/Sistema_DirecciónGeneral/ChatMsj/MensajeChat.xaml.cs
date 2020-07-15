@@ -20,11 +20,21 @@ namespace Sistema_DirecciónGeneral.ChatMsj
     /// </summary>
     public partial class MensajeChat : UserControl
     {
-        public MensajeChat(int posicionMensaje, string mensaje)
+        public MensajeChat(int posicionMensaje, string mensaje, string usuarioEmisor)
         {
             InitializeComponent();
 
             txtMensaje.Text = mensaje;
+
+            if (usuarioEmisor.Length > 4)
+            {
+                txtEmisor.Text = usuarioEmisor.Remove(4, usuarioEmisor.Length - 4);
+            }
+            else
+            {
+                txtEmisor.Text = usuarioEmisor;
+            }
+
             this.Margin = new Thickness(0, posicionMensaje, 71, 0);
 
             string minutos = "";
@@ -43,3 +53,4 @@ namespace Sistema_DirecciónGeneral.ChatMsj
 
     }
 }
+

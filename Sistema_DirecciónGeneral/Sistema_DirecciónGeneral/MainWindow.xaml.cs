@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Sistema_DirecciónGeneral.Modelo;
 using Sistema_DirecciónGeneral.ViewController;
 
 namespace Sistema_DirecciónGeneral
@@ -23,15 +25,35 @@ namespace Sistema_DirecciónGeneral
     {
         private int botonSeleccionado = 5;
 
-        ChatGrupal chat = new ChatGrupal();
-        
+        ChatGrupal chatGrupal;
         Inicio inicio = new Inicio();
+        private int idUser;
 
-        public MainWindow()
+        public MainWindow(int idUser)
         {
             InitializeComponent();
             GridPrincipal.Children.Add(inicio);
             btnInicio.Background = Brushes.White;
+
+
+            SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
+            string usuarioEmisor = db.Usuario.Where(x => x.idUsuario == idUser).Select(x => x.usuario1).FirstOrDefault().ToString();
+
+            string delegacionEmisor = (from u in db.Usuario.Where(x => x.idUsuario == idUser)
+                                       from d in db.Delegacion.Where(x => x.idDelegacion == u.idDelegación)
+                                       select d.nombre).FirstOrDefault().ToString();
+
+            int idDelegacionEmisor = (from u in db.Usuario.Where(x => x.idUsuario == idUser)
+                                      from d in db.Delegacion.Where(x => x.idDelegacion == u.idDelegación)
+                                      select d.idDelegacion).FirstOrDefault();
+
+            this.idUser = idUser;
+
+            Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+            chatGrupal = new ChatGrupal(idUser, usuarioEmisor, delegacionEmisor, socketCliente);
+
+            inicio.MensajeBienvenida(usuarioEmisor);
         }
 
 
@@ -72,7 +94,7 @@ namespace Sistema_DirecciónGeneral
             {
                 cambiarBoton(4);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(chat);
+                GridPrincipal.Children.Add(chatGrupal);
             }
         }
 

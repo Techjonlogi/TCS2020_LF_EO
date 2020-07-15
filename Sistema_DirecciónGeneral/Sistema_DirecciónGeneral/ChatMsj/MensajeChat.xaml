@@ -22,10 +22,10 @@
                     BorderBrush="Gray"
                     BorderThickness="1"
                     >
-                    <TextBlock Text="TC"
+                    <TextBlock x:Name="txtEmisor" Text="TTTT"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                           Foreground="White" FontFamily="Segoe UI Historic" FontWeight="Bold"
+                           Foreground="White" FontFamily="Segoe UI Historic" FontWeight="Bold" FontSize="10"
                            />
                 </Border>
 

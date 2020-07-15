@@ -17,8 +17,8 @@ namespace Sistema_DirecciónGeneral.Modelo
         public string folio { get; set; }
         public string descripcion { get; set; }
         public string responsable { get; set; }
-        public System.DateTime fechaHora { get; set; }
-        public int idUsuario { get; set; }
+        public Nullable<System.DateTime> fechaHora { get; set; }
+        public Nullable<int> idUsuario { get; set; }
         public int idReporte { get; set; }
     
         public virtual Reporte Reporte { get; set; }

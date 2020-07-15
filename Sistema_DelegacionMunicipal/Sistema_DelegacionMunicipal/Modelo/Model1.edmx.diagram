@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6f17574746bd4e0d8086e4d53d7b645e" Name="Diagram1" ZoomLevel="74">
+      <Diagram DiagramId="6f17574746bd4e0d8086e4d53d7b645e" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="ModeloDelMunicipal.Cargo" Width="1.5" PointX="3" PointY="1.375" />
         <EntityTypeShape EntityType="ModeloDelMunicipal.Conductor" Width="1.5" PointX="6" PointY="9" />
         <EntityTypeShape EntityType="ModeloDelMunicipal.Delegacion" Width="1.5" PointX="3" PointY="4.5" />

@@ -273,6 +273,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
                         }
                     }
                     db.SaveChanges();
+                    idImagen = img.idImagenes;
                 }
 
 
@@ -281,17 +282,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
                 int idReporte = 0;
                 using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
                 {
-                    //Buscar id de las imagenes
-                    try
-                    {
-                        idImagen = db.Imagenes.Select(x => x.idImagenes).Count();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Error, no se pudo conseguir idImagen y no se guardo el reporte.");
-                        return;
-                    }
-
                     //Guardar reporte
                     try
                     {
@@ -300,23 +290,16 @@ namespace Sistema_DelegacionMunicipal.ViewController
                         reporte.numCarrosInvolucrados = listaInvolucrados.Count();
                         reporte.idDelegación = idDelegacionEmisor;
                         reporte.idImagenes = idImagen;
+                        reporte.fechaHora = DateTime.Now;
 
                         db.Reporte.Add(reporte);
                         db.SaveChanges();
+
+                        idReporte = reporte.idReporte;
                     }
                     catch
                     {
                         MessageBox.Show("Error, no se pudo guardar el reporte");
-                        return;
-                    }
-                    //Buscar id del reporte
-                    try
-                    {
-                        idReporte = db.Reporte.Select(x => x.idReporte).Count();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Error, no se pudo conseguir idReporte.");
                         return;
                     }
 

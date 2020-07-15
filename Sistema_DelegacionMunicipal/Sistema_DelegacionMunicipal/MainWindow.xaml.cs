@@ -48,14 +48,13 @@ namespace Sistema_DelegacionMunicipal
             this.idUser = idUser;
 
             Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
             chat = new Chat(idUser, usuarioEmisor, delegacionEmisor, socketCliente);
 
             levantarReporte = new LevantarReporte(idDelegacionEmisor, socketCliente, chat);
+
+            inicio.MensajeBienvenida(usuarioEmisor);
         }
-
-
-
-
 
 
         private void cuadroUsuario_MouseDown(object sender, MouseButtonEventArgs e)

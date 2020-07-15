@@ -442,3 +442,5 @@ C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunici
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.exe
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.pdb
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csprojAssemblyReference.cache
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\Newtonsoft.Json.dll
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\Newtonsoft.Json.xml

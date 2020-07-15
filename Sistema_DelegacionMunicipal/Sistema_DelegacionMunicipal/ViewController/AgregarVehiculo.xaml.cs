@@ -1,4 +1,5 @@
-﻿using Sistema_DelegacionMunicipal.Modelo;
+﻿using Sistema_DelegacionMunicipal.Interface;
+using Sistema_DelegacionMunicipal.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,15 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// </summary>
     public partial class AgregarVehiculo : UserControl
     {
-        public AgregarVehiculo()
+        int idConductorSeleccionado = 0;
+        IVehiculo itActualizar;
+        public AgregarVehiculo(int idConductorSeleccionado, IVehiculo itActualizar)
         {
             InitializeComponent();
-            CargarConductores();
+            this.idConductorSeleccionado = idConductorSeleccionado;
+
+            
+            this.itActualizar = itActualizar;
         }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
@@ -41,7 +47,9 @@ namespace Sistema_DelegacionMunicipal.ViewController
             string nombreAseguradora = txt_nomAseguradora.Text;
             string numPoliza = txt_numPoliza.Text;
             string placas = txt_placas.Text;
-            int idConductor = cb_dueño.SelectedIndex +1;
+
+            
+            
 
             if (string.IsNullOrEmpty(marca) || string.IsNullOrEmpty(modelo) || string.IsNullOrEmpty(anio) || string.IsNullOrEmpty(color) || string.IsNullOrEmpty(placas))
             {
@@ -55,7 +63,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
             }
             try
             {
-
                 using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
                 {
                     Vehiculo vehiculo = new Vehiculo
@@ -67,12 +74,16 @@ namespace Sistema_DelegacionMunicipal.ViewController
                         nombreAseguradora = nombreAseguradora,
                         numPoliza = int.Parse(numPoliza),
                         placas = placas,
-                        idConductor = idConductor
+                        idConductor = idConductorSeleccionado
                     };
                     db.Vehiculo.Add(vehiculo);
                     db.SaveChanges();
                     MessageBox.Show("Vehículo agregado con éxito");
+
                 }
+                this.Visibility = Visibility.Collapsed;
+                this.itActualizar.Actualizar(idConductorSeleccionado);
+
             }
             catch
             {
@@ -81,21 +92,6 @@ namespace Sistema_DelegacionMunicipal.ViewController
             }
         }
 
-        private void CargarConductores()
-        {
-            SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
-            var list = db.Conductor.ToList();
-            if (list.Count() > 0)
-            {
-                cb_dueño.ItemsSource = list;
-                cb_dueño.DisplayMemberPath = "nombre";
-                cb_dueño.SelectedValuePath = "idConductor";
-            }
-        }
-
-        private void cb_dueño_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
     }
 }

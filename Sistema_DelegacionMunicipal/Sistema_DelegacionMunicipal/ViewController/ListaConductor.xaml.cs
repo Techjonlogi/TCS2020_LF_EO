@@ -1,4 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
+using Sistema_DelegacionMunicipal.Interface;
 using Sistema_DelegacionMunicipal.Modelo;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,9 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// <summary>
     /// Lógica de interacción para Conductor.xaml
     /// </summary>
-    public partial class ListaConductor : UserControl
+    public partial class ListaConductor : UserControl, IConductor
     {
 
-        int conductorSeleccionado = 0;
         List<string> listaConductores = new List<string>();
 
         public ListaConductor()
@@ -54,37 +54,45 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void BtnNuevoConductor_Click(object sender, RoutedEventArgs e)
         {
-            AgregarConductor agregarConductor = new AgregarConductor();
+            AgregarConductor agregarConductor = new AgregarConductor(0, this);
             GridConductor.Children.Clear();
             GridConductor.Children.Add(agregarConductor);
         }
 
 
-
+        /*
         private void btnNuevoVehiculo_Click(object sender, RoutedEventArgs e)
         {
-            AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
+            AgregarVehiculo agregarVehiculo = new AgregarVehiculo(idConductor, this);
             GridConductor.Children.Clear();
             GridConductor.Children.Add(agregarVehiculo);
 
         }
-
-        private void dataGridConductores_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            /*
-            DataGrid dataGrid = sender as DataGrid;
-            DataGridRow row = (DataGridRow)dataGrid.ItemContainerGenerator.ContainerFromIndex(dataGrid.SelectedIndex);
-            DataGridCell RowColumn = dataGrid.Columns[1].GetCellContent(row).Parent as DataGridCell;
-            int CellValue = (int)RowColumn;*/
-
-            conductorSeleccionado = dataGridConductores.SelectedIndex + 1;
-        }
+        */
 
         private void btnDetalleConductor_Click(object sender, RoutedEventArgs e)
         {
-            DetalleConductor detalleConductor = new DetalleConductor(conductorSeleccionado);
-            gridDetallesConductor.Children.Clear();
-            gridDetallesConductor.Children.Add(detalleConductor);
+            int idConductor = (int)((Button)sender).CommandParameter;
+
+            DetalleConductor detalleConductor = new DetalleConductor(idConductor, this);
+            GridConductor.Children.Clear();
+            GridConductor.Children.Add(detalleConductor);
+            llenarTablaConductores();
+        }
+
+        public void Actualizar(int idConductor)
+        {
+            llenarTablaConductores();
+        }
+
+        private void Button_Modificar_Click(object sender, RoutedEventArgs e)
+        {
+            int idConductor = (int)((Button)sender).CommandParameter;
+
+            AgregarConductor agregarConductor = new AgregarConductor(idConductor, this);
+            GridConductor.Children.Clear();
+            GridConductor.Children.Add(agregarConductor);
+
             llenarTablaConductores();
         }
     }

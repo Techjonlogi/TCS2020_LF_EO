@@ -41,11 +41,11 @@
           <Key>
             <PropertyRef Name="folio" />
           </Key>
-          <Property Name="folio" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="folio" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="descripcion" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="responsable" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="fechaHora" Type="datetime" Nullable="false" />
-          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="fechaHora" Type="datetime" />
+          <Property Name="idUsuario" Type="int" />
           <Property Name="idReporte" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Imagenes">
@@ -74,10 +74,11 @@
             <PropertyRef Name="idReporte" />
           </Key>
           <Property Name="idReporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="direccion" Type="nvarchar" MaxLength="150" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="numCarrosInvolucrados" Type="int" Nullable="false" />
           <Property Name="idDelegación" Type="int" Nullable="false" />
           <Property Name="idImagenes" Type="int" />
+          <Property Name="fechaHora" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -137,7 +138,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Dictamen_Usuario">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
           <End Role="Dictamen" Type="Self.Dictamen" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -381,11 +382,11 @@
           <Key>
             <PropertyRef Name="folio" />
           </Key>
-          <Property Name="folio" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="folio" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="descripcion" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="responsable" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="fechaHora" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="fechaHora" Type="DateTime" Precision="3" />
+          <Property Name="idUsuario" Type="Int32" />
           <Property Name="idReporte" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Reporte" Relationship="ModeloDelMunicipal.FK_Dictamen_Reporte" FromRole="Dictamen" ToRole="Reporte" />
           <NavigationProperty Name="Usuario" Relationship="ModeloDelMunicipal.FK_Dictamen_Usuario" FromRole="Dictamen" ToRole="Usuario" />
@@ -418,10 +419,11 @@
             <PropertyRef Name="idReporte" />
           </Key>
           <Property Name="idReporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="numCarrosInvolucrados" Type="Int32" Nullable="false" />
           <Property Name="idDelegación" Type="Int32" Nullable="false" />
           <Property Name="idImagenes" Type="Int32" />
+          <Property Name="fechaHora" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Delegacion" Relationship="ModeloDelMunicipal.FK_Reporte_Delegacion" FromRole="Reporte" ToRole="Delegacion" />
           <NavigationProperty Name="Dictamen" Relationship="ModeloDelMunicipal.FK_Dictamen_Reporte" FromRole="Reporte" ToRole="Dictamen" />
           <NavigationProperty Name="Imagenes" Relationship="ModeloDelMunicipal.FK_Reporte_Imagenes" FromRole="Reporte" ToRole="Imagenes" />
@@ -540,7 +542,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Dictamen_Usuario">
-          <End Type="ModeloDelMunicipal.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="ModeloDelMunicipal.Usuario" Role="Usuario" Multiplicity="0..1" />
           <End Type="ModeloDelMunicipal.Dictamen" Role="Dictamen" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -666,6 +668,7 @@
           <EntitySetMapping Name="Reporte">
             <EntityTypeMapping TypeName="ModeloDelMunicipal.Reporte">
               <MappingFragment StoreEntitySet="Reporte">
+                <ScalarProperty Name="fechaHora" ColumnName="fechaHora" />
                 <ScalarProperty Name="idImagenes" ColumnName="idImagenes" />
                 <ScalarProperty Name="idDelegación" ColumnName="idDelegación" />
                 <ScalarProperty Name="numCarrosInvolucrados" ColumnName="numCarrosInvolucrados" />

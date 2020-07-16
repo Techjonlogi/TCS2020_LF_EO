@@ -22,9 +22,8 @@
                         </Style>
                     </DataGrid.Resources>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding folio}" ClipboardContentBinding="{x:Null}" Header="Folio" Width="140" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Responsable"  Width="120" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-                        <DataGridTextColumn Binding="{Binding delegacion}" ClipboardContentBinding="{x:Null}" Header="Delegación" Width="130" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding folio}" ClipboardContentBinding="{x:Null}" Header="Folio" Width="200" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding delegacion}" ClipboardContentBinding="{x:Null}" Header="Delegación" Width="200" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
                         <DataGridTextColumn Binding="{Binding numCarrosInvolucrados}" ClipboardContentBinding="{x:Null}" Header="Carros involucrados" Width="140" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
 
                         <DataGridTemplateColumn>

@@ -47,6 +47,18 @@
                 <Label Content="Descripción" HorizontalAlignment="Left" Margin="5,311,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
                 <TextBlock x:Name="txt_descripcion"  TextWrapping="Wrap" HorizontalAlignment="Left" Margin="179,316,0,0" Text="" VerticalAlignment="Top" Height="60" Width="293" FontFamily="Segoe UI Historic" FontSize="14"/>
 
+
+                <Image x:Name="imagen1" HorizontalAlignment="Left" Height="90" Margin="494,395,0,0" VerticalAlignment="Top" Width="85"/>
+                <Image x:Name="imagen2" HorizontalAlignment="Left" Height="90" Margin="585,395,0,0" VerticalAlignment="Top" Width="85"/>
+                <Image x:Name="imagen3" HorizontalAlignment="Left" Height="90" Margin="685,395,0,0" VerticalAlignment="Top" Width="85"/>
+                <Image x:Name="imagen4" HorizontalAlignment="Left" Height="90" Margin="785,395,0,0" VerticalAlignment="Top" Width="85"/>
+
+                <Image x:Name="imagen5" HorizontalAlignment="Left" Height="90" Margin="494,490,0,0" VerticalAlignment="Top" Width="85"/>
+                <Image x:Name="imagen6" HorizontalAlignment="Left" Height="90" Margin="585,490,0,0" VerticalAlignment="Top" Width="85"/>
+                <Image x:Name="imagen7" HorizontalAlignment="Left" Height="90" Margin="685,490,0,0" VerticalAlignment="Top" Width="85"/>
+                <Image x:Name="imagen8" HorizontalAlignment="Left" Height="90" Margin="785,490,0,0" VerticalAlignment="Top" Width="85"/>
+
+
             </Grid>
 
         </materialDesign:TransitioningContent>

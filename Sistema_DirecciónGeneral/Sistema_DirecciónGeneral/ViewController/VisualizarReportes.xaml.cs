@@ -21,8 +21,10 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// </summary>
     public partial class VisualizarReportes : UserControl, IReporte
     {
-        public VisualizarReportes()
+        int idUsuario;
+        public VisualizarReportes(int idUsuario)
         {
+            this.idUsuario = idUsuario;
             InitializeComponent();
             gridDictamen.Children.Clear();
             LlenarTablaReportes();
@@ -36,8 +38,8 @@ namespace Sistema_DirecciónGeneral.ViewController
                 var query = (from r in db.Reporte
                              join d in db.Delegacion on r.idDelegación equals d.idDelegacion
                              join dic in db.Dictamen on r.idReporte equals dic.idReporte
-                             join v in db.Vehiculo on dic.responsable equals v.placas
-                             join c in db.Conductor on v.idConductor equals c.idConductor
+                             //join v in db.Vehiculo on dic.responsable equals v.placas
+                             //join c in db.Conductor on v.idConductor equals c.idConductor
                              select new
                              {
                                  idReporte = r.idReporte,
@@ -47,10 +49,10 @@ namespace Sistema_DirecciónGeneral.ViewController
                                  idImagenes = r.idImagenes,
                                  delegacion = d.nombre,
                                  folio = dic.folio,
-                                 nombre = c.nombre +" "+ c.apellidos                               
+                                 //nombre = c.nombre +" "+ c.apellidos                               
                              }).ToList();
                 dgReportes.ItemsSource = query;
-                
+
             }
         }
 
@@ -85,7 +87,7 @@ namespace Sistema_DirecciónGeneral.ViewController
             }
             
             //var dictamen = (Dictamen)dgReportes.SelectedItem;
-            DetallesReporte detalles = new DetallesReporte(idReporte, folioDic, placasRespo, this);
+            DetallesReporte detalles = new DetallesReporte(idUsuario, idReporte, folioDic, placasRespo, this);
             gridDictamen.Children.Clear();
             gridDictamen.Children.Add(detalles);
 

@@ -306,10 +306,8 @@ namespace Sistema_DirecciónGeneral.ViewController
             }
             else if (envioMensajeChat.reporteVerificacion != null && envioMensajeChat.contenidoMensaje == null)
             {
-                MessageBox.Show("REPORTE RECIBIDO");
+                MessageBox.Show("Nuevo reporte recibido", "AVISO");
             }
-
-
 
 
 

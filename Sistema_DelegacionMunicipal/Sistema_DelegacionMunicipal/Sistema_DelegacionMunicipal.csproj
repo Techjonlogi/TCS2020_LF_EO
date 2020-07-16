@@ -151,6 +151,8 @@
     <Compile Include="Classes\ClienteConectado.cs" />
     <Compile Include="Classes\EnvioMensajeChat.cs" />
     <Compile Include="Classes\InformacionReporteEnvio.cs" />
+    <Compile Include="Interface\IConductor.cs" />
+    <Compile Include="Interface\IVehiculo.cs" />
     <Compile Include="Modelo\Cargo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

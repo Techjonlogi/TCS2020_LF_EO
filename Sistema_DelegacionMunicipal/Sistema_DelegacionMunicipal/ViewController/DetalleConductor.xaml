@@ -36,7 +36,7 @@
                 <Button Content="Volver" HorizontalAlignment="Left" Margin="102,575,0,0" VerticalAlignment="Top" Width="160" Click="BtnCancelar_Click" Background="#FF5B5B5B" FontSize="16" FontFamily="Impact" BorderBrush="#FF5B5B5B" Height="30"/>
 
 
-                <DataGrid x:Name="dataGridVehiculos" SelectionMode="Single"  AutoGenerateColumns="False" IsReadOnly="True" Height="258" Margin="100,312,98,0" VerticalAlignment="Top" ItemsSource="{Binding}" RowBackground="#FFF1E6E6" CanUserResizeRows="False" FontSize="14" Background="#FFCFCFCF" SelectionChanged="dataGridConductores_SelectionChanged">
+                <DataGrid x:Name="dataGridVehiculos" SelectionMode="Single"  AutoGenerateColumns="False" IsReadOnly="True" Height="258" Margin="100,312,98,0" VerticalAlignment="Top" ItemsSource="{Binding}" RowBackground="#FFF1E6E6" CanUserResizeRows="False" FontSize="14" Background="#FFCFCFCF">
                     <DataGrid.Resources>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Background" Value="#FFA3081F" />

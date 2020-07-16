@@ -34,8 +34,6 @@
 
                 <Button Content="Cancelar" HorizontalAlignment="Left" Margin="116,490,0,0" VerticalAlignment="Top" Width="176" Click="BtnCancelar_Click" Background="#FF5B5B5B" FontSize="16" FontFamily="Impact" BorderBrush="#FF5B5B5B"/>
                 <Button Content="Agregar" HorizontalAlignment="Left" Margin="382,490,0,0" VerticalAlignment="Top" Width="184" Click="BtnAgregar_Click" Background="#FF307CD6" FontSize="16" FontFamily="Impact" BorderBrush="#FF307CD6"/>
-                <Label Content="Dueño del vehículo" HorizontalAlignment="Left" Margin="0,395,0,0" VerticalAlignment="Top" Width="282" Height="49" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
-                <ComboBox x:Name="cb_dueño" ItemsSource="{Binding Conductor}" HorizontalAlignment="Left" Height="49" Margin="301,395,0,0" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom" SelectionChanged="cb_dueño_SelectionChanged"/>
 
 
             </Grid>

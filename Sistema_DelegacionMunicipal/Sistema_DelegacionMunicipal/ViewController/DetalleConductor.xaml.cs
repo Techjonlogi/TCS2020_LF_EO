@@ -1,4 +1,6 @@
-﻿using Sistema_DelegacionMunicipal.Modelo;
+﻿using MaterialDesignThemes.Wpf;
+using Sistema_DelegacionMunicipal.Interface;
+using Sistema_DelegacionMunicipal.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,19 +21,25 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// <summary>
     /// Lógica de interacción para DetalleConductor.xaml
     /// </summary>
-    public partial class DetalleConductor : UserControl
+    public partial class DetalleConductor : UserControl, IConductor, IVehiculo
     {
 
         Modelo.SistemaReportesVehiculosEntities db = new Modelo.SistemaReportesVehiculosEntities();
+        IConductor itActualizar;
         int idConductorSeleccionado = 0;
 
-        public DetalleConductor(int idConductorSeleccionado_)
+
+        public DetalleConductor(int idConductorSeleccionado, IConductor itActualizar)
         {
             InitializeComponent();
-            this.idConductorSeleccionado = idConductorSeleccionado_;
+            this.idConductorSeleccionado = idConductorSeleccionado;
             llenarTablaVehiculos();
             llenarInformacion();
+
+            this.itActualizar = itActualizar;
         }
+
+        
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
@@ -54,16 +62,9 @@ namespace Sistema_DelegacionMunicipal.ViewController
             txtTelefono.Text = db.Conductor.Where(x => x.idConductor == idConductorSeleccionado).Select(x => x.telefono).FirstOrDefault().ToString();
         }
 
-        
-        private void dataGridConductores_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
         private void btnNuevoVehiculo_Click(object sender, RoutedEventArgs e)
         {
-            AgregarVehiculo agregarVehiculo = new AgregarVehiculo();
+            AgregarVehiculo agregarVehiculo = new AgregarVehiculo(idConductorSeleccionado, this);
             gridVehiculo.Children.Clear();
             gridVehiculo.Children.Add(agregarVehiculo);
         }
@@ -71,6 +72,12 @@ namespace Sistema_DelegacionMunicipal.ViewController
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
+        }
+
+        public void Actualizar(int idConductor)
+        {
+            llenarTablaVehiculos();
+            llenarInformacion();
         }
     }
 

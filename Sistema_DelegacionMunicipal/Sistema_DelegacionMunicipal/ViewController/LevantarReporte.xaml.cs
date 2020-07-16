@@ -302,6 +302,28 @@ namespace Sistema_DelegacionMunicipal.ViewController
                         MessageBox.Show("Error, no se pudo guardar el reporte");
                         return;
                     }
+                    try
+                    {
+                        string hora = DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Millisecond.ToString();
+                        //Guardar dictamen por defecto
+                        Dictamen dictamenNew = new Dictamen
+                        {
+                            folio = hora,
+                            descripcion = "...",
+                            responsable = "0",
+                            fechaHora = null,
+                            idUsuario = null, //Traer el idUsuario desde el login
+                            idReporte = idReporte
+                        };
+                        db.Dictamen.Add(dictamenNew);
+                        db.SaveChanges();
+                        MessageBox.Show("dictamen por defecto con éxito");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error, no se pudo generar el dictamen");
+                    }
+
 
                     //Guardar matriculas de vehiculos de reporte
                     try

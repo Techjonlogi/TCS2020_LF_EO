@@ -89,7 +89,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(3);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new HistorialReportes());
+                GridPrincipal.Children.Add(new HistorialReportes(idUser));
             }
         }
 

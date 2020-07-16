@@ -216,7 +216,6 @@ C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistem
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Chat.g.cs
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\ListaConductor.g.cs
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\DetalleConductor.g.cs
-C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Dictamen.g.cs
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\HistorialReportes.g.cs
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Inicio.g.cs
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\LevantarReporte.g.cs
@@ -314,7 +313,6 @@ C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistem
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Chat.baml
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\ListaConductor.baml
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\DetalleConductor.baml
-C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Dictamen.baml
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\HistorialReportes.baml
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\Inicio.baml
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\LevantarReporte.baml
@@ -444,3 +442,5 @@ C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunici
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\Sistema_DelegacionMunicipal.csprojAssemblyReference.cache
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\Newtonsoft.Json.dll
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\DetalleDictamen.g.cs
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\obj\Debug\ViewController\DetalleDictamen.baml

@@ -152,6 +152,7 @@
     <Compile Include="Classes\EnvioMensajeChat.cs" />
     <Compile Include="Classes\InformacionReporteEnvio.cs" />
     <Compile Include="Interface\IConductor.cs" />
+    <Compile Include="Interface\IReporte.cs" />
     <Compile Include="Interface\IVehiculo.cs" />
     <Compile Include="Modelo\Cargo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -213,8 +214,8 @@
     <Compile Include="ViewController\DetalleConductor.xaml.cs">
       <DependentUpon>DetalleConductor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewController\Dictamen.xaml.cs">
-      <DependentUpon>Dictamen.xaml</DependentUpon>
+    <Compile Include="ViewController\DetalleDictamen.xaml.cs">
+      <DependentUpon>DetalleDictamen.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewController\HistorialReportes.xaml.cs">
       <DependentUpon>HistorialReportes.xaml</DependentUpon>
@@ -272,7 +273,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewController\Dictamen.xaml">
+    <Page Include="ViewController\DetalleDictamen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

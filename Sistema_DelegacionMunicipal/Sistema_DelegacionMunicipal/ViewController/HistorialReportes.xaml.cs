@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sistema_DelegacionMunicipal.Interface;
+using Sistema_DelegacionMunicipal.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,14 +20,16 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// <summary>
     /// Lógica de interacción para HistorialReportes.xaml
     /// </summary>
-    public partial class HistorialReportes : UserControl
+    public partial class HistorialReportes : UserControl, IReporte
     {
-        
 
-        public HistorialReportes()
+        int idUsuarioSelec = 0;
+        public HistorialReportes(int idUsuario)
         {
+            this.idUsuarioSelec = idUsuario;
             InitializeComponent();
             gridHistorial.Children.Clear();
+            LlenarTablaHistorial();
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
@@ -37,11 +41,34 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void BtnVerDictamen_Click(object sender, RoutedEventArgs e)
         {
-                Dictamen dictamen = new Dictamen();
-                gridHistorial.Children.Clear();
-                gridHistorial.Children.Add(dictamen);
+            DetalleDictamen dictamen = new DetalleDictamen();
+            gridHistorial.Children.Clear();
+            gridHistorial.Children.Add(dictamen);
+        }
+
+        private void LlenarTablaHistorial()
+        {
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                var query = (from r in db.Reporte
+                             join d in db.Delegacion on r.idDelegación equals d.idDelegacion
+                             where r.idDelegación == d.idDelegacion
+                             select new
+                             {
+                                 idReporte = r.idReporte,
+                                 direccion = r.direccion,
+                                 numCarrosInvolucrados = r.numCarrosInvolucrados,
+                                 fechaHora = r.fechaHora
+                             }).ToList();
+                
+                dataGridInvolucrados.ItemsSource = query;
+            }
         }
 
 
+        public void Actualizar(int idReporte)
+        {
+            LlenarTablaHistorial();
+        }
     }
 }

@@ -16,7 +16,7 @@
                 <Label Content="Historial de Reportes" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
 
 
-                <DataGrid x:Name="dataGridInvolucrados" SelectionMode="Single"  AutoGenerateColumns="False" IsReadOnly="True" Height="430" Margin="108,100,102,0" VerticalAlignment="Top" ItemsSource="{Binding}" RowBackground="#FFF1E6E6" CanUserResizeRows="False" FontSize="14" Background="#FFCFCFCF">
+                <DataGrid x:Name="dataGridInvolucrados" SelectionMode="Single"  AutoGenerateColumns="False" IsReadOnly="True" Height="478" Margin="108,100,102,0" VerticalAlignment="Top" ItemsSource="{Binding}" RowBackground="#FFF1E6E6" CanUserResizeRows="False" FontSize="14" Background="#FFCFCFCF">
                     <DataGrid.Resources>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Background" Value="#FFA3081F" />
@@ -25,15 +25,12 @@
                     </DataGrid.Resources>
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding direccion}" ClipboardContentBinding="{x:Null}" Header="Dirección" HeaderStringFormat="Nombre" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-                        <DataGridTextColumn Binding="{Binding vehiculos}" ClipboardContentBinding="{x:Null}" Header="Vehículos involucrados" HeaderStringFormat="Nombre" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-                        <DataGridTextColumn Binding="{Binding fotografias}" ClipboardContentBinding="{x:Null}" Header="Cantidad fotografías" HeaderStringFormat="Nombre" Width="210" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
-
+                        <DataGridTextColumn Binding="{Binding direccion}" ClipboardContentBinding="{x:Null}" Header="Dirección" Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding numCarrosInvolucrados}" ClipboardContentBinding="{x:Null}" Header="Cantidad Involucrados"  Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding fechaHora}" ClipboardContentBinding="{x:Null}" Header="Fecha y hora" Width="200" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        
                     </DataGrid.Columns>
                 </DataGrid>
-
-                <Button x:Name="btnVisualizarReporte" HorizontalAlignment="Center" Content="Visualizar Reporte" FontFamily="Impact" FontSize="16" Width="157" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="108,564,614,38" Height="Auto" HorizontalContentAlignment="Left" />
-                <Button x:Name="btnVerDictamen" HorizontalAlignment="Center" Content="Ver Dictamen" FontFamily="Impact" FontSize="16" Width="146" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="631,564,102,38" Height="Auto" HorizontalContentAlignment="Center" Click="BtnVerDictamen_Click" RenderTransformOrigin="0.719,0.468" />
 
 
             </Grid>
@@ -46,7 +43,7 @@
         <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,621" Width="22" Height="22" Click="BtnSalir_Click"/>
 
 
-        <Grid Margin="106,98,102,0">
+        <Grid Margin="0,10,10.2,0.2">
             <Grid x:Name="gridHistorial" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
 

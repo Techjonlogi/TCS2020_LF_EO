@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DelegacionMunicipal\Sistema_DelegacionMunicipal\App.xaml
-13-2015912192
+13-73288698
 10-1863619973
-361529373133
+37233297760
 4393001552
-ChatMsj\MensajeChat.xaml;ChatMsj\MensajeEnviado.xaml;LoginMunicipal.xaml;MainWindow.xaml;ViewController\AgregarConductor.xaml;ViewController\AgregarVehiculo.xaml;ViewController\Chat.xaml;ViewController\ListaConductor.xaml;ViewController\DetalleConductor.xaml;ViewController\Dictamen.xaml;ViewController\HistorialReportes.xaml;ViewController\Inicio.xaml;ViewController\LevantarReporte.xaml;
+ChatMsj\MensajeChat.xaml;ChatMsj\MensajeEnviado.xaml;LoginMunicipal.xaml;MainWindow.xaml;ViewController\AgregarConductor.xaml;ViewController\AgregarVehiculo.xaml;ViewController\Chat.xaml;ViewController\ListaConductor.xaml;ViewController\DetalleConductor.xaml;ViewController\DetalleDictamen.xaml;ViewController\HistorialReportes.xaml;ViewController\Inicio.xaml;ViewController\LevantarReporte.xaml;
 
-False
+True
 

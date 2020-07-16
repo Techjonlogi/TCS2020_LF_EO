@@ -338,3 +338,5 @@ C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DirecciónGenera
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\Sistema_DirecciónGeneral.csproj.CopyComplete
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\Sistema_DirecciónGeneral.exe
 C:\Users\alex-\OneDrive\Documentos\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\obj\Debug\Sistema_DirecciónGeneral.pdb
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\bin\Debug\Newtonsoft.Json.dll
+C:\Users\skimo\Documents\GitHub\TCS2020_LF_EO\Sistema_DirecciónGeneral\Sistema_DirecciónGeneral\bin\Debug\Newtonsoft.Json.xml

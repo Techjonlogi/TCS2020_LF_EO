@@ -50,6 +50,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                 Delegacion delegacion = db.Delegacion.Find(reporte.idDelegación);
                 Dictamen dictamen = db.Dictamen.Find(folio);
                 Vehiculo vehiculo = db.Vehiculo.Find(dictamen.responsable);
+                Usuario usuario = db.Usuario.Find(idUsuario);
                 if (folio.Length == 12)
                 {
                     Conductor conductor = db.Conductor.Find(vehiculo.idConductor);
@@ -71,7 +72,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                 txt_descripcion.Text = dictamen.descripcion;
                 txt_folio.Content = dictamen.folio;
                 txt_fechaHora.Content = dictamen.fechaHora;
-
+                txt_perito.Content = usuario.nombre + " " + usuario.apellidos;
 
                 var query = (from r in db.Reporte
                              join dic in db.Dictamen on r.idReporte equals dic.idReporte

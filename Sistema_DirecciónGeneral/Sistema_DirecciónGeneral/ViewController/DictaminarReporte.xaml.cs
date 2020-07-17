@@ -22,30 +22,49 @@ namespace Sistema_DirecciónGeneral.ViewController
     public partial class DictaminarReporte : UserControl
     {
         int idReporte = 0;
+        int idUsuario = 0;
+        string folio = "";
+        string placas =""; 
         IReporte itActualizar;
-        public DictaminarReporte(int idReporte, IReporte itActualizar)
+        public DictaminarReporte(int idUsuario, int idReporte, string folio, IReporte itActualizar)
         {
             InitializeComponent();
+            this.idUsuario = idUsuario;
             this.idReporte = idReporte;
-            if (this.idReporte > 0)
+            this.folio = folio;
+            LlenarResponsable();
+            if (this.folio.Length == 12)
             {
-                LlenarResponsable();
+                CargarDictamen();
 
             }
             this.itActualizar = itActualizar;
+        }
+
+        private void CargarDictamen()
+        {
+            using(SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                Dictamen dictamen = db.Dictamen.Find(folio);
+                cb_responsable.Text = dictamen.responsable;
+                txt_descripcion.Text = dictamen.descripcion;
+            }
         }
 
         private void LlenarResponsable()
         {
             SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
             var list = (from r in db.Reporte
+                        join dic in db.Dictamen on r.idReporte equals dic.idReporte
                         join vr in db.VehiculoReporte on r.idReporte equals vr.idReporte
                         join v in db.Vehiculo on vr.placas equals v.placas
+                        join c in db.Conductor on v.idConductor equals c.idConductor
+                        where vr.idReporte == idReporte
                         select new
                         {
                             idReporte = vr.idReporte,
                             placas = vr.placas,
-                            auto = v.marca + " " + v.modelo + " " + v.placas
+                            auto = v.placas
                         }).ToList();
 
             if (list.Count() > 0)
@@ -64,39 +83,34 @@ namespace Sistema_DirecciónGeneral.ViewController
         private void btn_dictaminar_Click(object sender, RoutedEventArgs e)
         {
             string descripcion = txt_descripcion.Text;
-            string responsable = cb_responsable.Text;
             string hora = DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Millisecond.ToString();
             string fecha = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString();
-            //int idUsuario = 
+            placas = cb_responsable.Text;
 
             int idReportAux = idReporte;
 
-            if (string.IsNullOrEmpty(descripcion) || string.IsNullOrEmpty(responsable))
+            if (string.IsNullOrEmpty(descripcion))
             {
                 MessageBox.Show("Campos Vacios...", "Error");
                 return;
             }
             try
             {
-                if (idReporte == 0)
-                {
+               
                     using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
                     {
-                        Dictamen dictamenNew = new Dictamen
-                        {
-                            folio = fecha + hora,
-                            descripcion = descripcion,
-                            responsable = responsable,
-                            fechaHora = DateTime.Now,
-                            idUsuario = 5, //Traer el idUsuario desde el login
-                            idReporte = idReportAux
-                        };
-                        db.Dictamen.Add(dictamenNew);
-                        db.SaveChanges();
-                        MessageBox.Show("dictamen registrado con éxito");
-                        idReportAux = dictamenNew.idReporte;
-                    }
-                }
+                    Dictamen dictamenNew = db.Dictamen.Find(folio);
+                    dictamenNew.folio = fecha + hora;
+                    dictamenNew.descripcion = descripcion;
+                    dictamenNew.responsable = placas;
+                    dictamenNew.fechaHora = DateTime.Now;
+                    dictamenNew.idUsuario = idUsuario;
+                    dictamenNew.idReporte = idReportAux;
+                    db.Entry(dictamenNew).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("dictamen actualizado con éxito");
+                    idReportAux = dictamenNew.idReporte;
+                    }           
                 this.Visibility = Visibility.Collapsed;
                 this.itActualizar.Actualizar(idReportAux);
             }

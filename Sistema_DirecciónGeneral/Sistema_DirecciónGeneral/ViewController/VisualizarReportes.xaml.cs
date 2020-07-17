@@ -22,6 +22,7 @@ namespace Sistema_DirecciónGeneral.ViewController
     public partial class VisualizarReportes : UserControl, IReporte
     {
         int idUsuario;
+        string folioDic = "";
         public VisualizarReportes(int idUsuario)
         {
             this.idUsuario = idUsuario;
@@ -38,8 +39,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                 var query = (from r in db.Reporte
                              join d in db.Delegacion on r.idDelegación equals d.idDelegacion
                              join dic in db.Dictamen on r.idReporte equals dic.idReporte
-                             //join v in db.Vehiculo on dic.responsable equals v.placas
-                             //join c in db.Conductor on v.idConductor equals c.idConductor
+                            
                              select new
                              {
                                  idReporte = r.idReporte,
@@ -48,8 +48,7 @@ namespace Sistema_DirecciónGeneral.ViewController
                                  idDelegación = r.idDelegación,
                                  idImagenes = r.idImagenes,
                                  delegacion = d.nombre,
-                                 folio = dic.folio,
-                                 //nombre = c.nombre +" "+ c.apellidos                               
+                                 folio = dic.folio                                  
                              }).ToList();
                 dgReportes.ItemsSource = query;
 
@@ -64,8 +63,15 @@ namespace Sistema_DirecciónGeneral.ViewController
         private void BtnDictaminar_Click(object sender, RoutedEventArgs e)
         {
             int idReporte = (int)((Button)sender).CommandParameter;
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                folioDic = db.Dictamen.Where(x => x.idReporte == idReporte).Select(x => x.folio).FirstOrDefault().ToString();
 
-            DictaminarReporte dictaminar = new DictaminarReporte(idReporte, this);
+
+
+            }
+
+            DictaminarReporte dictaminar = new DictaminarReporte(idUsuario, idReporte, folioDic, this);
             gridDictamen.Children.Clear();
             gridDictamen.Children.Add(dictaminar);
 
@@ -76,7 +82,6 @@ namespace Sistema_DirecciónGeneral.ViewController
         private void BtnVerDetalles_Click(object sender, RoutedEventArgs e)
         {
             int idReporte = (int)((Button)sender).CommandParameter;
-            string folioDic = "";
             string placasRespo = "";
             using(SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
             {

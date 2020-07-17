@@ -26,6 +26,7 @@ namespace Sistema_DelegacionMunicipal
         Chat chat;
         LevantarReporte levantarReporte;
         Inicio inicio = new Inicio();
+        Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
         public MainWindow(int idUser)
         {
@@ -47,7 +48,6 @@ namespace Sistema_DelegacionMunicipal
 
             this.idUser = idUser;
 
-            Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             chat = new Chat(idUser, usuarioEmisor, delegacionEmisor, socketCliente);
 
@@ -212,6 +212,16 @@ namespace Sistema_DelegacionMunicipal
                 btnChat.Background = Brushes.Transparent;
         }
 
-        
+        private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            LoginMunicipal login = new LoginMunicipal();
+            login.Show();
+
+            chat.CerrarConexiones();
+
+            this.Close();
+            socketCliente.Close();
+        }
+
     }
 }

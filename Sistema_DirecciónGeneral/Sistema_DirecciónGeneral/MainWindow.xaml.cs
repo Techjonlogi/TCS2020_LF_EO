@@ -28,6 +28,7 @@ namespace Sistema_DirecciónGeneral
         ChatGrupal chatGrupal;
         Inicio inicio = new Inicio();
         private int idUser;
+        Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
         public MainWindow(int idUser)
         {
@@ -49,7 +50,6 @@ namespace Sistema_DirecciónGeneral
 
             this.idUser = idUser;
 
-            Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             chatGrupal = new ChatGrupal(idUser, usuarioEmisor, delegacionEmisor, socketCliente);
 
@@ -148,6 +148,16 @@ namespace Sistema_DirecciónGeneral
                     break;
             }
 
+        }
+        private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            chatGrupal.CerrarConexiones();
+
+            this.Close();
+            socketCliente.Close();
         }
 
         private void CuadroUsuario_MouseDown(object sender, MouseButtonEventArgs e)

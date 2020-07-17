@@ -60,6 +60,8 @@
 
             <materialDesign:PackIcon Kind="User" Width="62" Height="101" VerticalAlignment="Center" Margin="22,15,0,537" Foreground="White" RenderTransformOrigin="3.1,0.867" />
 
+            <materialDesign:PackIcon Kind="ExitRun" Width="39" Height="22" VerticalAlignment="Center" Margin="89,93,0,537.8" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnCerrarSesion" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="89,93,0,0" VerticalAlignment="Top" Width="39" Height="19" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnCerrarSesion_Click"/>
 
 
         </Grid>

@@ -262,7 +262,7 @@ namespace Sistema_DelegacionMunicipal.ViewController
                 mensaje = (Encoding.Default.GetString(dataBuf));
 
             }
-            catch (SocketException)
+            catch (Exception)
             {
                 this.Dispatcher.Invoke(() =>
                 {
@@ -360,6 +360,11 @@ namespace Sistema_DelegacionMunicipal.ViewController
                 byte[] buffer = Encoding.Default.GetBytes(infoReporte);
                 socketCliente.Send(buffer);
             }
+        }
+
+        public void CerrarConexiones()
+        {
+            socketCliente.Close();
         }
     }
 }

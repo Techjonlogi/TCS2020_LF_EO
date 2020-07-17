@@ -32,7 +32,7 @@
 
 
             <Rectangle Fill="#FF36342F" HorizontalAlignment="Right" Height="645" VerticalAlignment="Top" Width="147" Margin="-20,10,879,-2.2" Grid.RowSpan="2"/>
-            <Rectangle Fill="#7A6E46" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="148" Margin="-20,0,0,0"/>
+            <Rectangle Fill="#7A6E46" HorizontalAlignment="Left" Height="117" Stroke="#00000000" VerticalAlignment="Top" Width="148" Margin="-20,0,0,0" MouseDown="CuadroUsuario_MouseDown"/>
 
 
             <Label Content="Visualizar" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="35,319,0,0" VerticalAlignment="Top" Width="85" Height="91" Foreground="White" FontSize="14" FontFamily="Constantia" FontWeight="Bold" RenderTransformOrigin="0.498,0.208" Grid.RowSpan="2"/>
@@ -62,6 +62,8 @@
 
             <materialDesign:PackIcon Kind="User" Width="62" Height="101" VerticalAlignment="Center" Margin="22,15,0,216.867" Foreground="White" RenderTransformOrigin="3.1,0.867" />
 
+            <materialDesign:PackIcon Kind="ExitRun" Width="39" Height="22" VerticalAlignment="Center" Margin="89,95,0,216" Foreground="White" RenderTransformOrigin="3.1,0.867" />
+            <Button x:Name="btnCerrarSesion" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="89,93,0,0" VerticalAlignment="Top" Width="39" Height="19" FontSize="18" FontFamily="MS Reference Sans Serif" Background="Transparent" FontWeight="Bold" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.1" Click="BtnCerrarSesion_Click"/>
 
         </Grid>
         <Grid Margin="128,0,0,0.2" Grid.Column="1">

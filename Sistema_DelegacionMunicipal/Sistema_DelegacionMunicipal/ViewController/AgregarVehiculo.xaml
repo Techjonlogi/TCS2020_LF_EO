@@ -24,13 +24,16 @@
                 <Label Content="Año" HorizontalAlignment="Left" Margin="0,145,0,0" VerticalAlignment="Top" Width="282" Height="49" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
                 <Label Content="Modelo" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Width="282" Height="49" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
 
-                <TextBox HorizontalAlignment="Left" Height="49" Margin="301,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="49" Margin="301,96,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="49" Margin="301,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="49" Margin="301,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="49" Margin="301,243,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="49" Margin="301,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="49" Margin="301,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txt_marca" HorizontalAlignment="Left" Height="49" Margin="301,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txt_modelo" HorizontalAlignment="Left" Height="49" Margin="301,96,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txt_anio" HorizontalAlignment="Left" Height="49" Margin="301,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txt_color" HorizontalAlignment="Left" Height="49" Margin="301,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txt_nomAseguradora" HorizontalAlignment="Left" Height="49" Margin="301,243,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txt_numPoliza" HorizontalAlignment="Left" Height="49" Margin="301,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txt_placas" HorizontalAlignment="Left" Height="49" Margin="301,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+
+                <Button Content="Cancelar" HorizontalAlignment="Left" Margin="116,490,0,0" VerticalAlignment="Top" Width="176" Click="BtnCancelar_Click" Background="#FF5B5B5B" FontSize="16" FontFamily="Impact" BorderBrush="#FF5B5B5B"/>
+                <Button Content="Agregar" HorizontalAlignment="Left" Margin="382,490,0,0" VerticalAlignment="Top" Width="184" Click="BtnAgregar_Click" Background="#FF307CD6" FontSize="16" FontFamily="Impact" BorderBrush="#FF307CD6"/>
 
 
             </Grid>

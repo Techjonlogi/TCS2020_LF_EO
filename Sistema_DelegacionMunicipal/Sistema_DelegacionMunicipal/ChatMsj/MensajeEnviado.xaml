@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:Sistema_DelegacionMunicipal.ChatMsj" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" d:DesignWidth="300">
 
-    <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.5}">
+    <materialDesign:TransitioningContent x:Name="TransicionMensaje" OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight, Duration=0:0:0.5}">
 
 
-        <Border Padding="5" Background="#FF999999" Margin="0,0,-39,0" Height="106" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Border Padding="5" Background="#FF999999" Margin="0,0,-39,0" Height="394"  HorizontalAlignment="Right" VerticalAlignment="Top">
             <Grid HorizontalAlignment="Right" VerticalAlignment="Top">
 
                 <!-- Perfil Mensaje -->
@@ -18,14 +18,14 @@
                     CornerRadius="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     Width="35"
-                    Background="Green"
+                    Background="#FFA3081F"
                     BorderBrush="Gray"
                     BorderThickness="1"
                     >
                     <TextBlock Text="Tú"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                           Foreground="Black"
+                           Foreground="White" FontWeight="Bold" FontFamily="Segoe UI Historic"
                            />
                 </Border>
 
@@ -38,9 +38,11 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
+
+                    
                     <!-- Rectangulo de burbuja -->
                     <Border HorizontalAlignment="Right" CornerRadius="10"
-                    Padding="15"
+                    Padding="13"
                     Background="White" Margin="-15,0,40,0"
                     >
 
@@ -49,7 +51,8 @@
 
                            TextWrapping="Wrap"
                            Foreground="Black"
-                           Margin="0,-3,-5,-5" VerticalAlignment="Center" FontFamily="Leelawadee UI"
+                           IsEnabled="false"
+                           Margin="0,-3,-5,-5" VerticalAlignment="Center" FontFamily="Segoe UI Historic"
                               
                            />
 
@@ -58,9 +61,9 @@
                     <!-- Burbuja -->
 
                     <TextBlock x:Name="txtHora" Grid.Row="2"
-                           Text="11:54am"
+                           Text="00:00"
                            Foreground="Black"
-                           HorizontalAlignment="Left" Margin="-15,0,0,0"
+                           HorizontalAlignment="Right" Margin="-13,0,39,0" FontFamily="Segoe UI Historic"
                            />
 
                 </Grid>

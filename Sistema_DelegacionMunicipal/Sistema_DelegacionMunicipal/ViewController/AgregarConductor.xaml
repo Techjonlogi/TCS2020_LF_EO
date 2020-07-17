@@ -17,17 +17,21 @@
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="749"/>
                 <Label Content="Agregar Conductor" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="722" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="24"/>
 
-                <Label Content="Nombre completo" HorizontalAlignment="Left" Margin="0,61,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="300,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <Label Content="Fecha de nacimiento" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="41" Margin="300,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <Label Content="de conducir" HorizontalAlignment="Left" Margin="0,231,0,0" VerticalAlignment="Top" Width="277" Height="44" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="300,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <Label Content="Teléfono celular" HorizontalAlignment="Left" Margin="0,300,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="300,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
-                <Label Content="Contraseña de acceso" HorizontalAlignment="Left" Margin="0,379,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
-                <Label Content="Número de licencia" HorizontalAlignment="Left" Margin="0,204,0,0" VerticalAlignment="Top" Width="277" Height="56" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="297" Margin="300,0,0,222" Height="42" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <Label Content="Nombre(s)" HorizontalAlignment="Left" Margin="0,61,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="42" Margin="300,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <Label Content="Fecha de nacimiento" HorizontalAlignment="Left" Margin="0,230,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txtNacimiento" HorizontalAlignment="Left" Height="42" Margin="300,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <Label Content="de conducir" HorizontalAlignment="Left" Margin="0,339,0,0" VerticalAlignment="Top" Width="277" Height="44" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txtLicencia" HorizontalAlignment="Left" Height="42" Margin="300,309,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <Label Content="Teléfono celular" HorizontalAlignment="Left" Margin="0,392,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="42" Margin="300,392,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <Label Content="Número de licencia" HorizontalAlignment="Left" Margin="0,309,0,0" VerticalAlignment="Top" Width="277" Height="56" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+
+                <Button Content="Cancelar" HorizontalAlignment="Left" Margin="116,490,0,0" VerticalAlignment="Top" Width="176" Click="BtnCancelar_Click" Background="#FF5B5B5B" FontSize="16" FontFamily="Impact" BorderBrush="#FF5B5B5B"/>
+                <Button x:Name="BtnAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="382,490,0,0" VerticalAlignment="Top" Width="184" Click="BtnAgregar_Click" Background="#FF307CD6" FontSize="16" FontFamily="Impact" BorderBrush="#FF307CD6"/>
+                <TextBox x:Name="txtApellidos" HorizontalAlignment="Left" Height="42" Margin="300,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" FontSize="20" VerticalContentAlignment="Bottom"/>
+                <Label Content="Apellidos" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Width="277" Height="42" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                <Label Content="DD/MM/AAAA" HorizontalAlignment="Left" Margin="300,277,0,0" VerticalAlignment="Top" Width="143"/>
 
 
             </Grid>

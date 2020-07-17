@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Sistema_DelegacionMunicipal.Modelo;
 using Sistema_DelegacionMunicipal.ViewController;
 
 namespace Sistema_DelegacionMunicipal
@@ -22,20 +21,43 @@ namespace Sistema_DelegacionMunicipal
     public partial class MainWindow : Window
     {
         private int botonSeleccionado = 5;
+        int idUser = 1;
 
-        Chat chat = new Chat();
-        LevantarReporte levantarReporte = new LevantarReporte();
+        Chat chat;
+        LevantarReporte levantarReporte;
         Inicio inicio = new Inicio();
+        Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-        public MainWindow()
+        public MainWindow(int idUser)
         {
             InitializeComponent();
             GridPrincipal.Children.Add(inicio);
             btnInicio.Background = Brushes.White;
+
+
+            SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities();
+            string usuarioEmisor = db.Usuario.Where(x => x.idUsuario == idUser).Select(x => x.usuario1).FirstOrDefault().ToString();
+
+            string delegacionEmisor = (from u in db.Usuario.Where(x => x.idUsuario == idUser)
+                                       from d in db.Delegacion.Where(x => x.idDelegacion == u.idDelegación)
+                                       select d.nombre).FirstOrDefault().ToString();
+
+            int idDelegacionEmisor = (from u in db.Usuario.Where(x => x.idUsuario == idUser)
+                                      from d in db.Delegacion.Where(x => x.idDelegacion == u.idDelegación)
+                                      select d.idDelegacion).FirstOrDefault();
+
+            this.idUser = idUser;
+
+
+            chat = new Chat(idUser, usuarioEmisor, delegacionEmisor, socketCliente);
+
+            levantarReporte = new LevantarReporte(idDelegacionEmisor, socketCliente, chat);
+
+            inicio.MensajeBienvenida(usuarioEmisor);
         }
 
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        private void cuadroUsuario_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
@@ -47,7 +69,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(1);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new Conductor());
+                GridPrincipal.Children.Add(new ListaConductor());
             }
         }
 
@@ -67,7 +89,7 @@ namespace Sistema_DelegacionMunicipal
             {
                 cambiarBoton(3);
                 GridPrincipal.Children.Clear();
-                GridPrincipal.Children.Add(new HistorialReportes());
+                GridPrincipal.Children.Add(new HistorialReportes(idUser));
             }
         }
 
@@ -94,6 +116,7 @@ namespace Sistema_DelegacionMunicipal
 
         private void cambiarBoton(int seleccionado)
         {
+
             btnConductores.Background = Brushes.Transparent;
             btnLevantarReporte.Background = Brushes.Transparent;
             btnHistorialReportes.Background = Brushes.Transparent;
@@ -134,6 +157,71 @@ namespace Sistema_DelegacionMunicipal
 
         }
 
-        
+        private void BtnInicio_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnInicio.Background = Brushes.White;
+        }
+
+        private void BtnInicio_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 5)
+                btnInicio.Background = Brushes.Transparent;
+        }
+
+        private void btnConductores_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnConductores.Background = Brushes.White;
+        }
+
+        private void btnConductores_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 1)
+                btnConductores.Background = Brushes.Transparent;
+        }
+
+        private void btnLevantarReporte_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnLevantarReporte.Background = Brushes.White;
+        }
+
+        private void btnLevantarReporte_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 2)
+                btnLevantarReporte.Background = Brushes.Transparent;
+        }
+
+        private void btnHistorialReportes_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnHistorialReportes.Background = Brushes.White;
+        }
+
+        private void btnHistorialReportes_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 3)
+                btnHistorialReportes.Background = Brushes.Transparent;
+        }
+
+        private void btnChat_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnChat.Background = Brushes.White;
+        }
+
+        private void btnChat_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (botonSeleccionado != 4)
+                btnChat.Background = Brushes.Transparent;
+        }
+
+        private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            LoginMunicipal login = new LoginMunicipal();
+            login.Show();
+
+            chat.CerrarConexiones();
+
+            this.Close();
+            socketCliente.Close();
+        }
+
     }
 }

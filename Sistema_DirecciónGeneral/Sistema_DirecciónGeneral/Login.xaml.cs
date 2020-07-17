@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Sistema_DirecciónGeneral.Modelo;
 
 namespace Sistema_DirecciónGeneral
 {
@@ -19,6 +20,7 @@ namespace Sistema_DirecciónGeneral
     /// </summary>
     public partial class Login : Window
     {
+                
         public Login()
         {
             InitializeComponent();
@@ -31,9 +33,43 @@ namespace Sistema_DirecciónGeneral
 
         private void Button_IniciarSesion(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            if (string.IsNullOrEmpty(txt_user.Text) || string.IsNullOrEmpty(txt_pass.Password))
+            {
+                MessageBox.Show("Usuario y/o password Vacios...", "Error");
+                txt_user.Focus();
+                txt_pass.Focus();
+                return;
+            }
+            try
+            {
+                //IQueryable query;
+                using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+                {
+                    var query = from Usuario in db.Usuario
+                                where Usuario.usuario1 == txt_user.Text && Usuario.contrasenia == txt_pass.Password
+                                select Usuario.idUsuario;
+                    if (query.Count() > 0)
+                    {
+                        int idUser = db.Usuario.Where(x => x.usuario1 == txt_user.Text).Select(x => x.idUsuario).FirstOrDefault();
+
+                        MessageBox.Show(this, "Bienvenido: " + txt_user.Text, "Información");
+                        MainWindow mainWindow = new MainWindow(idUser);
+                        mainWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o password incorrecto...", "Error");
+                    }
+                }
+                
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+                 
+            }            
         }
+
     }
 }

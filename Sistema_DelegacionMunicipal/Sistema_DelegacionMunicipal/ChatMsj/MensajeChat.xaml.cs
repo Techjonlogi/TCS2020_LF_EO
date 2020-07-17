@@ -20,22 +20,36 @@ namespace Sistema_DelegacionMunicipal.ChatMsj
     /// </summary>
     public partial class MensajeChat : UserControl
     {
-        public MensajeChat(int posicionMensaje,string mensaje)
+        public MensajeChat(int posicionMensaje,string mensaje, string usuarioEmisor)
         {
             InitializeComponent();
 
             txtMensaje.Text = mensaje;
-            this.Margin = new Thickness(0, posicionMensaje, 110, 0);
+
+            if (usuarioEmisor.Length > 4)
+            {
+                txtEmisor.Text = usuarioEmisor.Remove(4, usuarioEmisor.Length - 4);
+            }
+            else
+            {
+                txtEmisor.Text = usuarioEmisor;
+            }
+            
+            this.Margin = new Thickness(0, posicionMensaje, 71, 0);
+
+            string minutos = "";
+
+            if (DateTime.Now.Minute < 10)
+                minutos = "0" + DateTime.Now.Minute;
+            else
+                minutos = "" + DateTime.Now.Minute;
 
             if (DateTime.Now.Hour > 12)
-                txtHora.Text = "" + (DateTime.Now.Hour - 12) + ":" + DateTime.Now.Minute + " pm";
+                txtHora.Text = "" + (DateTime.Now.Hour - 12) + ":" + minutos + " pm";
             else
-                txtHora.Text = "" + (DateTime.Now.Hour) + ":" + DateTime.Now.Minute + " am";
+                txtHora.Text = "" + (DateTime.Now.Hour) + ":" + minutos + " am";
+
         }
-
-
-
-
 
     }
 }

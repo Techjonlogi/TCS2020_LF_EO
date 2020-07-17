@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sistema_DirecciónGeneral.Interfaces;
+using Sistema_DirecciónGeneral.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +19,41 @@ namespace Sistema_DirecciónGeneral.ViewController
     /// <summary>
     /// Lógica de interacción para VisualizarReportes.xaml
     /// </summary>
-    public partial class VisualizarReportes : UserControl
+    public partial class VisualizarReportes : UserControl, IReporte
     {
-        public VisualizarReportes()
+        int idUsuario;
+        string folioDic = "";
+        public VisualizarReportes(int idUsuario)
         {
+            this.idUsuario = idUsuario;
             InitializeComponent();
-            btnVolver.Visibility = Visibility.Hidden;
-            btnFinalizarDictamen.Visibility = Visibility.Hidden;
+            gridDictamen.Children.Clear();
+            LlenarTablaReportes();
+
         }
 
+        private void LlenarTablaReportes()
+        {
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
+            {
+                var query = (from r in db.Reporte
+                             join d in db.Delegacion on r.idDelegación equals d.idDelegacion
+                             join dic in db.Dictamen on r.idReporte equals dic.idReporte
+                            
+                             select new
+                             {
+                                 idReporte = r.idReporte,
+                                 direccion = r.direccion,
+                                 numCarrosInvolucrados = r.numCarrosInvolucrados,
+                                 idDelegación = r.idDelegación,
+                                 idImagenes = r.idImagenes,
+                                 delegacion = d.nombre,
+                                 folio = dic.folio                                  
+                             }).ToList();
+                dgReportes.ItemsSource = query;
+
+            }
+        }
 
         private void Button_Salir(object sender, RoutedEventArgs e)
         {
@@ -34,59 +62,46 @@ namespace Sistema_DirecciónGeneral.ViewController
 
         private void BtnDictaminar_Click(object sender, RoutedEventArgs e)
         {
-            if (gridDictamen.Children.Count < 1)
+            int idReporte = (int)((Button)sender).CommandParameter;
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
             {
-                gridDictamen.Children.Clear();
-                gridDictamen.Children.Add(new DictaminarReporte());
+                folioDic = db.Dictamen.Where(x => x.idReporte == idReporte).Select(x => x.folio).FirstOrDefault().ToString();
 
-                btnVolver.Visibility = Visibility.Visible;
-                btnVolver.Content = "Cancelar";
-                btnFinalizarDictamen.Visibility = Visibility.Visible;
 
-                btnDictaminarReporte.Visibility = Visibility.Hidden;
-                btnVerDetalles.Visibility = Visibility.Hidden;
+
             }
 
+            DictaminarReporte dictaminar = new DictaminarReporte(idUsuario, idReporte, folioDic, this);
+            gridDictamen.Children.Clear();
+            gridDictamen.Children.Add(dictaminar);
+
+            LlenarTablaReportes();
         }
 
 
         private void BtnVerDetalles_Click(object sender, RoutedEventArgs e)
         {
-            if (gridDetalles.Children.Count < 1)
+            int idReporte = (int)((Button)sender).CommandParameter;
+            string placasRespo = "";
+            using(SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
             {
-                gridDetalles.Children.Clear();
-                gridDetalles.Children.Add(new DetallesReporte());
+                folioDic = db.Dictamen.Where(x => x.idReporte == idReporte).Select(x => x.folio).FirstOrDefault().ToString();
 
-                btnVolver.Visibility = Visibility.Visible;
-                btnVolver.Content = "Volver";
-
-                btnDictaminarReporte.Visibility = Visibility.Hidden;
-                btnVerDetalles.Visibility = Visibility.Hidden;
+                
+                
             }
+            
+            //var dictamen = (Dictamen)dgReportes.SelectedItem;
+            DetallesReporte detalles = new DetallesReporte(idUsuario, idReporte, folioDic, placasRespo, this);
+            gridDictamen.Children.Clear();
+            gridDictamen.Children.Add(detalles);
+
+            LlenarTablaReportes();
         }
 
-        private void BtnVolver_Click(object sender, RoutedEventArgs e)
+        public void Actualizar(int idReporte)
         {
-            if (gridDetalles.Children.Count > 0)
-            {
-                btnVolver.Visibility = Visibility.Hidden;
-
-                btnDictaminarReporte.Visibility = Visibility.Visible;
-                btnVerDetalles.Visibility = Visibility.Visible;
-
-                gridDetalles.Children.RemoveAt(0);
-            }
-
-            if (gridDictamen.Children.Count > 0)
-            {
-                btnVolver.Visibility = Visibility.Hidden;
-                btnFinalizarDictamen.Visibility = Visibility.Hidden;
-
-                btnDictaminarReporte.Visibility = Visibility.Visible;
-                btnVerDetalles.Visibility = Visibility.Visible;
-
-                gridDictamen.Children.RemoveAt(0);
-            }
+            LlenarTablaReportes();
         }
     }
 }

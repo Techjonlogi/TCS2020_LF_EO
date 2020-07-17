@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sistema_DelegacionMunicipal.Interface;
+using Sistema_DelegacionMunicipal.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,12 +20,16 @@ namespace Sistema_DelegacionMunicipal.ViewController
     /// <summary>
     /// Lógica de interacción para HistorialReportes.xaml
     /// </summary>
-    public partial class HistorialReportes : UserControl
+    public partial class HistorialReportes : UserControl, IReporte
     {
-        public HistorialReportes()
+
+        int idUsuarioSelec = 0;
+        public HistorialReportes(int idUsuario)
         {
+            this.idUsuarioSelec = idUsuario;
             InitializeComponent();
-            btnVolver.Visibility = Visibility.Hidden;
+            gridHistorial.Children.Clear();
+            LlenarTablaHistorial();
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
@@ -35,31 +41,34 @@ namespace Sistema_DelegacionMunicipal.ViewController
 
         private void BtnVerDictamen_Click(object sender, RoutedEventArgs e)
         {
-            if (gridHistorial.Children.Count < 1)
+            DetalleDictamen dictamen = new DetalleDictamen();
+            gridHistorial.Children.Clear();
+            gridHistorial.Children.Add(dictamen);
+        }
+
+        private void LlenarTablaHistorial()
+        {
+            using (SistemaReportesVehiculosEntities db = new SistemaReportesVehiculosEntities())
             {
-                gridHistorial.Children.Clear();
-                gridHistorial.Children.Add(new Dictamen());
-
-                btnVisualizarReporte.Visibility = Visibility.Hidden;
-                btnVerDictamen.Visibility = Visibility.Hidden;
-
-                btnVolver.Visibility = Visibility.Visible;
+                var query = (from r in db.Reporte
+                             join d in db.Delegacion on r.idDelegación equals d.idDelegacion
+                             where r.idDelegación == d.idDelegacion
+                             select new
+                             {
+                                 idReporte = r.idReporte,
+                                 direccion = r.direccion,
+                                 numCarrosInvolucrados = r.numCarrosInvolucrados,
+                                 fechaHora = r.fechaHora
+                             }).ToList();
+                
+                dataGridInvolucrados.ItemsSource = query;
             }
         }
 
 
-        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        public void Actualizar(int idReporte)
         {
-            if (gridHistorial.Children.Count > 0)
-            {
-                gridHistorial.Children.RemoveAt(0);
-
-                btnVisualizarReporte.Visibility = Visibility.Visible;
-                btnVerDictamen.Visibility = Visibility.Visible;
-
-                btnVolver.Visibility = Visibility.Hidden;
-            }
-
+            LlenarTablaHistorial();
         }
     }
 }

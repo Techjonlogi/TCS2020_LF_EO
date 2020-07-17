@@ -8,37 +8,33 @@
              mc:Ignorable="d" Height="705.88" Width="878.999">
 
     <Grid>
-        <Rectangle Fill="#FF6C6CB2" HorizontalAlignment="Left" Height="643" Stroke="Black" VerticalAlignment="Top" Width="893"/>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595" Margin="0,0,-0.2,0.2">
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595" Margin="-2,-2,2.2,2.6">
 
             <Grid>
-                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
-                <Label Content="Registrar usuarios" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
-                <Label Content="Nombre:" HorizontalAlignment="Left" Margin="219,128,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Apellidos" HorizontalAlignment="Left" Margin="229,175,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="Cargo" HorizontalAlignment="Left" Margin="187,457,0,0" VerticalAlignment="Top" Width="211" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <Label Content="1.- Ingrese sus datos personales" HorizontalAlignment="Left" Margin="0,81,0,0" VerticalAlignment="Top" Width="879" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Button x:Name="btnVolver" HorizontalAlignment="Center" Content="Volver" FontFamily="Impact" FontSize="14" Width="111" Background="#FFC13434" BorderBrush="{x:Null}" Margin="208,442,560.2,227.8" Height="Auto" Click="btnVolver_Click" />
+                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="879"/>
+                <Label Content="Registrar usuarios" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="879" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
+                <Label Content="Nombre:" HorizontalAlignment="Left" Margin="81,84,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Apellidos" HorizontalAlignment="Left" Margin="91,131,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="Cargo" HorizontalAlignment="Left" Margin="49,366,0,0" VerticalAlignment="Top" Width="211" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <Label Content="1.- Ingrese sus datos personales" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="879" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
 
-                <Label Content="2.- Selecciona el cargo" HorizontalAlignment="Left" Margin="0,384,0,0" VerticalAlignment="Top" Width="879" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
-                <Label Content="Username" HorizontalAlignment="Left" Margin="229,222,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" RenderTransformOrigin="0.755,0.606"/>
-                <Label Content="Contraseña" HorizontalAlignment="Left" Margin="229,269,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="424,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="424,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.444,0.47"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="424,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="424,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
-                <ComboBox HorizontalAlignment="Left" Margin="424,457,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.665,0.42"/>
-                <Label Content="Delegación" HorizontalAlignment="Left" Margin="197,311,0,0" VerticalAlignment="Top" Width="201" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-                <ComboBox HorizontalAlignment="Left" Margin="424,316,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
-                <Button  HorizontalAlignment="Center" Content="Registrar Usuario" FontFamily="Impact" FontSize="14" Width="201" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="332,566,346,104" Height="Auto"/>
+                <Label Content="2.- Selecciona el cargo" HorizontalAlignment="Left" Margin="0,319,0,0" VerticalAlignment="Top" Width="879" Height="42" FontSize="24" HorizontalContentAlignment="Center" FontWeight="Bold" Background="#FF787878" />
+                <Label Content="Username" HorizontalAlignment="Left" Margin="91,178,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right" RenderTransformOrigin="0.755,0.606"/>
+                <Label Content="Contraseña" HorizontalAlignment="Left" Margin="91,225,0,0" VerticalAlignment="Top" Width="169" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="42" Margin="291,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
+                <TextBox x:Name="txt_apellidos" HorizontalAlignment="Left" Height="42" Margin="291,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.444,0.47"/>
+                <TextBox x:Name="txt_user" HorizontalAlignment="Left" Height="42" Margin="291,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22"/>
+                <TextBox x:Name="txt_contrasenia" HorizontalAlignment="Left" Height="42" Margin="291,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" FontSize="22" RenderTransformOrigin="0.246,-0.01"/>
+                <ComboBox x:Name="cb_cargo" ItemsSource="{Binding Cargo}" HorizontalAlignment="Left" Margin="291,366,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.665,0.42"/>
+                <Label Content="Delegación" HorizontalAlignment="Left" Margin="59,272,0,0" VerticalAlignment="Top" Width="201" Height="42" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+                <ComboBox x:Name="cb_delegacion" ItemsSource="{Binding Delegacion}" HorizontalAlignment="Left" Margin="291,272,0,0" VerticalAlignment="Top" Width="366" FontSize="22" Height="42" RenderTransformOrigin="0.257,0.482"/>
+                <Button x:Name="btn_RegistrarUsuario" HorizontalAlignment="Center" Content="Registrar Usuario" FontFamily="Impact" FontSize="14" Width="202" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="455,442,222.2,227.8" Height="Auto" Click="btn_RegistrarUsuario_Click"/>
 
 
             </Grid>
 
         </materialDesign:TransitioningContent>
-
-        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="857,0,0,684" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="857,0,0,684" Width="22" Height="Auto" Click="Button_Salir" />
-
 
 
 

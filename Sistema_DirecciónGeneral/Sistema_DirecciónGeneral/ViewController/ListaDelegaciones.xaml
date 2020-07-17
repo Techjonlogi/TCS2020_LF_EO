@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Sistema_DirecciónGeneral.ViewController.ListaDelegaciones"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sistema_DirecciónGeneral.ViewController" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Height="643" Width="879">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="619*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF6C6CB2" HorizontalAlignment="Left" Height="643" Stroke="Black" VerticalAlignment="Top" Width="893" Margin="0,0,-13.8,0" Grid.RowSpan="2"/>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}" Background="#FF959595" Margin="0,0,0.2,0.2" Grid.RowSpan="2">
+
+            <Grid>
+                <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="476"/>
+                <Label Content="Lista de delegaciones" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="476" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="28"/>
+                <DataGrid x:Name="dgDelegacion" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="465" Margin="35,101,0,0" VerticalAlignment="Top" Width="808">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#7A6E46" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding nombre}" ClipboardContentBinding="{x:Null}" Header="Delegación" Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding municipio}" ClipboardContentBinding="{x:Null}" Header="Municipio"  Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding telefono}" ClipboardContentBinding="{x:Null}" Header="Teléfono" Width="130" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTextColumn Binding="{Binding correo}" ClipboardContentBinding="{x:Null}" Header="Correo" Width="180" CanUserReorder="False" CanUserResize="False" CanUserSort="False"/>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Button CommandParameter="{Binding idDelegacion}" Click="Button_Eliminar" Background="#FFC13434">
+                                            <materialDesign:PackIcon Kind="Delete" VerticalAlignment="Center" Foreground="White"/>
+                                        </Button>
+                                        <Button CommandParameter="{Binding idDelegacion}" Click="Button_Modificar" Background="Gray">
+                                            <materialDesign:PackIcon Kind="Edit"  VerticalAlignment="Center" Foreground="White"/>
+                                        </Button>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="btnRegistrarDelegacion" HorizontalAlignment="Center" Content="Registrar delegación" FontFamily="Impact" FontSize="14" Width="179" Background="#FF307CD6" BorderBrush="#FF307CD6" Margin="625,584,75.2,27.2" Height="Auto" Click="btnRegistrarDelegacion_Click"/>
+
+
+            </Grid>
+
+        </materialDesign:TransitioningContent>
+
+        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="856,0,0,2.3" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
+        <Button HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="856,0,0.2,2.3" Width="23" Height="Auto" Click="Button_Salir" />
+
+        <Grid Margin="10,28.7,24.2,0.2" Grid.Row="1">
+            <Grid x:Name="GridDelegacion" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

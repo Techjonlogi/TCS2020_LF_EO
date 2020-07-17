@@ -9,7 +9,7 @@
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.5}">
 
 
-        <Border Padding="5" Background="#FF999999" Margin="0,0,-39,0" Height="106" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Border Padding="5" Background="#FF999999" Height="400" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
 
                 <!-- Perfil Mensaje -->
@@ -18,14 +18,14 @@
                     CornerRadius="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     Width="35"
-                    Background="Green"
+                    Background="#FF307CD6"
                     BorderBrush="Gray"
                     BorderThickness="1"
                     >
-                    <TextBlock Text="LM"
+                    <TextBlock x:Name="txtEmisor" Text="TTTT"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                           Foreground="Black"
+                           Foreground="White" FontFamily="Segoe UI Historic" FontWeight="Bold" FontSize="10"
                            />
                 </Border>
 
@@ -40,7 +40,7 @@
 
                     <!-- Rectangulo de burbuja -->
                     <Border HorizontalAlignment="Left" CornerRadius="10"
-                    Padding="15"
+                    Padding="13"
                     Background="White" Margin="15,0,0,0"
                     >
 
@@ -49,7 +49,7 @@
 
                            TextWrapping="Wrap"
                            Foreground="Black"
-                           Margin="0,-3,-5,-5" VerticalAlignment="Center" FontFamily="Leelawadee UI"
+                           Margin="0,-3,-5,-5" VerticalAlignment="Center" FontFamily="Segoe UI Historic"
                               
                            />
 
@@ -58,9 +58,9 @@
                     <!-- Burbuja -->
 
                     <TextBlock x:Name="txtHora" Grid.Row="2"
-                           Text="11:54am"
+                           Text="00:00"
                            Foreground="Black"
-                           HorizontalAlignment="Right" Margin="0,0,10,0"
+                           HorizontalAlignment="Left" Margin="17,0,0,0" FontFamily="Segoe UI Historic"
                            />
 
                 </Grid>

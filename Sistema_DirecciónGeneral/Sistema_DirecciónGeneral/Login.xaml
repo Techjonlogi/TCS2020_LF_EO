@@ -21,11 +21,11 @@
 
             <StackPanel Margin="0,15" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Foreground="#707070"/>
-                <TextBox materialDesign:HintAssist.Hint="Usuario" Width="250" Margin="5"/>
+                <TextBox x:Name="txt_user" materialDesign:HintAssist.Hint="Usuario" Width="250" Margin="5"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Key" VerticalAlignment="Center" Foreground="#707070"/>
-                <PasswordBox materialDesign:HintAssist.Hint="Contraseña" Width="250" Margin="5"/>
+                <PasswordBox x:Name="txt_pass" materialDesign:HintAssist.Hint="Contraseña" Width="250" Margin="5"/>
             </StackPanel>
             <Grid>
                 <CheckBox Content="Recordar cuenta" Margin="5,10" Foreground="#707070"/>

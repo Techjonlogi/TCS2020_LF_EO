@@ -20,12 +20,12 @@
                 <Rectangle Fill="#CCD8D8D8" HorizontalAlignment="Left" Height="601" Stroke="Transparent" VerticalAlignment="Top" Width="531" Margin="0,42,0,0"/>
                 <Rectangle Fill="#FF648FAE" HorizontalAlignment="Left" Height="47" Margin="0,596,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="531"/>
 
-                <TextBox  MaxLength="200" x:Name="txtMensajeRecibido" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="43" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" BorderBrush="{x:Null}" FontSize="16" FontFamily="Leelawadee UI Semilight" AcceptsReturn="False" FontStretch="Condensed" MaxLines="4" TextOptions.TextFormattingMode="Display" TextWrapping="Wrap" PreviewKeyDown="txtBoxMensaje_PreviewKeyDown" GotFocus="txtBoxMensaje_GotFocus" LostFocus="txtBoxMensaje_LostFocus" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}"/>
+                <TextBox  MaxLength="250" x:Name="txtMensajeRecibido" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="43" Margin="0,596,0,0" VerticalAlignment="Top" Width="386" BorderBrush="{x:Null}" FontSize="12" FontFamily="Segoe UI Historic" AcceptsReturn="False" FontStretch="Condensed" MaxLines="4" TextOptions.TextFormattingMode="Display" TextWrapping="Wrap" PreviewKeyDown="txtBoxMensaje_PreviewKeyDown" GotFocus="txtBoxMensaje_GotFocus" LostFocus="txtBoxMensaje_LostFocus" CaretBrush="{x:Null}" Foreground="{x:Null}" SelectionBrush="{x:Null}"/>
 
 
 
                 <Label x:Name="lbMensaje" Content="Escribe un mensaje" HorizontalAlignment="Left" VerticalContentAlignment="Bottom" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" Height="43" FontSize="16" FontFamily="Leelawadee UI Semilight" Background="{x:Null}" Foreground="#DD3E3E3E"/>
-                <TextBox MaxLength="200" x:Name="txtBoxMensaje" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="43" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" BorderBrush="Black" FontSize="16" FontFamily="Leelawadee UI Semilight" AcceptsReturn="False" FontStretch="Condensed" MaxLines="4" TextOptions.TextFormattingMode="Display" TextWrapping="Wrap" PreviewKeyDown="txtBoxMensaje_PreviewKeyDown" GotFocus="txtBoxMensaje_GotFocus" LostFocus="txtBoxMensaje_LostFocus"/>
+                <TextBox MaxLength="250" x:Name="txtBoxMensaje" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="43" Margin="10,596,0,0" VerticalAlignment="Top" Width="435" BorderBrush="Black" FontSize="16" FontFamily="Leelawadee UI Semilight" AcceptsReturn="False" FontStretch="Condensed" MaxLines="4" TextOptions.TextFormattingMode="Display" TextWrapping="Wrap" PreviewKeyDown="txtBoxMensaje_PreviewKeyDown" GotFocus="txtBoxMensaje_GotFocus" LostFocus="txtBoxMensaje_LostFocus"/>
 
                 <materialDesign:PackIcon Kind="Send" VerticalAlignment="Center" Foreground="#FF36342F" Margin="501,596,0,0" Height="47" Width="30" RenderTransformOrigin="2.59,-0.56"/>
                 <Button x:Name="btnEnviar" HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,596,348,0" Width="30" Height="Auto" Click="btnEnviar_Click"/>
@@ -34,18 +34,35 @@
                 <Button x:Name="btnEnviarImagen" HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,596,397,0" Width="32" Height="47" RenderTransformOrigin="1.018,0.546" VerticalAlignment="Top" Click="btnEnviarImagen_Click"/>
 
 
-
                 <Rectangle Fill="#FF36342F" HorizontalAlignment="Left" Height="42" Stroke="Transparent" VerticalAlignment="Top" Width="348" Margin="531,0,0,0"/>
-                <Label x:Name="labelTest" Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="343" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="536,0,0,0"/>
-                <DataGrid HorizontalAlignment="Left" Height="601" Margin="531,42,0,0" VerticalAlignment="Top" Width="348" Background="#FF707070"/>
+                <Label Content="Usuarios Conectados" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="42" Width="343" FontFamily="Constantia" FontWeight="Bold" Foreground="White" FontSize="23" Margin="536,0,0,0"/>
+
+                <DataGrid x:Name="dataGridUsuariosConectados" IsHitTestVisible="False" RowBackground="#FF6A6A6A" SelectionMode="Single" AutoGenerateColumns="False" IsReadOnly="True" Height="601" Margin="531,42,0,0" VerticalAlignment="Top"  CanUserResizeRows="False" FontSize="17" Background="#FF6A6A6A" FontFamily="Segoe UI Historic" Foreground="#DDFFFFFF">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  Binding="{Binding}" Width="345" CanUserReorder="False" CanUserResize="False" CanUserSort="False">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+
+
+
 
             </Grid>
 
 
         </materialDesign:TransitioningContent>
 
-        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
-        <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,621" Width="22" Height="22" Click="BtnSalir_Click"/>
+
+
+
 
 
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlidee" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.4}">
@@ -56,6 +73,24 @@
                 </Grid>
             </ScrollViewer>
         </materialDesign:TransitioningContent>
+
+
+        <Grid>
+            <Label x:Name="labelConexion" Content="Chat no disponible: No hay conexión con el servidor" Visibility="Hidden" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="643" Width="879" FontFamily="Segoe UI Historic" FontWeight="Bold" Foreground="White" FontSize="30" BorderBrush="Black" Background="#83000000"/>
+            <materialDesign:PackIcon x:Name="iconoConexion" Kind="Warning" VerticalAlignment="Center" Visibility="Hidden" Foreground="#FFE22A2A" Margin="388,221,0,342" Height="80" Width="104" RenderTransformOrigin="2.59,-0.56"/>
+
+            <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Foreground="White" Margin="855.5,0,0,621" Height="22" Width="22" Background="#FFE05959" RenderTransformOrigin="2.59,-0.56"/>
+            <Button HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="#FFE05959" Margin="0,0,0,621" Width="22" Height="22" Click="BtnSalir_Click"/>
+
+            <materialDesign:PackIcon x:Name="iconoReintentar" Visibility="Hidden" Kind="Reload" VerticalAlignment="Center" Foreground="White" Margin="388,465,0,134" Height="44" Width="104" RenderTransformOrigin="2.59,-0.56"/>
+            <Label x:Name="labelReintentar" Visibility="Hidden" Content="Reintentar conexión" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="106" Width="879" FontFamily="Segoe UI Historic" Foreground="White" FontSize="20" BorderBrush="Black" Background="{x:Null}" Margin="0,465,0,0" FontWeight="Bold"/>
+            <Button x:Name="btnReintentarConexión"  Visibility="Hidden" HorizontalAlignment="Right" FontFamily="Impact" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,470,344,102" Width="190" Height="Auto" Foreground="{x:Null}" Click="btnReintentarConexión_Click"/>
+
+
+        </Grid>
+
+
+
 
     </Grid>
 </UserControl>

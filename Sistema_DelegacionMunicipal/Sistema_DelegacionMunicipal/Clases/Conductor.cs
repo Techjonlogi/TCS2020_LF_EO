@@ -13,6 +13,6 @@ namespace Sistema_DelegacionMunicipal.Clases
 
         public string nombre { get; set; }
         private string apellidos { get; set; }
-
+//hola mundo
     }
 }
